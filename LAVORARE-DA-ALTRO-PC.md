@@ -3,8 +3,8 @@
 Istruzioni per Claude (e per Raffaele) quando si apre il sito su un PC diverso.
 
 ## Dove si trova il lavoro
-- Il **nuovo sito** è in preparazione nel ramo Git **`nuovo-sito`**, cartella `_proposte/`.
-  Il ramo `main` contiene ancora il sito vecchio.
+- Il **nuovo sito** è in preparazione nella cartella `_proposte/` (ramo `main`).
+  Le pagine fuori da `_proposte/` sono ancora il sito vecchio.
 - Pagina principale: `_proposte/d-moderno.html` (ispirata al modello Webflow "Fazora", rifatta da zero).
 - Blog: `_proposte/blog/`. Le pagine si **generano** con `node _genera.js` (dentro `_proposte/blog`):
   per cambiare testi, articoli, menu o piè di pagina del blog si modifica `_genera.js` e si rilancia.
@@ -16,8 +16,8 @@ Istruzioni per Claude (e per Raffaele) quando si apre il sito su un PC diverso.
 - Le altre proposte (`a-galleria`, `b-studio`, `c-preventivo`) sono scartate: tenute solo come riferimento.
 
 ## Come vederlo in locale
-1. `git clone https://github.com/russoraffaele1997/ventilart-sito.git` poi `git checkout nuovo-sito`
-   (oppure, se già scaricato: `git fetch` e `git checkout nuovo-sito` e `git pull`).
+1. `git clone https://github.com/russoraffaele1997/ventilart-sito.git`
+   (oppure, se già scaricato: `git pull`).
 2. Dalla cartella del sito: `npx http-server . -p 5500 -c-1`
 3. Aprire http://localhost:5500/_proposte/d-moderno.html
 
@@ -39,6 +39,6 @@ Non servono chiavi né Supabase: è un sito statico (solo HTML, CSS, JS).
 - Verificare i diritti d'uso delle 4 foto in `assets/servizi/` (composito.jpg è ritagliata per togliere loghi di altre aziende).
 - Far controllare al tecnico il riferimento alla norma UNI 11018 negli articoli.
 - Modulo contatti e assistente non inviano ancora nulla: serve scegliere dove pubblicare il sito (hosting) e come ricevere le richieste.
-- Quando il nuovo sito è approvato: spostarlo al posto di quello vecchio e unirlo a `main`.
+- Quando il nuovo sito è approvato: spostarlo al posto di quello vecchio.
 
 Raffaele non è tecnico: parlare in italiano semplice e spiegare ogni passaggio.
