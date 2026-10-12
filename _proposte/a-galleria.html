@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modello A · Galleria — Ventilàrt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#121517;--ink2:#1b1f22;--line:rgba(255,255,255,.12);--txt:#eceeee;--mut:#9aa1a6;--red:#E31E2B}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--txt);font:16px/1.6 'Public Sans',sans-serif}
+  a{color:inherit;text-decoration:none}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Big Shoulders Display',sans-serif;text-transform:uppercase;line-height:.95;letter-spacing:.01em}
+  .tag{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+  .tag b{color:var(--red);font-weight:600}
+
+  header{position:fixed;inset:0 0 auto;z-index:10;padding:14px 0;background:rgba(18,21,23,.92);backdrop-filter:blur(10px)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Big Shoulders Display';font-size:22px;font-weight:800;letter-spacing:.04em}
+  .logo img{width:34px;height:34px;object-fit:contain;background:#fff;border-radius:3px;padding:2px}
+  nav{display:flex;gap:28px;font-size:14px}
+  nav a:hover{color:var(--red)}
+  .btn{display:inline-block;background:var(--red);color:#fff;padding:12px 22px;font-weight:600;font-size:14px;border-radius:2px}
+  .btn.ghost{background:transparent;border:1px solid var(--line)}
+
+  .hero{position:relative;height:100vh;min-height:620px}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,12,13,.88) 0%,rgba(10,12,13,.35) 60%,rgba(10,12,13,.1))}
+  .hero .copy{position:absolute;z-index:2;left:0;right:0;bottom:12vh}
+  .hero h1{font-size:clamp(56px,9vw,128px);max-width:9ch}
+  .hero h1 em{font-style:normal;color:var(--red)}
+  .hero p{max-width:460px;margin:20px 0 30px;color:#cfd3d5;font-size:18px}
+  .hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+
+  section{padding:110px 0;border-top:1px solid var(--line)}
+  .head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+  .head h2{font-size:clamp(40px,5vw,72px)}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .steps div{border-top:2px solid var(--red);padding-top:18px}
+  .steps b{font-family:'Big Shoulders Display';font-size:48px;color:var(--red)}
+  .steps h3{font-size:30px;margin:6px 0}
+  .steps p{color:var(--mut);font-size:15px}
+  .sys{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+  .sys a{position:relative;aspect-ratio:3/4;overflow:hidden}
+  .sys a img{transition:transform .6s}
+  .sys a:hover img{transform:scale(1.05)}
+  .sys a span{position:absolute;inset:auto 0 0;padding:26px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+  .sys h3{font-size:34px}
+  .sys p{color:#c9cdd0;font-size:14px}
+
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+  .contact h2{font-size:clamp(48px,6vw,88px)}
+  .contact ul{list-style:none;margin-top:30px}
+  .contact li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}
+  .contact li span{color:var(--mut)}
+  form{display:grid;gap:12px}
+  input,textarea{background:var(--ink2);border:1px solid var(--line);color:var(--txt);padding:14px;font:inherit;border-radius:2px}
+  footer{padding:30px 0;border-top:1px solid var(--line);color:var(--mut);font-size:13px}
+  .note{background:#E31E2B;color:#fff;text-align:center;font-size:13px;padding:6px;position:fixed;bottom:0;left:0;right:0;z-index:20}
+
+  @media (max-width:860px){
+    nav{display:none}
+    .featured,.contact{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .sys{grid-template-columns:1fr}
+    .sys a{aspect-ratio:4/3}
+    section{padding:72px 0}
+  }
+  .sys{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:1000px){.sys{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.sys{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#"><img src="../assets/ventilart-logo.svg" alt="">VENTILÀRT</a>
+  <nav><a href="#metodo">Metodo</a><a href="#sistemi">Sistemi</a><a href="#contatti">Contatti</a></nav>
+  <a class="btn" href="#contatti">Preventivo</a>
+</div></header>
+
+<div class="hero">
+  <img src="../assets/servizi/rivestimento-effetto-legno.jpg" alt="">
+  <div class="copy"><div class="wrap">
+    <p class="tag"><b>■</b> Facciate ventilate</p>
+    <h1>Facciate <em>ventilate.</em></h1>
+    <p>Progettazione esecutiva e posa in opera di facciate ventilate in gres porcellanato, fibrocemento, legno e composito, per committenti pubblici e privati.</p>
+    <div class="btns"><a class="btn" href="#contatti">Richiedi un sopralluogo</a><a class="btn ghost" href="#sistemi">Scopri i sistemi</a></div>
+  </div></div>
+</div>
+
+<section id="metodo"><div class="wrap">
+  <div class="head"><div><p class="tag"><b>01</b> — Come lavoriamo</p><h2>Dal sopralluogo<br>alla consegna</h2></div></div>
+  <div class="steps">
+    <div><b>01</b><h3>Sopralluogo</h3><p>Rilievo dell'edificio e delle tue esigenze.</p></div>
+    <div><b>02</b><h3>Preventivo</h3><p>Sistema, materiali e costi chiari, voce per voce.</p></div>
+    <div><b>03</b><h3>Posa</h3><p>Sottostruttura, isolante e rivestimento.</p></div>
+    <div><b>04</b><h3>Consegna</h3><p>Documentazione completa del lavoro eseguito.</p></div>
+  </div>
+</div></section>
+
+<section id="sistemi"><div class="wrap">
+  <div class="head"><div><p class="tag"><b>02</b> — Cosa facciamo</p><h2>I nostri sistemi</h2></div></div>
+  <div class="sys">
+    <a href="#"><img src="../assets/servizi/rivestimento-ceramico.webp" alt=""><span><h3>Gres porcellanato</h3><p>Lastre di grande formato in gres porcellanato, stabili nel colore e resistenti agli agenti atmosferici.</p></span></a>
+    <a href="#"><img src="../assets/servizi/fibrocemento-tecnico.webp" alt=""><span><h3>Fibrocemento</h3><p>Lastre in fibrocemento dalla superficie uniforme, per facciate dal linguaggio architettonico essenziale.</p></span></a>
+    <a href="#"><img src="../assets/servizi/rivestimento-effetto-legno.jpg" alt=""><span><h3>Legno</h3><p>Doghe, listelli e frangisole per facciate dall'aspetto naturale e caldo.</p></span></a>
+    <a href="#"><img src="../assets/servizi/composito.jpg" alt="" style="object-position:50% 25%"><span><h3>Composito</h3><p>Pannelli in materiale composito, leggeri e planari, per superfici continue e moderne.</p></span></a>
+  </div>
+</div></section>
+
+<section id="contatti"><div class="wrap contact">
+  <div>
+    <p class="tag"><b>03</b> — Contatti</p>
+    <h2>Richiedi un sopralluogo.</h2>
+    <ul>
+      <li><span>Telefono</span>[da inserire]</li>
+      <li><span>Email</span>[da inserire]</li>
+      <li><span>Sede</span>[da inserire]</li>
+    </ul>
+  </div>
+  <form onsubmit="return false">
+    <input placeholder="Nome e cognome"><input placeholder="Telefono o email"><input placeholder="Comune del cantiere">
+    <textarea rows="5" placeholder="Descrizione dell'intervento (superficie, tipo di edificio…)"></textarea>
+    <button class="btn" style="border:0;cursor:pointer">Invia richiesta</button>
+  </form>
+</div></section>
+
+<footer><div class="wrap">© Ventilàrt · P.IVA [da inserire]</div></footer>
+<div class="note">MODELLO A · “Galleria” — scuro, le foto parlano da sole</div>
+</body>
+</html>
