@@ -8,7 +8,13 @@ Istruzioni per Claude (e per Raffaele) quando si apre il sito su un PC diverso.
 - Pagina principale: `_proposte/d-moderno.html` (ispirata al modello Webflow "Fazora", rifatta da zero).
 - Blog: `_proposte/blog/`. Le pagine si **generano** con `node _genera.js` (dentro `_proposte/blog`):
   per cambiare testi, articoli, menu o piè di pagina del blog si modifica `_genera.js` e si rilancia.
-- Assistente virtuale (risposte automatiche, gratuito): `_proposte/chat/chat.js`, elenco "RISPOSTE" in cima.
+- Pagine del menu (Chi siamo, Lavorazioni, I nostri progetti, Contatti): `_proposte/chi-siamo.html` ecc.,
+  per ora "in lavorazione". Si generano con `node _genera-pagine.js` (dentro `_proposte`); usano lo stile del blog.
+- Foto: in `assets/foto/`, con l'elenco delle fonti e dei permessi da chiedere in `assets/foto/FONTI.md`.
+- Assistente virtuale (chatbot automatico, gratuito, senza servizi esterni): `_proposte/chat/chat.js`.
+  In cima al file ci sono CONTATTI, MATERIALI (schede tecniche dei 4 sistemi) e ARGOMENTI: si modificano lì.
+  Capisce anche parole scritte male, ricorda l'argomento, mantiene la chat tra le pagine e guida la
+  richiesta di sopralluogo, che si invia su WhatsApp (331 836 4042). Fonti dei dati tecniche annotate in cima al file.
 - Animazioni stile Fazora: `_proposte/anim/`.
 - Loghi: `assets/logo/` (verticale, orizzontale, simbolo; versioni `-bianco` per fondi scuri).
   La V della scritta è stata ridisegnata come la V del simbolo (richiesta del 12/10/2026).
@@ -33,7 +39,7 @@ Non servono chiavi né Supabase: è un sito statico (solo HTML, CSS, JS).
 - Assistente virtuale ben visibile (pulsante "Assistente virtuale" + inviti nella pagina).
 
 ## Da completare
-- Contatti veri: telefono, email, sede, Partita IVA (ora ci sono "[da inserire]"; il sito vecchio ha contatti finti di Treviso).
+- Contatti: telefono 331 836 4042 e sede Via Padula 19, Casoria (NA) inseriti il 13/10/2026; mancano email e Partita IVA (ora ci sono "[da inserire]"; il sito vecchio ha contatti finti di Treviso).
 - Testo "Chi siamo": anno di fondazione, sede, zona di lavoro (anche nella risposta "zona" dell'assistente).
 - Pagina "I nostri progetti": vuota finché non c'è un lavoro da mostrare.
 - Verificare i diritti d'uso delle 4 foto in `assets/servizi/` (composito.jpg è ritagliata per togliere loghi di altre aziende).

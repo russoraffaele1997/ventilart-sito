@@ -15,7 +15,7 @@
 .vchat-hint{position:fixed;right:22px;bottom:96px;z-index:80;background:#fff;color:#1d2225;font:500 14px/1.4 'Manrope',sans-serif;padding:10px 16px;border-radius:14px;box-shadow:0 10px 30px rgba(20,22,24,.12);opacity:0;transform:translateX(8px);transition:opacity .4s,transform .4s;pointer-events:none}
 .vchat-hint.show{opacity:1;transform:none}
 
-.vchat{position:fixed;right:22px;bottom:96px;z-index:85;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100vh - 130px));background:#f6f6f5;border-radius:24px;box-shadow:0 24px 60px rgba(20,22,24,.25);display:flex;flex-direction:column;overflow:hidden;font:15px/1.55 'Manrope',sans-serif;color:#1d2225;opacity:0;transform:translateY(16px) scale(.98);transform-origin:bottom right;pointer-events:none;transition:opacity .3s,transform .35s cubic-bezier(.2,.8,.2,1)}
+.vchat{position:fixed;right:22px;bottom:96px;z-index:85;width:min(400px,calc(100vw - 24px));height:min(620px,calc(100vh - 130px));background:#f6f6f5;border-radius:24px;box-shadow:0 24px 60px rgba(20,22,24,.25);display:flex;flex-direction:column;overflow:hidden;font:15px/1.55 'Manrope',sans-serif;color:#1d2225;opacity:0;transform:translateY(16px) scale(.98);transform-origin:bottom right;pointer-events:none;transition:opacity .3s,transform .35s cubic-bezier(.2,.8,.2,1)}
 .vchat.open{opacity:1;transform:none;pointer-events:auto}
 .vchat-head{background:#1d2225;color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px}
 .vchat-head img{width:36px;height:36px;border-radius:10px;background:#fff;padding:4px}
@@ -23,10 +23,19 @@
 .vchat-head b{display:block;font-weight:600;font-size:15px}
 .vchat-head small{color:#aab0b4;font-size:12px;display:flex;align-items:center;gap:6px}
 .vchat-head small .on{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3ccf6e}
+.vchat-r{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;font-size:17px;cursor:pointer;margin-right:2px}
+.vchat-r:hover{background:rgba(255,255,255,.1)}
 .vchat-x{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;font-size:18px;cursor:pointer}
 .vchat-x:hover{background:rgba(255,255,255,.1)}
 .vchat-log{flex:1;overflow-y:auto;padding:18px 16px 8px;display:flex;flex-direction:column;gap:10px}
-.vmsg{max-width:85%;padding:10px 14px;border-radius:18px;white-space:pre-line;animation:vin .25s ease}
+.vmsg{max-width:88%;padding:10px 14px;border-radius:18px;animation:vin .25s ease;overflow-wrap:anywhere}
+.vmsg.noanim{animation:none}
+.vmsg p{margin:0}
+.vmsg p+p,.vmsg p+ul,.vmsg ul+p{margin-top:6px}
+.vmsg ul{margin:6px 0 0;padding-left:18px}
+.vmsg li{margin:3px 0}
+.vmsg b{font-weight:600}
+.vmsg.me{white-space:pre-line}
 .vmsg.bot{background:#fff;border-bottom-left-radius:6px;align-self:flex-start}
 .vmsg.me{background:#30363B;color:#fff;border-bottom-right-radius:6px;align-self:flex-end}
 .vmsg a{color:#E31E2B;font-weight:600}
@@ -34,7 +43,7 @@
 .vtyping{display:inline-flex;gap:4px;padding:14px 16px}
 .vtyping i{width:6px;height:6px;border-radius:50%;background:#a6abae;animation:vdot 1s infinite}
 .vtyping i:nth-child(2){animation-delay:.15s}.vtyping i:nth-child(3){animation-delay:.3s}
-.vchips{display:flex;flex-wrap:wrap;gap:6px;padding:4px 16px 12px}
+.vchips{display:flex;flex-wrap:wrap;gap:6px;padding:4px 16px 12px;max-height:132px;overflow-y:auto}
 .vchips button{border:1px solid #dfe1e2;background:#fff;color:#1d2225;border-radius:99px;padding:7px 12px;font:500 13px 'Manrope',sans-serif;cursor:pointer;transition:background .2s,border-color .2s}
 .vchips button:hover{background:#30363B;color:#fff;border-color:#30363B}
 .vchat-form{display:flex;gap:8px;padding:12px;background:#fff;border-top:1px solid #e6e7e7}

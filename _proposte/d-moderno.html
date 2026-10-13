@@ -69,8 +69,10 @@
 
   /* hero */
   .hero{position:relative;height:calc(100vh - 100px);min-height:560px;max-height:860px;border-radius:var(--r);overflow:hidden}
-  .hero>img{position:absolute;inset:0}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,18,20,.75) 0%,rgba(15,18,20,.15) 55%,rgba(15,18,20,.05))}
+  .hero>img{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease,transform 1.8s cubic-bezier(.2,.7,.2,1)!important}
+  .hero>img.on{opacity:1}
+  .hero .dots{z-index:3;left:auto;right:48px;bottom:60px}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,18,20,.45) 0%,rgba(15,18,20,0) 58%),linear-gradient(0deg,rgba(15,18,20,.75) 0%,rgba(15,18,20,.15) 55%,rgba(15,18,20,.05))}
   .hero .txt{position:absolute;z-index:2;left:48px;bottom:56px;max-width:600px;color:#fff}
   .hero h1{font-size:clamp(40px,5vw,68px);margin:16px 0 14px}
   .hero p{color:#e2e5e6;font-size:18px;margin-bottom:26px;max-width:480px}
@@ -235,7 +237,11 @@
 
   <!-- HERO -->
   <div class="hero">
-    <img src="../assets/servizi/rivestimento-effetto-legno.jpg" alt="Facciata ventilata con doghe in legno">
+    <img class="on" src="../assets/foto/hero-gres.jpg" alt="Facciata ventilata in lastre di gres porcellanato">
+    <img src="../assets/foto/hero-fibrocemento-equitone.jpg" alt="">
+    <img src="../assets/foto/hero-legno.jpg" alt="">
+    <img src="../assets/foto/composito-a.jpg" alt="">
+    <div class="dots" id="heroDots"></div>
     <div class="txt">
       <span class="pill dark sig"><img src="../assets/logo/ventilart-simbolo-bianco.svg" alt="">Ventilàrt · Facciate ventilate</span>
       <h1>Progettazione e posa di facciate ventilate</h1>
@@ -273,17 +279,17 @@
       <p>Per ogni edificio il materiale più adatto, con la stessa cura nella progettazione e nella posa.</p>
     </div>
     <div class="works">
-      <a class="work" href="#contatti"><img src="../assets/servizi/rivestimento-ceramico.webp" alt="">
-        <div class="head"><span class="pill dark">01</span><span class="pill dark">Grandi formati</span></div>
+      <a class="work" href="#contatti"><img src="../assets/foto/gres-moderno.jpg" alt="Facciata ventilata in lastre di gres porcellanato">
+        <div class="head"><span class="pill dark">Grandi formati</span></div>
         <div class="foot"><h3>Gres porcellanato</h3><p>Lastre stabili nel colore e resistenti agli agenti atmosferici, in un'ampia gamma di finiture.</p></div></a>
-      <a class="work" href="#contatti"><img src="../assets/servizi/fibrocemento-tecnico.webp" alt="">
-        <div class="head"><span class="pill dark">02</span><span class="pill dark">Superfici uniformi</span></div>
+      <a class="work" href="#contatti"><img src="../assets/foto/fibrocemento-equitone.jpg" alt="Facciata ventilata in pannelli di fibrocemento Equitone">
+        <div class="head"><span class="pill dark">Superfici uniformi</span></div>
         <div class="foot"><h3>Fibrocemento</h3><p>Lastre dalla superficie omogenea per facciate dal linguaggio essenziale.</p></div></a>
-      <a class="work" href="#contatti"><img src="../assets/servizi/rivestimento-effetto-legno.jpg" alt="">
-        <div class="head"><span class="pill dark">03</span><span class="pill dark">Doghe e frangisole</span></div>
+      <a class="work" href="#contatti"><img src="../assets/foto/legno-deco.jpg" alt="Frangisole Dèco Ultrashield">
+        <div class="head"><span class="pill dark">Doghe e frangisole</span></div>
         <div class="foot"><h3>Legno</h3><p>Doghe, listelli e frangisole per facciate dall'aspetto naturale e caldo.</p></div></a>
-      <a class="work" href="#contatti"><img src="../assets/servizi/composito.jpg" alt="" style="object-position:50% 25%">
-        <div class="head"><span class="pill dark">04</span><span class="pill dark">Pannelli planari</span></div>
+      <a class="work" href="#contatti"><img src="../assets/foto/composito-a.jpg" alt="Facciata ventilata in pannelli compositi">
+        <div class="head"><span class="pill dark">Pannelli planari</span></div>
         <div class="foot"><h3>Composito</h3><p>Pannelli leggeri e planari per superfici continue e moderne.</p></div></a>
     </div>
   </section>
@@ -296,11 +302,7 @@
     </div>
     <div class="split">
       <div class="slider" id="slider">
-        <img class="on" src="../assets/servizi/composito.jpg" alt="" style="object-position:50% 25%">
-        <img src="../assets/servizi/rivestimento-ceramico.webp" alt="">
-        <img src="../assets/servizi/fibrocemento-tecnico.webp" alt="">
-        <img src="../assets/servizi/rivestimento-effetto-legno.jpg" alt="">
-        <div class="dots"></div>
+        <img class="on" src="../assets/foto/composito-b.jpg" alt="">
       </div>
       <div class="panel">
         <span class="pill">Metodo</span>
@@ -326,9 +328,9 @@
       <p>Guide pratiche su materiali, funzionamento e cantiere.</p>
     </div>
     <div class="posts">
-      <a class="post" href="blog/cos-e-una-facciata-ventilata.html"><div class="im"><img src="../assets/servizi/composito.jpg" alt="" style="object-position:50% 25%"><span class="pill dark">Guide</span></div><div class="b"><h3>Cos’è una facciata ventilata e come funziona</h3><span class="more">Leggi l’articolo →</span></div></a>
-      <a class="post" href="blog/gres-fibrocemento-legno-composito.html"><div class="im"><img src="../assets/servizi/rivestimento-ceramico.webp" alt=""><span class="pill dark">Materiali</span></div><div class="b"><h3>Gres, fibrocemento, legno o composito: come scegliere il rivestimento</h3><span class="more">Leggi l’articolo →</span></div></a>
-      <a class="post" href="blog/facciata-ventilata-edificio-esistente.html"><div class="im"><img src="../assets/servizi/fibrocemento-tecnico.webp" alt=""><span class="pill dark">Cantiere</span></div><div class="b"><h3>Facciata ventilata su un edificio esistente: le fasi dell’intervento</h3><span class="more">Leggi l’articolo →</span></div></a>
+      <a class="post" href="blog/cos-e-una-facciata-ventilata.html"><div class="im"><img src="../assets/foto/blog-struttura-equitone.jpg" alt=""><span class="pill dark">Guide</span></div><div class="b"><h3>Cos’è una facciata ventilata e come funziona</h3><span class="more">Leggi l’articolo →</span></div></a>
+      <a class="post" href="blog/gres-fibrocemento-legno-composito.html"><div class="im"><img src="../assets/foto/blog-strati-facciata.jpg" alt=""><span class="pill dark">Materiali</span></div><div class="b"><h3>Gres, fibrocemento, legno o composito: come scegliere il rivestimento</h3><span class="more">Leggi l’articolo →</span></div></a>
+      <a class="post" href="blog/facciata-ventilata-edificio-esistente.html"><div class="im"><img src="../assets/foto/blog-cantiere-esistente.jpg" alt=""><span class="pill dark">Cantiere</span></div><div class="b"><h3>Facciata ventilata su un edificio esistente: le fasi dell’intervento</h3><span class="more">Leggi l’articolo →</span></div></a>
     </div>
     <div style="text-align:center;margin-top:28px"><a class="btn" href="blog/index.html">Tutti gli articoli</a></div>
   </section>
@@ -336,7 +338,7 @@
   <!-- BANNER -->
   <section>
     <div class="banner">
-      <img src="../assets/servizi/fibrocemento-tecnico.webp" alt="">
+      <img src="../assets/foto/fibrocemento-d.jpg" alt="">
       <div class="in">
         <img class="bmark" src="../assets/logo/ventilart-simbolo-bianco.svg" alt=""><span class="pill dark">Sopralluogo</span>
         <h2>Hai un intervento da valutare?</h2>
@@ -370,9 +372,9 @@
       <div class="info">
         <div><img class="cmark" src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><span class="pill dark">Contatti</span><h2>Richiedi un sopralluogo</h2></div>
         <dl>
-          <div><dt>Telefono</dt><dd>[da inserire]</dd></div>
+          <div><dt>Telefono</dt><dd><a href="tel:+393318364042">331 836 4042</a></dd></div>
           <div><dt>Email</dt><dd>[da inserire]</dd></div>
-          <div><dt>Sede</dt><dd>[da inserire]</dd></div>
+          <div><dt>Sede</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Padula+19+Casoria+NA" target="_blank" rel="noopener">Via Padula 19, 80026 Casoria (NA)</a></dd></div>
         </dl>
       </div>
       <form class="card" onsubmit="return false">
@@ -390,8 +392,8 @@
 
 <footer>
   <div class="wrap">
-    <div><img src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><p>Progettazione e posa di facciate ventilate.</p><p style="margin-top:14px">© Ventilàrt · P.IVA [da inserire]</p></div>
-    <div><h4>Sito</h4><ul><li><a href="#chi-siamo">Chi siamo</a></li><li><a href="#lavorazioni">Lavorazioni</a></li><li><a href="#progetti">I nostri progetti</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="#contatti">Contatti</a></li></ul></div>
+    <div><img src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><p>Progettazione e posa di facciate ventilate.</p><p style="margin-top:14px">Via Padula 19, 80026 Casoria (NA)<br>Tel. <a href="tel:+393318364042">331 836 4042</a></p><p style="margin-top:14px">© Ventilàrt · P.IVA [da inserire]</p></div>
+    <div><h4>Sito</h4><ul><li><a href="chi-siamo.html">Chi siamo</a></li><li><a href="lavorazioni.html">Lavorazioni</a></li><li><a href="progetti.html">I nostri progetti</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="contatti.html">Contatti</a></li></ul></div>
     <div><h4>Informazioni</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Cookie</a></li></ul></div>
   </div>
 </footer>
@@ -401,27 +403,29 @@
 <aside class="drawer" id="menu" aria-hidden="true">
   <div class="dh"><img src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><button class="close" id="chiudi" aria-label="Chiudi il menu">×</button></div>
   <nav>
-    <a href="#chi-siamo"><small>01</small>Chi siamo</a>
-    <a href="#lavorazioni"><small>02</small>Lavorazioni</a>
-    <a href="#progetti"><small>03</small>I nostri progetti</a>
-    <a href="blog/index.html"><small>04</small>Blog</a>
-    <a href="#contatti"><small>05</small>Contatti</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="lavorazioni.html">Lavorazioni</a>
+    <a href="progetti.html">I nostri progetti</a>
+    <a href="blog/index.html">Blog</a>
+    <a href="contatti.html">Contatti</a>
   </nav>
   <div class="df">
     <b>Contatti</b>
-    <span>Tel. [da inserire]</span>
+    <span>Tel. <a href="tel:+393318364042">331 836 4042</a></span>
+    <span>Via Padula 19, 80026 Casoria (NA)</span>
     <span>[email da inserire]</span>
     <a class="btn" href="#contatti">Richiedi un sopralluogo</a>
   </div>
 </aside>
 
 <script>
-  // Slider della sezione Metodo
+  // Foto a scorrimento della hero
   (function(){
-    var s=document.getElementById('slider'), imgs=s.querySelectorAll('img'), dots=s.querySelector('.dots'), i=0;
+    var s=document.querySelector('.hero'), imgs=s.querySelectorAll(':scope > img'), dots=document.getElementById('heroDots'), i=0;
     imgs.forEach(function(_,n){var b=document.createElement('button');b.setAttribute('aria-label','Foto '+(n+1));b.onclick=function(){go(n)};dots.appendChild(b)});
     function go(n){imgs[i].classList.remove('on');dots.children[i].classList.remove('on');i=n;imgs[i].classList.add('on');dots.children[i].classList.add('on')}
-    go(0); setInterval(function(){go((i+1)%imgs.length)},5000);
+    go(0);
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(function(){go((i+1)%imgs.length)},5000);
   })();
   // Menu laterale
   (function(){

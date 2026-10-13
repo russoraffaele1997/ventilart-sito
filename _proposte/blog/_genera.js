@@ -13,7 +13,7 @@ const articoli = [
     categoria: 'Guide',
     data: '12 ottobre 2026',
     lettura: '5 min',
-    img: 'servizi/composito.jpg', pos: '50% 25%',
+    img: 'foto/blog-struttura-equitone.jpg', pos: '50% 50%',
     corpo: `
 <p>La facciata ventilata è un sistema di rivestimento esterno in cui il materiale di finitura non è incollato al muro, ma fissato meccanicamente a una struttura metallica. Tra il rivestimento e la parete resta uno spazio libero in cui l’aria circola dal basso verso l’alto. È proprio questa intercapedine a dare il nome al sistema e a determinarne buona parte dei vantaggi.</p>
 
@@ -55,7 +55,7 @@ const articoli = [
     categoria: 'Materiali',
     data: '12 ottobre 2026',
     lettura: '6 min',
-    img: 'servizi/rivestimento-ceramico.webp', pos: '50% 50%',
+    img: 'foto/blog-strati-facciata.jpg', pos: '50% 50%',
     corpo: `
 <p>La sottostruttura e l’isolante di una facciata ventilata sono simili in quasi tutti i progetti. Ciò che cambia davvero l’aspetto e il comportamento dell’edificio è il rivestimento. Ecco le caratteristiche dei quattro sistemi che realizziamo.</p>
 
@@ -115,7 +115,7 @@ const articoli = [
     categoria: 'Cantiere',
     data: '12 ottobre 2026',
     lettura: '5 min',
-    img: 'servizi/fibrocemento-tecnico.webp', pos: '50% 50%',
+    img: 'foto/blog-cantiere-esistente.jpg', pos: '50% 50%',
     corpo: `
 <p>Una facciata ventilata non è solo un intervento per le nuove costruzioni: è una delle soluzioni più efficaci per riqualificare un edificio esistente, perché unisce isolamento, protezione del muro e rinnovo estetico in un unico lavoro. Ecco come si svolge, fase per fase.</p>
 
@@ -179,8 +179,8 @@ const head = (titolo, desc, base) => `<!doctype html>
 const foot = `
 <footer>
   <div class="wrap">
-    <div><img src="${A}/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><p>Progettazione e posa di facciate ventilate.</p><p style="margin-top:14px">© Ventilàrt · P.IVA [da inserire]</p></div>
-    <div><h4>Sito</h4><ul><li><a href="../d-moderno.html#chi-siamo">Chi siamo</a></li><li><a href="../d-moderno.html#lavorazioni">Lavorazioni</a></li><li><a href="../d-moderno.html#progetti">I nostri progetti</a></li><li><a href="index.html">Blog</a></li><li><a href="../d-moderno.html#contatti">Contatti</a></li></ul></div>
+    <div><img src="${A}/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><p>Progettazione e posa di facciate ventilate.</p><p style="margin-top:14px">Via Padula 19, 80026 Casoria (NA)<br>Tel. <a href="tel:+393318364042">331 836 4042</a></p><p style="margin-top:14px">© Ventilàrt · P.IVA [da inserire]</p></div>
+    <div><h4>Sito</h4><ul><li><a href="../chi-siamo.html">Chi siamo</a></li><li><a href="../lavorazioni.html">Lavorazioni</a></li><li><a href="../progetti.html">I nostri progetti</a></li><li><a href="index.html">Blog</a></li><li><a href="../contatti.html">Contatti</a></li></ul></div>
     <div><h4>Informazioni</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Cookie</a></li></ul></div>
   </div>
 </footer>
@@ -189,15 +189,16 @@ const foot = `
 <aside class="drawer" id="menu" aria-hidden="true">
   <div class="dh"><img src="${A}/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><button class="close" id="chiudi" aria-label="Chiudi il menu">×</button></div>
   <nav>
-    <a href="../d-moderno.html#chi-siamo"><small>01</small>Chi siamo</a>
-    <a href="../d-moderno.html#lavorazioni"><small>02</small>Lavorazioni</a>
-    <a href="../d-moderno.html#progetti"><small>03</small>I nostri progetti</a>
-    <a href="index.html"><small>04</small>Blog</a>
-    <a href="../d-moderno.html#contatti"><small>05</small>Contatti</a>
+    <a href="../chi-siamo.html">Chi siamo</a>
+    <a href="../lavorazioni.html">Lavorazioni</a>
+    <a href="../progetti.html">I nostri progetti</a>
+    <a href="index.html">Blog</a>
+    <a href="../contatti.html">Contatti</a>
   </nav>
   <div class="df">
     <b>Contatti</b>
-    <span>Tel. [da inserire]</span>
+    <span>Tel. <a href="tel:+393318364042">331 836 4042</a></span>
+    <span>Via Padula 19, 80026 Casoria (NA)</span>
     <span>[email da inserire]</span>
     <a class="btn" href="../d-moderno.html#contatti">Richiedi un sopralluogo</a>
   </div>
