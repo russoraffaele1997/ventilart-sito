@@ -27,7 +27,7 @@ Non servono chiavi né Supabase: è un sito statico (solo HTML, CSS, JS).
 - Tono **professionale e sobrio**, niente slogan ("la nostra specialità" è stato bocciato).
 - Le 4 lavorazioni (gres porcellanato, fibrocemento, legno, composito) hanno **lo stesso risalto**.
 - **Nessuna foto** dell'unico lavoro fatto (scuola di Parete) per ora.
-- Menu a panino laterale: Chi siamo, Lavorazioni, I nostri progetti, Blog, Contatti. Niente finestrella nella foto iniziale.
+- Menu a panino laterale: Chi siamo, Lavorazioni, I nostri progetti, Blog, Contatti. Stile scelto: "antracite e rosso" (pannello squadrato sfumato antracite, riga rossa a sinistra, voci in maiuscolo con carattere Barlow Condensed, riempimento rosso al passaggio, V del logo in filigrana in basso). Niente finestrella nella foto iniziale.
 - Pagina larga 1440 px. Provati e **scartati**: barre laterali, menu fisso a sinistra, tutta larghezza,
   filigrana ai lati, loghi partner finti, etichette chiare/scure adattive (le etichette sulle foto sono tutte scure).
 - Assistente virtuale ben visibile (pulsante "Assistente virtuale" + inviti nella pagina).

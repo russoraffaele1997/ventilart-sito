@@ -28,16 +28,16 @@ h1,h2,h3{font-weight:300;letter-spacing:-.02em;line-height:1.15}
 
 /* menu laterale */
 .veil{position:fixed;inset:0;z-index:90;background:rgba(15,18,20,.35);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .4s}
-.drawer{position:fixed;top:12px;right:12px;bottom:12px;z-index:100;width:min(440px,calc(100vw - 24px));background:var(--ink);color:#fff;border-radius:var(--r);padding:28px 36px 36px;display:flex;flex-direction:column;transform:translateX(calc(100% + 24px));transition:transform .55s cubic-bezier(.7,0,.2,1);overflow-y:auto;line-height:1.5}
+.drawer{position:fixed;top:12px;right:12px;bottom:12px;z-index:100;width:min(360px,calc(100vw - 24px));background:url(../../assets/logo/ventilart-v-filigrana-chiara.svg) no-repeat right -40px bottom -60px/78% auto,var(--ink);color:#fff;border-radius:var(--r);padding:24px 28px 28px;display:flex;flex-direction:column;transform:translateX(calc(100% + 24px));transition:transform .55s cubic-bezier(.7,0,.2,1);overflow-y:auto;line-height:1.5}
 body.menu-open .veil{opacity:1;pointer-events:auto}
 body.menu-open .drawer{transform:none}
 body.menu-open{overflow:hidden}
-.drawer .dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px}
-.drawer .dh img{height:34px;width:auto}
+.drawer .dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}
+.drawer .dh img{height:28px;width:auto}
 .close{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;font-size:22px;font-weight:300;cursor:pointer;transition:background .2s,transform .3s}
 .close:hover{background:rgba(255,255,255,.1);transform:rotate(90deg)}
 .drawer nav{display:flex;flex-direction:column}
-.drawer nav a{display:flex;align-items:baseline;gap:18px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:clamp(26px,3.2vw,34px);font-weight:300;letter-spacing:-.01em;opacity:0;transform:translateX(30px);transition:opacity .4s,transform .5s,color .2s}
+.drawer nav a{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:24px;font-weight:300;letter-spacing:-.01em;opacity:0;transform:translateX(30px);transition:opacity .4s,transform .5s,color .2s}
 .drawer nav a small{font-size:12px;color:#7d8488;font-weight:400;min-width:22px}
 .drawer nav a:hover{color:#ff4650}
 body.menu-open .drawer nav a{opacity:1;transform:none}
@@ -120,3 +120,19 @@ footer img{height:52px;width:auto;margin-bottom:18px}
   .ahead{margin-top:36px}
   .layers li{grid-template-columns:34px 1fr}
 }
+
+/* menu definitivo: antracite e rosso, carattere Barlow Condensed */
+.veil{background:rgba(10,12,13,.6);backdrop-filter:none}
+.drawer{top:0;right:0;bottom:0;border-radius:0;width:min(390px,100vw);padding:28px 32px 32px;background:url(../../assets/logo/ventilart-v-filigrana-chiara.svg) no-repeat right -40px bottom -60px/78% auto,linear-gradient(180deg,#2b3135 0%,#16191b 100%);border-left:4px solid #E31E2B;transition:transform .55s cubic-bezier(.77,0,.18,1)}
+.drawer nav a{font-family:'Barlow Condensed','Manrope',sans-serif;font-weight:600;text-transform:uppercase;font-size:32px;letter-spacing:.03em;line-height:1;padding:11px 0;border-color:rgba(255,255,255,.07);position:relative;z-index:0;opacity:1;transform:none;clip-path:inset(0 0 100% 0);transition:clip-path .6s cubic-bezier(.77,0,.18,1),color .25s,padding .3s}
+body.menu-open .drawer nav a{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+.drawer nav a small{font-family:'Manrope',sans-serif;font-weight:600;font-size:13px;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.5)}
+.drawer nav a::before{content:"";position:absolute;inset:0;background:#E31E2B;transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.77,0,.18,1);z-index:-1}
+.drawer nav a:hover{color:#fff;padding-left:14px}
+.drawer nav a:hover::before{transform:scaleX(1)}
+.drawer nav a:hover small{-webkit-text-stroke:1px #fff}
+.drawer .close{border-radius:0;border-color:#E31E2B;color:#fff}
+.drawer .close:hover{background:#E31E2B;transform:none}
+.drawer .df b{color:#E31E2B;letter-spacing:.2em}
+.drawer .df .btn{border-radius:0;background:#E31E2B;color:#fff;text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+.drawer .df .btn:hover{background:#c81924}

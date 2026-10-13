@@ -160,7 +160,7 @@ const head = (titolo, desc, base) => `<!doctype html>
 <meta name="description" content="${desc.replace(/"/g, '&quot;')}">
 <link rel="icon" href="${A}/logo/ventilart-simbolo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="blog.css">
 <link rel="stylesheet" href="../chat/chat.css">
 <link rel="stylesheet" href="../anim/anim.css">
