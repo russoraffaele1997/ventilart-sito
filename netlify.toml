@@ -1,0 +1,14 @@
+# Pubblicazione su Netlify: per ora va online solo la pagina provvisoria
+# "il nuovo sito è in arrivo" (cartella online/). Il nuovo sito completo
+# resta in _proposte/ finché non è pronto (foto con permesso, P.IVA, privacy).
+[build]
+  publish = "online"
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; script-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'"
