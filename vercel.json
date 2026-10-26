@@ -4,8 +4,10 @@
   "installCommand": "",
   "buildCommand": "sh pubblica.sh",
   "outputDirectory": "pubblico",
+  "cleanUrls": true,
   "redirects": [
-    { "source": "/", "destination": "/_proposte/d-moderno.html", "permanent": false }
+    { "source": "/_proposte/d-moderno.html", "destination": "/", "permanent": false },
+    { "source": "/_proposte/:path*", "destination": "/:path*", "permanent": false }
   ],
   "headers": [
     {
