@@ -1,0 +1,16 @@
+/* Pagina Chi siamo (stile del blog) */
+.persone{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.persona{background:var(--card);border-radius:var(--r);padding:30px 30px 28px;position:relative;overflow:hidden}
+.persona .anni{font-family:'Barlow Condensed','Manrope',sans-serif;font-weight:600;font-size:64px;line-height:.9;color:var(--red);letter-spacing:.01em}
+.persona .anni small{font-size:18px;color:var(--mut);font-family:'Manrope',sans-serif;font-weight:500;margin-left:6px;letter-spacing:0}
+.persona h2{font-size:28px;margin:18px 0 4px}
+.persona .ruolo{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.persona p{margin-top:14px;color:#2e3438;font-size:16px;line-height:1.7}
+.motivi{list-style:none;margin:22px 0 28px!important;display:grid;gap:10px}
+.motivi li{background:var(--card);border-radius:16px;padding:18px 22px;margin:0;display:grid;grid-template-columns:44px 1fr;gap:4px 14px;align-items:baseline}
+.motivi li span{grid-row:span 2;font-size:28px;font-weight:300;color:var(--red);line-height:1}
+.motivi li b{font-weight:600}
+.motivi li em{font-style:normal;color:var(--mut);font-size:15px;line-height:1.65}
+.due{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 10px}
+.due .box{margin:0}
+@media (max-width:760px){.persone,.due{grid-template-columns:1fr}}
