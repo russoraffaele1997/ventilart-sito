@@ -257,7 +257,7 @@ const PROGETTI = [
     </div>`,
     foto: [
       ['barbuti-san-leucio-posa.jpg', 'Posa delle lamelle: piattaforma aerea in quota e squadra a terra.'],
-      ['barbuti-san-leucio-struttura.jpg', 'Montaggio della sottostruttura in alluminio preverniciato.'],
+      ['barbuti-san-leucio-struttura.jpg', 'Fissaggio della lamella alla struttura nella parte inferiore.'],
       ['barbuti-san-leucio-dettaglio.jpg', 'Le lamelle di taglio viste da vicino, con i fissaggi alla struttura.'],
     ],
   },
@@ -297,7 +297,7 @@ const PROGETTI = [
     foto: [
       ['don-milani-parete-posa.jpg', 'Posa delle doghe sui montanti: piattaforma aerea in quota e squadra a terra.'],
       ['don-milani-parete-struttura.jpg', 'Preparazione dei profili in alluminio della sottostruttura.'],
-      ['don-milani-parete-insieme.jpg', 'Il frangisole finito sull’angolo dell’edificio.'],
+      ['don-milani-parete-insieme.jpg', 'L’angolo dell’edificio in fase di finitura.'],
     ],
   },
 ];
