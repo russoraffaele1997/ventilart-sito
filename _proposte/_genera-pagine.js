@@ -261,6 +261,45 @@ const PROGETTI = [
       ['barbuti-san-leucio-dettaglio.jpg', 'Le lamelle di taglio viste da vicino, con i fissaggi alla struttura.'],
     ],
   },
+  {
+    file: 'progetto-scuola-don-milani-parete.html',
+    etichetta: 'Frangisole',
+    titolo: 'Scuola Don Milani',
+    sottotitolo: 'IC Basile Don Milani',
+    luogo: 'Parete, Caserta',
+    riassunto: 'Sistema di frangisole a doghe orizzontali in Dèco Ultrashield per schermare le finestre delle aule.',
+    copertina: 'don-milani-parete-facciata.jpg',
+    scheda: [
+      ['Committente', 'Costruzioni Vitale S.r.l.'],
+      ['Opera', 'Scuola IC Basile Don Milani'],
+      ['Luogo', 'Parete, Caserta'],
+      ['Intervento', 'Frangisole per le finestre delle aule'],
+      ['Rivestimento', 'Doghe Dèco Ultrashield 60 × 40 mm, posate in orizzontale'],
+      ['Sottostruttura', 'Alluminio preverniciato con staffe regolabili'],
+      ['Realizzazione', 'Ventilàrt'],
+    ],
+    corpo: `
+    <h2>Il progetto</h2>
+    <p>Per la scuola <strong>IC Basile Don Milani</strong> di Parete, su incarico di <strong>Costruzioni Vitale S.r.l.</strong>, abbiamo progettato e posato un <strong>sistema di frangisole</strong> davanti alle finestre delle aule: una schermatura a doghe orizzontali che avvolge il primo piano dell’edificio.</p>
+    <p>Le doghe <strong>Dèco Ultrashield da 60 × 40 mm</strong> sono distanziate in modo da fermare il sole diretto lasciando passare la luce e la vista verso l’esterno. Il risultato è una facciata calda e uniforme, che cambia completamente l’immagine dell’edificio scolastico.</p>
+    <p>Le doghe sono fissate a montanti in <strong>alluminio preverniciato</strong> su <strong>staffe regolabili</strong>: la regolazione permette di recuperare i fuori piombo del muro e di ottenere linee perfettamente dritte e parallele su tutta la facciata.</p>
+
+    <h2>Cosa cambia per le aule</h2>
+    <ul class="strati">
+      <li><span>1</span><b>Meno caldo</b><em>Il sole non batte più direttamente sui vetri: le aule si surriscaldano molto meno nei mesi caldi.</em></li>
+      <li><span>2</span><b>Luce più morbida</b><em>Le doghe filtrano la luce e riducono l’abbagliamento su banchi e lavagne, senza dover tenere le tapparelle abbassate.</em></li>
+      <li><span>3</span><b>Zero manutenzione</b><em>Il Dèco Ultrashield non va verniciato né oliato e non scolorisce: per un edificio pubblico significa nessun costo di manutenzione negli anni.</em></li>
+    </ul>
+    <div class="box">
+      <b>Il materiale</b>
+      <p>Dèco Ultrashield è un legno composito con anima in fibre di legno e plastica riciclata, protetta da uno scudo esterno contro UV, umidità e macchie. Lo abbiamo raccontato meglio nel progetto <a href="progetto-barbuti-san-leucio.html" style="text-decoration:underline">Le Sete di San Leucio</a>.</p>
+    </div>`,
+    foto: [
+      ['don-milani-parete-posa.jpg', 'Posa delle doghe sui montanti: piattaforma aerea in quota e squadra a terra.'],
+      ['don-milani-parete-struttura.jpg', 'Preparazione dei profili in alluminio della sottostruttura.'],
+      ['don-milani-parete-insieme.jpg', 'Il frangisole finito sull’angolo dell’edificio.'],
+    ],
+  },
 ];
 
 const FOTO = `${A}/foto/progetti`;

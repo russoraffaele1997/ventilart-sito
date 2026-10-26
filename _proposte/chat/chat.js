@@ -21,6 +21,7 @@
     artEsistente: BASE + 'blog/facciata-ventilata-edificio-esistente.html',
     progetti: BASE + 'progetti.html',
     progBarbuti: BASE + 'progetto-barbuti-san-leucio.html',
+    progDonMilani: BASE + 'progetto-scuola-don-milani-parete.html',
   };
 
   // ======================= CONTATTI =======================
@@ -77,7 +78,7 @@
       durata: 'Lo scudo protettivo che avvolge il profilo lo rende **immune a muffe, parassiti, cloro, salsedine e intemperie** e molto resistente alle spaccature e allo scolorimento UV.',
       finiture: 'Le finiture di Ultrashield Stilo sono: **Teak, Red Cedar, Cedar, Snow, Antique Walnut e Charcoal**.',
       sostenibilita: 'Ultrashield è fatto al **95% con materiali riciclati** (fibre di legno duro rigenerate e bottiglie di plastica) ed è certificato **FSC** ed **EPD**.',
-      extra: 'Con Ultrashield abbiamo realizzato la facciata a lamelle delle **Sete di San Leucio** (Barbuti S.p.A.): barre **Stilo da 3 × 10 cm posate di taglio** su struttura in alluminio preverniciato ([guarda il progetto](' + PAG.progBarbuti + ')). Abbiamo posato anche i frangisole **Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**.',
+      extra: 'Con Ultrashield abbiamo realizzato la facciata a lamelle delle **Sete di San Leucio** (Barbuti S.p.A.): barre **Stilo da 3 × 10 cm posate di taglio** su struttura in alluminio preverniciato ([guarda il progetto](' + PAG.progBarbuti + ')). Abbiamo posato anche i frangisole **Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**, con doghe da 60 × 40 mm ([guarda il progetto](' + PAG.progDonMilani + ')).',
     },
     comp: {
       nome: 'composito',
@@ -193,7 +194,7 @@
       pulsanti: ['Quali materiali usate?', 'Avete già realizzato lavori?', 'Contatti'] },
 
     { id: 'lavori', parole: ['realizzaz', 'lavori fatti', 'lavori realizzati', 'progetti', 'referenz', 'esempi', 'cantieri fatti', 'avete gia', 'avete fatto', 'fatto lavori', 'fatto dei lavori', 'lavori eseguiti', 'portfolio', 'don milani', 'barbuti', 'san leucio', 'sete'],
-      testo: 'Tra i nostri lavori:\n• la facciata a lamelle in **Dèco Ultrashield Stilo** per la nuova produzione delle **Sete di San Leucio** di **Barbuti S.p.A.** (Caserta): [guarda il progetto](' + PAG.progBarbuti + ')\n• i **frangisole Dèco Ultrashield Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**\nTrovi foto e schede nella pagina [I nostri progetti](' + PAG.progetti + ').',
+      testo: 'Tra i nostri lavori:\n• la facciata a lamelle in **Dèco Ultrashield Stilo** per la nuova produzione delle **Sete di San Leucio** di **Barbuti S.p.A.** (Caserta): [guarda il progetto](' + PAG.progBarbuti + ')\n• i **frangisole Dèco Ultrashield Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**, per Costruzioni Vitale S.r.l.: [guarda il progetto](' + PAG.progDonMilani + ')\nTrovi foto e schede nella pagina [I nostri progetti](' + PAG.progetti + ').',
       pulsanti: ['Legno', 'Richiedere un sopralluogo'] },
 
     { id: 'zona', parole: ['zona', 'dove lavorate', 'dove operate', 'provinc', 'citta', 'regione', 'venite', 'lavorate a', 'lavorate in', 'campania', 'napoli', 'caserta', 'salerno', 'fuori'],
