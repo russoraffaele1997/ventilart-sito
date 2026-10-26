@@ -3,7 +3,7 @@
 .persona{background:var(--card);border-radius:var(--r);padding:30px 30px 28px;position:relative;overflow:hidden}
 .persona .anni{font-family:'Barlow Condensed','Manrope',sans-serif;font-weight:600;font-size:64px;line-height:.9;color:var(--red);letter-spacing:.01em}
 .persona .anni small{font-size:18px;color:var(--mut);font-family:'Manrope',sans-serif;font-weight:500;margin-left:6px;letter-spacing:0}
-.persona h2{font-size:28px;margin:18px 0 4px}
+.persona h2{font-size:28px;margin:0 0 4px}
 .persona .ruolo{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:600}
 .persona p{margin-top:14px;color:#2e3438;font-size:16px;line-height:1.7}
 .motivi{list-style:none;margin:22px 0 28px!important;display:grid;gap:10px}

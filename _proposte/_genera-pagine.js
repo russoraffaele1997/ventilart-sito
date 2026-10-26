@@ -9,13 +9,6 @@ const A = '../assets';
 
 const pagine = [
   {
-    file: 'lavorazioni.html',
-    voce: 'Lavorazioni',
-    titolo: 'Lavorazioni',
-    desc: 'Facciate ventilate in gres porcellanato, fibrocemento, legno e composito.',
-    prossimamente: 'Le schede dettagliate di ogni sistema: materiali, finiture, sottostruttura e campi di impiego.',
-  },
-  {
     file: 'contatti.html',
     voce: 'Contatti',
     titolo: 'Contatti',
@@ -135,16 +128,14 @@ fs.writeFileSync(path.join(DIR, 'chi-siamo.html'), head({
 
   <div class="persone">
     <div class="persona">
-      <div class="anni">30<small>anni di esperienza</small></div>
       <h2>Mauro Ferrara</h2>
       <span class="ruolo">Socio fondatore</span>
-      <p>Trent’anni nel mondo dell’edilizia e nei sistemi di riqualificazione energetica degli edifici: conosce a fondo come si comporta un involucro e come migliorarne le prestazioni.</p>
+      <p>Una lunga esperienza nel mondo dell’edilizia e nei sistemi di riqualificazione energetica degli edifici: conosce a fondo come si comporta un involucro e come migliorarne le prestazioni.</p>
     </div>
     <div class="persona">
-      <div class="anni">8<small>anni di esperienza</small></div>
       <h2>Raffaele Russo</h2>
       <span class="ruolo">Socio fondatore</span>
-      <p>Da otto anni nell’edilizia, con interventi di demolizione e ricostruzione per la rigenerazione e la valorizzazione delle aree urbane.</p>
+      <p>Imprenditore edile specializzato in interventi di demolizione e ricostruzione per la rigenerazione e la valorizzazione delle aree urbane.</p>
     </div>
   </div>
 
@@ -157,18 +148,7 @@ fs.writeFileSync(path.join(DIR, 'chi-siamo.html'), head({
       <li><span>3</span><b>Un salto di qualità estetico</b><em>Gres porcellanato e ceramica, fibrocemento, HPL, composito e legno permettono di trasformare un immobile datato in un edificio di pregio, dal linguaggio contemporaneo.</em></li>
     </ul>
 
-    <h2>Cosa cambia per l’edificio</h2>
-    <div class="due">
-      <div class="box">
-        <b>Comfort termico</b>
-        <p>Il rivestimento scherma la parete dal sole, che non batte più direttamente sul muro, e l’aria che scorre nell’intercapedine porta via il calore: d’estate l’edificio si surriscalda molto meno, anche senza isolante. Quando serve, il cappotto si inserisce sotto il rivestimento e le prestazioni migliorano ancora.</p>
-      </div>
-      <div class="box">
-        <b>Valore e immagine</b>
-        <p>Una facciata nuova cambia il modo in cui l’edificio viene percepito e ne aumenta il valore: materiali di qualità, geometrie pulite e finiture durature trasformano un immobile vecchio in un immobile di livello superiore.</p>
-      </div>
-    </div>
-    <p>Seguiamo ogni intervento dal sopralluogo alla consegna, con un unico referente e i materiali dei migliori produttori del settore.</p>
+    <p>Seguiamo ogni intervento dal sopralluogo alla consegna, con un unico referente e i materiali dei migliori produttori del settore. Scopri <a href="lavorazioni.html" style="text-decoration:underline">cosa fa una facciata ventilata e i sistemi che posiamo</a>.</p>
   </article>
 
   <div class="cta">
@@ -179,6 +159,63 @@ fs.writeFileSync(path.join(DIR, 'chi-siamo.html'), head({
 </div>
 ` + foot);
 console.log('chi siamo: chi-siamo.html');
+
+// ---------------------------------------------------------------------
+// LAVORAZIONI
+// ---------------------------------------------------------------------
+fs.writeFileSync(path.join(DIR, 'lavorazioni.html'), head({
+  titolo: 'Lavorazioni',
+  desc: 'Facciate ventilate in gres porcellanato, fibrocemento, HPL, composito e legno: comfort termico, zero manutenzione e un nuovo valore per l’edificio.',
+  css: 'chi-siamo.css',
+}) + `
+  <div class="intro">
+    <span class="pill">Lavorazioni</span>
+    <h1>Lavorazioni</h1>
+    <p>Progettiamo e posiamo facciate ventilate: un rivestimento staccato dal muro, fissato a una sottostruttura metallica, con un’intercapedine d’aria che protegge l’edificio.</p>
+  </div>
+
+  <article class="body">
+    <h2>Cosa fa una facciata ventilata</h2>
+    <div class="due">
+      <div class="box">
+        <b>Comfort termico</b>
+        <p>Il rivestimento scherma la parete dal sole, che non batte più direttamente sul muro, e l’aria che scorre nell’intercapedine porta via il calore: d’estate l’edificio si surriscalda molto meno, anche senza isolante. Quando serve, il cappotto si inserisce sotto il rivestimento e le prestazioni migliorano ancora.</p>
+      </div>
+      <div class="box">
+        <b>Zero manutenzione</b>
+        <p>I materiali che posiamo non vanno pitturati né trattati: niente ritinteggiature periodiche, basta un lavaggio con acqua. La parete, protetta dal rivestimento, non subisce più pioggia battente e sbalzi di temperatura: niente crepe né intonaco che si stacca.</p>
+      </div>
+      <div class="box">
+        <b>Una facciata sana</b>
+        <p>L’intercapedine ventilata smaltisce l’umidità che arriva dall’interno e dall’esterno: il muro resta asciutto, senza condense, muffe ed efflorescenze.</p>
+      </div>
+      <div class="box">
+        <b>Valore e immagine</b>
+        <p>Una facciata nuova cambia il modo in cui l’edificio viene percepito e ne aumenta il valore: materiali di qualità, geometrie pulite e finiture durature trasformano un immobile vecchio in un immobile di livello superiore.</p>
+      </div>
+    </div>
+
+    <h2>I sistemi che posiamo</h2>
+    <ul class="motivi">
+      <li><span>1</span><b>Gres porcellanato e ceramica</b><em>Lastre anche di grande formato (Laminam, Dekton), stabili nel colore e resistentissime: per facciate che restano come nuove nel tempo.</em></li>
+      <li><span>2</span><b>Fibrocemento</b><em>Pannelli materici dal linguaggio architettonico essenziale (Equitone), con un’ottima resistenza al fuoco.</em></li>
+      <li><span>3</span><b>Legno composito</b><em>Doghe, lamelle e frangisole Dèco Ultrashield: il calore del legno, senza oliature né scolorimenti.</em></li>
+      <li><span>4</span><b>HPL e composito</b><em>Pannelli leggeri e planari per superfici continue, lisce e moderne.</em></li>
+    </ul>
+    <div class="box">
+      <b>Sotto il rivestimento</b>
+      <p>Ogni sistema poggia su una sottostruttura in alluminio con staffe e ancoranti calcolati sul supporto (cemento armato, laterizio, blocchi), con o senza isolante. Progettiamo i dettagli, posiamo con la nostra squadra e consegniamo la documentazione dei materiali impiegati.</p>
+    </div>
+  </article>
+
+  <div class="cta">
+    <img src="${A}/logo/ventilart-simbolo.svg" alt="">
+    <div><h2>Quale sistema per il tuo edificio?</h2><p>Veniamo a fare un sopralluogo e ti proponiamo la soluzione più adatta.</p></div>
+    <a class="btn light" href="d-moderno.html#contatti">Richiedi un sopralluogo</a>
+  </div>
+</div>
+` + foot);
+console.log('lavorazioni: lavorazioni.html');
 
 // ---------------------------------------------------------------------
 // I NOSTRI PROGETTI: elenco e una scheda per ogni lavoro.
