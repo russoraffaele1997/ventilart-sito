@@ -16,3 +16,11 @@
 .wrap .cover.verticale{height:min(130vw,780px);width:min(100%,600px);margin:0 auto}
 @media (max-width:960px){.galleria{grid-template-columns:1fr 1fr}.posts.progetti .post .im{height:340px}}
 @media (max-width:620px){.galleria,.posts.progetti{grid-template-columns:1fr}}
+.progettazione{max-width:1100px;margin:64px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.progettazione h2{grid-column:1/-1;margin:0 0 4px}
+.progettazione figure{background:var(--card);border-radius:var(--r2);padding:8px;margin:0}
+.progettazione figure.largo{grid-column:1/-1}
+.progettazione img{width:100%;height:auto;display:block;border-radius:14px}
+.progettazione figure.largo img{background:#fff}
+.progettazione figcaption{font-size:14px;color:var(--mut);padding:12px 8px 6px;line-height:1.5}
+@media (max-width:620px){.progettazione{grid-template-columns:1fr}}

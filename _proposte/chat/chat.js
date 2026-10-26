@@ -22,6 +22,7 @@
     progetti: BASE + 'progetti.html',
     progBarbuti: BASE + 'progetto-barbuti-san-leucio.html',
     progDonMilani: BASE + 'progetto-scuola-don-milani-parete.html',
+    progSanRocco: BASE + 'progetto-san-rocco-casoria.html',
   };
 
   // ======================= CONTATTI =======================
@@ -193,8 +194,8 @@
       testo: '**Ventilàrt** è un’impresa specializzata nella **progettazione e posa di facciate ventilate**, con sede a **Casoria (NA)**. Seguiamo tutto l’intervento, dal sopralluogo alla consegna, con un unico referente.\nLavoriamo con materiali e sistemi **Dèco, Laminam, Dekton, Equitone e Hilti**.',
       pulsanti: ['Quali materiali usate?', 'Avete già realizzato lavori?', 'Contatti'] },
 
-    { id: 'lavori', parole: ['realizzaz', 'lavori fatti', 'lavori realizzati', 'progetti', 'referenz', 'esempi', 'cantieri fatti', 'avete gia', 'avete fatto', 'fatto lavori', 'fatto dei lavori', 'lavori eseguiti', 'portfolio', 'don milani', 'barbuti', 'san leucio', 'sete'],
-      testo: 'Tra i nostri lavori:\n• la facciata a lamelle in **Dèco Ultrashield Stilo** per la nuova produzione delle **Sete di San Leucio** di **Barbuti S.p.A.** (Caserta): [guarda il progetto](' + PAG.progBarbuti + ')\n• i **frangisole Dèco Ultrashield Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**, per Costruzioni Vitale S.r.l.: [guarda il progetto](' + PAG.progDonMilani + ')\nTrovi foto e schede nella pagina [I nostri progetti](' + PAG.progetti + ').',
+    { id: 'lavori', parole: ['realizzaz', 'lavori fatti', 'lavori realizzati', 'progetti', 'referenz', 'esempi', 'cantieri fatti', 'avete gia', 'avete fatto', 'fatto lavori', 'fatto dei lavori', 'lavori eseguiti', 'portfolio', 'don milani', 'barbuti', 'san leucio', 'sete', 'san rocco', 'casoria', 'travertino'],
+      testo: 'Tra i nostri lavori:\n• la facciata ventilata in **gres porcellanato effetto travertino** (lastre 270 × 180 cm) per un edificio residenziale in **via San Rocco a Casoria (NA)**: [guarda il progetto](' + PAG.progSanRocco + ')\n• la facciata a lamelle in **Dèco Ultrashield Stilo** per la nuova produzione delle **Sete di San Leucio** di **Barbuti S.p.A.** (Caserta): [guarda il progetto](' + PAG.progBarbuti + ')\n• i **frangisole Dèco Ultrashield Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**, per Costruzioni Vitale S.r.l.: [guarda il progetto](' + PAG.progDonMilani + ')\nTrovi foto e schede nella pagina [I nostri progetti](' + PAG.progetti + ').',
       pulsanti: ['Legno', 'Richiedere un sopralluogo'] },
 
     { id: 'zona', parole: ['zona', 'dove lavorate', 'dove operate', 'provinc', 'citta', 'regione', 'venite', 'lavorate a', 'lavorate in', 'campania', 'napoli', 'caserta', 'salerno', 'fuori'],

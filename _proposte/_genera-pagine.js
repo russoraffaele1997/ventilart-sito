@@ -300,6 +300,48 @@ const PROGETTI = [
       ['don-milani-parete-insieme.jpg', 'L’angolo dell’edificio in fase di finitura.'],
     ],
   },
+  {
+    file: 'progetto-san-rocco-casoria.html',
+    etichetta: 'Gres porcellanato',
+    titolo: 'Residenze in via San Rocco',
+    sottotitolo: 'CRG | Crafted Residential Group',
+    luogo: 'Casoria, Napoli',
+    riassunto: 'Facciata ventilata in gres porcellanato effetto travertino, lastre 270 × 180 cm su montanti a T e staffe Hilti.',
+    copertina: 'san-rocco-casoria-facciata.jpg',
+    copertinaAlt: 'Le lastre in gres effetto travertino con i profili neri in alluminio',
+    scheda: [
+      ['Committente', 'CRG | Crafted Residential Group'],
+      ['Opera', 'Edificio residenziale di nuova costruzione'],
+      ['Luogo', 'Via San Rocco, Casoria (NA)'],
+      ['Intervento', 'Facciata ventilata'],
+      ['Rivestimento', 'Gres porcellanato effetto travertino, lastre 270 × 180 cm'],
+      ['Sottostruttura', 'Montanti a T in alluminio su staffe Hilti'],
+      ['Dettagli', 'Profili in alluminio preverniciato nero da 5 cm'],
+      ['Realizzazione', 'Ventilàrt'],
+    ],
+    corpo: `
+    <h2>Il progetto</h2>
+    <p>Per un nuovo edificio residenziale in <strong>via San Rocco a Casoria</strong>, CRG | Crafted Residential Group ci ha affidato la realizzazione della <strong>facciata ventilata in gres porcellanato</strong>: un intervento che dà valore al fabbricato fin dalla sua costruzione, sia sul piano estetico sia su quello energetico.</p>
+    <p>Il rivestimento è composto da <strong>lastre di grande formato da 270 × 180 cm</strong> in gres <strong>effetto travertino</strong>: poche fughe, superfici ampie e la materia calda della pietra naturale, con la resistenza e la stabilità del gres.</p>
+    <p>Seguendo le indicazioni del progetto architettonico, tra le lastre abbiamo inserito <strong>profili da 5 cm in alluminio preverniciato nero</strong>: le linee scure scandiscono la facciata e creano l’<strong>effetto sfalsato</strong> delle lastre che caratterizza l’edificio.</p>
+
+    <h2>Sotto il rivestimento</h2>
+    <ul class="strati">
+      <li><span>1</span><b>Staffe Hilti</b><em>Ancorate alla struttura dell’edificio, regolano la distanza dal muro e assorbono i fuori piombo.</em></li>
+      <li><span>2</span><b>Montanti a T in alluminio</b><em>Il telaio verticale che porta le lastre e crea l’intercapedine d’aria della facciata ventilata.</em></li>
+      <li><span>3</span><b>Lastre in gres 270 × 180 cm</b><em>Fissate ai montanti, staccate dalla parete: proteggono l’edificio dal sole e dalla pioggia senza bisogno di manutenzione.</em></li>
+    </ul>`,
+    progettazione: [
+      ['san-rocco-casoria-render-angolo.jpg', 'Render di progetto: il volume rivestito in lastre effetto travertino.'],
+      ['san-rocco-casoria-render-strada.jpg', 'Render di progetto: l’edificio visto dalla strada.'],
+      ['san-rocco-casoria-prospetti.jpg', 'I prospetti di progetto con la disposizione sfalsata delle lastre.', 'largo'],
+    ],
+    foto: [
+      ['san-rocco-casoria-cantiere.jpg', 'L’edificio durante i lavori, con il ponteggio.'],
+      ['san-rocco-casoria-dettaglio.jpg', 'La superficie effetto travertino e il profilo nero da 5 cm.'],
+      ['san-rocco-casoria-staffe.jpg', 'Le staffe Hilti fissate alla parete, prima dei montanti.'],
+    ],
+  },
 ];
 
 const FOTO = `${A}/foto/progetti`;
@@ -335,13 +377,17 @@ for (const p of PROGETTI) {
     <p class="lead">${p.sottotitolo} — ${p.riassunto}</p>
     <div class="meta-row"><span class="pill">${p.luogo}</span><span class="pill">${p.etichetta}</span></div>
   </div>
-  <div class="cover verticale"><img src="${FOTO}/${p.copertina}" alt="${p.titolo}: la facciata finita"></div>
+  <div class="cover verticale"><img src="${FOTO}/${p.copertina}" alt="${p.copertinaAlt || p.titolo + ': la facciata finita'}"></div>
   <div class="scheda table"><table>
 ${p.scheda.map(([k, v]) => `    <tr><td>${k}</td><td>${v}</td></tr>`).join('\n')}
   </table></div>
   <article class="body">${p.corpo}
   </article>
-  <div class="galleria">
+${p.progettazione ? `  <div class="progettazione">
+    <h2>Il progetto architettonico</h2>
+${p.progettazione.map(([img, did, largo]) => `    <figure${largo ? ' class="largo"' : ''}><img src="${FOTO}/${img}" alt="${did}" loading="lazy"><figcaption>${did}</figcaption></figure>`).join('\n')}
+  </div>
+` : ''}  <div class="galleria">
 ${p.foto.map(([img, did]) => `    <figure><div class="ft"><img src="${FOTO}/${img}" alt="${did}" loading="lazy"></div><figcaption>${did}</figcaption></figure>`).join('\n')}
   </div>
   <div class="cta">
