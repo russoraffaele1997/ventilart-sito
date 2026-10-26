@@ -82,10 +82,10 @@
       extra: 'Con Ultrashield abbiamo realizzato la facciata a lamelle delle **Sete di San Leucio** (Barbuti S.p.A.): barre **Stilo da 3 × 10 cm posate di taglio** su struttura in alluminio preverniciato ([guarda il progetto](' + PAG.progBarbuti + ')). Abbiamo posato anche i frangisole **Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**, con doghe da 60 × 40 mm ([guarda il progetto](' + PAG.progDonMilani + ')).',
     },
     comp: {
-      nome: 'composito',
+      nome: 'alluminio composito',
       parole: ['composito', 'compositi', 'alluminio composito', 'pannelli compositi', 'acp', 'acm', 'alucobond', 'alluminio', 'metallico', 'metallo', 'lamiera'],
-      intro: '**Composito**\nSono pannelli formati da **due lamiere di alluminio con un nucleo interno**: leggeri, rigidi e perfettamente planari. Danno superfici continue e moderne, anche curve.\n• colori RAL, finiture opache, lucide, metallizzate o effetto legno\n• formati molto grandi\n• gamme disponibili in **classe A2-s1, d0**',
-      spessore: 'Il composito è sottile e leggero: lo spessore preciso dipende dal tipo di pannello e dal nucleo scelto, e lo indichiamo nel progetto con la scheda tecnica.',
+      intro: '**Alluminio composito**\nSono pannelli formati da **due lamiere di alluminio con un nucleo interno**: leggeri, rigidi e perfettamente planari. Danno superfici continue e moderne, anche curve.\n• colori RAL, finiture opache, lucide, metallizzate o effetto legno\n• formati molto grandi\n• gamme disponibili in **classe A2-s1, d0**',
+      spessore: 'L’alluminio composito è sottile e leggero: lo spessore preciso dipende dal tipo di pannello e dal nucleo scelto, e lo indichiamo nel progetto con la scheda tecnica.',
       formati: 'Larghezza **100–120 cm** (o multipli) e altezza **da 100 fino a 600 cm**, in misure standard o su misura. Con sottostrutture adatte si realizzano anche **facciate curve**.',
       peso: 'È uno dei rivestimenti più leggeri: le due lamiere di alluminio sono sottili e il nucleo è leggero. Questo facilita trasporto e posa, anche in quota.',
       fuoco: 'La reazione al fuoco dipende dal **nucleo** del pannello. Per le facciate si usano gamme in **classe A2-s1, d0**, con nucleo minerale. La classe giusta si sceglie in base all’altezza e al tipo di edificio.',
@@ -115,7 +115,7 @@
   // ======================= ARGOMENTI GENERALI =======================
   var ARGOMENTI = [
     { id: 'cose', parole: ['cos e', 'cosa e', 'che cos', 'cosa sono', 'facciata ventilata', 'facciate ventilate', 'parete ventilata', 'definizion', 'spiegami'],
-      testo: 'Una **facciata ventilata** è un rivestimento esterno **staccato dal muro** e fissato a una sottostruttura metallica. È composta da:\n• la parete dell’edificio con l’**isolante**\n• un’**intercapedine d’aria**\n• il **rivestimento** esterno (gres, fibrocemento, legno, composito…)\nL’aria entra dal basso ed esce dall’alto (**effetto camino**), porta via calore e umidità e protegge il muro.\nTrovi la spiegazione completa [nel nostro articolo](' + PAG.artFacciata + ').',
+      testo: 'Una **facciata ventilata** è un rivestimento esterno **staccato dal muro** e fissato a una sottostruttura metallica. È composta da:\n• la parete dell’edificio con l’**isolante**\n• un’**intercapedine d’aria**\n• il **rivestimento** esterno (gres, fibrocemento, WPC, alluminio composito…)\nL’aria entra dal basso ed esce dall’alto (**effetto camino**), porta via calore e umidità e protegge il muro.\nTrovi la spiegazione completa [nel nostro articolo](' + PAG.artFacciata + ').',
       pulsanti: ['Come funziona d’estate e d’inverno?', 'Quali sono i vantaggi?', 'Quali materiali usate?'] },
 
     { id: 'funziona', parole: ['come funziona', 'funzionament', 'effetto camino', 'intercapedin', 'estate', 'inverno', 'circola', 'aria', 'ventilazion'],
@@ -140,7 +140,7 @@
 
     { id: 'fissaggi', parole: ['tipi di fissaggio', 'tipo di fissaggio', 'fissaggi', 'a vista o a scomparsa', 'scomparsa', 'nascost', 'invisibil'],
       testo: 'I sistemi di fissaggio si dividono in due famiglie:\n• **a vista**: rivetti, viti o graffe (clip) visibili sulla facciata. Sono semplici, veloci da posare ed economici\n• **a scomparsa**: ganci fissati sul retro del pannello, incollaggio strutturale o sistemi a cassetta. La facciata resta pulita, senza elementi visibili\nScegliamo il sistema in base al materiale, al formato, all’altezza e all’effetto voluto.',
-      pulsanti: ['Fissaggio del gres', 'Fissaggio del fibrocemento', 'Fissaggio del composito'] },
+      pulsanti: ['Fissaggio del gres', 'Fissaggio del fibrocemento', 'Fissaggio dell’alluminio composito'] },
 
     { id: 'isolante', parole: ['isolant', 'lana di roccia', 'lana minerale', 'lana di vetro', 'eps', 'polistirene', 'coibent', 'quanti centimetri di isolante'],
       testo: 'Nelle facciate ventilate si usano di solito **pannelli in lana minerale** (di roccia o di vetro): isolano bene, lasciano passare il vapore e **non sono combustibili**, un aspetto importante per la sicurezza antincendio.\nLo **spessore** dell’isolante si calcola in base alla zona climatica e alle prestazioni richieste per l’edificio.',
@@ -151,7 +151,7 @@
       pulsanti: ['E per l’antincendio?', 'Com’è fatta la sottostruttura?'] },
 
     { id: 'antincendio', parole: ['antincendio', 'sicurezza antincendio', 'vigili del fuoco', 'prevenzione incendi', 'normativa incendi', 'e per l antincendio', 'classe di reazione'],
-      testo: 'La sicurezza antincendio è un punto chiave:\n• la **Guida tecnica dei Vigili del Fuoco** sulle facciate (richiamata dal DM 25 gennaio 2019) vale per gli edifici nuovi e per quelli esistenti in cui si rifà **più del 50% della facciata**\n• la reazione al fuoco dei materiali si classifica secondo la **EN 13501-1** (A1, A2-s1 d0, B…)\n• dei nostri materiali: **Dekton A1**, **Equitone A2-s1, d0**, **composito disponibile in A2-s1, d0**\nVerifichiamo sempre in progetto i requisiti del singolo edificio, anche in base all’altezza.',
+      testo: 'La sicurezza antincendio è un punto chiave:\n• la **Guida tecnica dei Vigili del Fuoco** sulle facciate (richiamata dal DM 25 gennaio 2019) vale per gli edifici nuovi e per quelli esistenti in cui si rifà **più del 50% della facciata**\n• la reazione al fuoco dei materiali si classifica secondo la **EN 13501-1** (A1, A2-s1 d0, B…)\n• dei nostri materiali: **Dekton A1**, **Equitone A2-s1, d0**, **alluminio composito disponibile in A2-s1, d0**\nVerifichiamo sempre in progetto i requisiti del singolo edificio, anche in base all’altezza.',
       pulsanti: ['Che isolante usate?', 'Richiedere un sopralluogo'] },
 
     { id: 'acustica', parole: ['acustic', 'rumor', 'insonorizz', 'traffico'],
@@ -159,15 +159,15 @@
       pulsanti: ['Quali sono i vantaggi?'] },
 
     { id: 'materiali', parole: ['materiali', 'quali materiali', 'che materiali', 'rivestimenti', 'che rivestimenti', 'cosa posate', 'soluzioni', 'sistemi'],
-      testo: 'Realizziamo facciate ventilate con **quattro sistemi**:\n• **gres porcellanato** (Laminam, Dekton): lastre grandi, resistentissime\n• **fibrocemento** (Equitone): pannelli materici dal design sobrio\n• **WPC – Wood Polymer Composite** (Dèco Ultrashield): doghe e frangisole senza manutenzione\n• **composito**: pannelli in alluminio leggeri, lisci e moderni\nDi quale vuoi sapere di più?',
-      pulsanti: ['Gres porcellanato', 'Fibrocemento', 'WPC', 'Composito', 'Come scelgo il materiale?'] },
+      testo: 'Realizziamo facciate ventilate con **quattro sistemi**:\n• **gres porcellanato** (Laminam, Dekton): lastre grandi, resistentissime\n• **fibrocemento** (Equitone): pannelli materici dal design sobrio\n• **WPC – Wood Polymer Composite** (Dèco Ultrashield): doghe e frangisole senza manutenzione\n• **alluminio composito**: pannelli leggeri, lisci e moderni\nDi quale vuoi sapere di più?',
+      pulsanti: ['Gres porcellanato', 'Fibrocemento', 'WPC', 'Alluminio composito', 'Come scelgo il materiale?'] },
 
     { id: 'scegliere', parole: ['come scelgo', 'quale scegliere', 'quale conviene', 'quale e meglio', 'migliore', 'confront', 'differenze tra', 'differenza tra', 'consigli', 'consiglia', 'cosa mi consigli'],
-      testo: 'Dipende da cosa conta di più per te:\n• **massima resistenza e zero manutenzione** → gres porcellanato\n• **aspetto architettonico e materico, ottima resistenza al fuoco** → fibrocemento Equitone\n• **calore del legno e schermatura solare** → WPC Dèco con frangisole\n• **superfici lisce, leggere, grandi o curve** → composito\nSpesso li combiniamo sullo stesso edificio. Leggi il [confronto completo](' + PAG.artMateriali + ') o raccontaci il tuo progetto.',
+      testo: 'Dipende da cosa conta di più per te:\n• **massima resistenza e zero manutenzione** → gres porcellanato\n• **aspetto architettonico e materico, ottima resistenza al fuoco** → fibrocemento Equitone\n• **calore del legno e schermatura solare** → WPC Dèco con frangisole\n• **superfici lisce, leggere, grandi o curve** → alluminio composito\nSpesso li combiniamo sullo stesso edificio. Leggi il [confronto completo](' + PAG.artMateriali + ') o raccontaci il tuo progetto.',
       pulsanti: ['Richiedere un sopralluogo', 'Quanto costa?'] },
 
     { id: 'altri', parole: ['hpl', 'pietra', 'marmo', 'vetro', 'cotto', 'terracotta', 'klinker', 'trespa', 'zinco', 'rame', 'corten'],
-      testo: 'Lavoriamo principalmente con **gres porcellanato, fibrocemento, WPC e composito**. Se il tuo progetto prevede un materiale diverso, scrivici: valutiamo insieme la soluzione e la sottostruttura più adatte.',
+      testo: 'Lavoriamo principalmente con **gres porcellanato, fibrocemento, WPC e alluminio composito**. Se il tuo progetto prevede un materiale diverso, scrivici: valutiamo insieme la soluzione e la sottostruttura più adatte.',
       pulsanti: ['Richiedere un sopralluogo', 'Quali materiali usate?'] },
 
     { id: 'costo', parole: ['costa', 'costi', 'costo', 'costano', 'prezz', 'quanto viene', 'quanto si spende', 'spesa', 'euro', 'al metro', 'al mq', 'mq', 'metro quadro', 'economic', 'budget', 'preventiv'],
@@ -211,8 +211,8 @@
       pulsanti: ['Come si svolgono i lavori?', 'Richiedere un sopralluogo'] },
 
     { id: 'curve', parole: ['curv', 'curva', 'curve', 'forme', 'sagomat', 'su misura', 'angoli', 'spigoli', 'tagli'],
-      testo: 'Sì, si possono realizzare anche facciate **curve** o con forme particolari:\n• il **composito** si presta molto bene alle superfici curve\n• **gres** e **fibrocemento** seguono le curve con sottostrutture specifiche e pannelli tagliati su misura\n• il fibrocemento si taglia **in qualsiasi forma**\nAngoli e spigoli si risolvono con pezzi speciali e profili dedicati.',
-      pulsanti: ['Composito', 'Richiedere un sopralluogo'] },
+      testo: 'Sì, si possono realizzare anche facciate **curve** o con forme particolari:\n• l’**alluminio composito** si presta molto bene alle superfici curve\n• **gres** e **fibrocemento** seguono le curve con sottostrutture specifiche e pannelli tagliati su misura\n• il fibrocemento si taglia **in qualsiasi forma**\nAngoli e spigoli si risolvono con pezzi speciali e profili dedicati.',
+      pulsanti: ['Alluminio composito', 'Richiedere un sopralluogo'] },
 
     { id: 'pavimenti', parole: ['pavimen', 'grandi metrature', 'a terra', 'interni', 'rivestimenti interni'],
       testo: 'Oltre alle facciate posiamo anche **grandi lastre a pavimento** su superfici ampie. Raccontaci il progetto e ti diamo tutte le informazioni.',
@@ -242,7 +242,7 @@
     { campo: 'edificio', domanda: 'Che tipo di edificio è?', scelte: ['Condominio', 'Casa o villa', 'Edificio pubblico o scuola', 'Commerciale o industriale', 'Altro'] },
     { campo: 'intervento', domanda: 'Di che intervento si tratta?', scelte: ['Nuova costruzione', 'Rifacimento di una facciata esistente', 'Solo frangisole', 'Non so ancora'] },
     { campo: 'superficie', domanda: 'Più o meno, quanta superficie di facciata?', scelte: ['Meno di 100 m²', '100–500 m²', '500–1.000 m²', 'Oltre 1.000 m²', 'Non lo so'] },
-    { campo: 'materiale', domanda: 'Hai già in mente un materiale?', scelte: ['Gres porcellanato', 'Fibrocemento', 'WPC', 'Composito', 'Consigliatemi voi'] },
+    { campo: 'materiale', domanda: 'Hai già in mente un materiale?', scelte: ['Gres porcellanato', 'Fibrocemento', 'WPC', 'Alluminio composito', 'Consigliatemi voi'] },
     { campo: 'telefono', domanda: 'Ultima cosa: a quale **numero di telefono** possiamo richiamarti?', valida: function (v) { return v.replace(/[^\d]/g, '').length >= 8; }, errore: 'Il numero non mi sembra completo: me lo riscrivi?' },
   ];
 

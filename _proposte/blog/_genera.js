@@ -24,7 +24,7 @@ const articoli = [
   <li><span>2</span><b>Isolante termico</b><em>Pannelli continui fissati alla parete, che avvolgono l’edificio senza interruzioni in corrispondenza di solai e pilastri.</em></li>
   <li><span>3</span><b>Sottostruttura</b><em>Staffe e profili, generalmente in alluminio, che reggono il rivestimento e permettono di correggere i fuori piombo del muro.</em></li>
   <li><span>4</span><b>Intercapedine ventilata</b><em>Lo spazio d’aria tra isolante e rivestimento, aperto in basso e in alto.</em></li>
-  <li><span>5</span><b>Rivestimento</b><em>La “pelle” visibile: lastre in gres porcellanato, fibrocemento, doghe in WPC o pannelli in composito.</em></li>
+  <li><span>5</span><b>Rivestimento</b><em>La “pelle” visibile: lastre in gres porcellanato, fibrocemento, doghe in WPC o pannelli in alluminio composito.</em></li>
 </ol>
 
 <h2>L’effetto camino</h2>
@@ -50,7 +50,7 @@ const articoli = [
   },
   {
     slug: 'gres-fibrocemento-legno-composito',
-    titolo: 'Gres, fibrocemento, WPC o composito: come scegliere il rivestimento',
+    titolo: 'Gres, fibrocemento, WPC o alluminio composito: come scegliere il rivestimento',
     lead: 'Quattro materiali, quattro caratteri diversi. Un confronto pratico per orientarsi tra estetica, peso, manutenzione e campi d’impiego.',
     categoria: 'Materiali',
     data: '12 ottobre 2026',
@@ -80,8 +80,8 @@ const articoli = [
   <li><strong>Da considerare:</strong> la classe di reazione al fuoco dipende dal prodotto e va verificata in progetto sulla scheda tecnica.</li>
 </ul>
 
-<h2>Composito</h2>
-<p>Pannelli multistrato leggeri e perfettamente planari, che permettono superfici continue, spigoli netti e forme anche curve.</p>
+<h2>Alluminio composito</h2>
+<p>Pannelli multistrato in alluminio, leggeri e perfettamente planari, che permettono superfici continue, spigoli netti e forme anche curve.</p>
 <ul>
   <li><strong>Punti di forza:</strong> leggerezza, planarità, finiture metalliche e colori brillanti, adatti a edifici commerciali e direzionali.</li>
   <li><strong>Da considerare:</strong> esistono composizioni diverse, con classi di reazione al fuoco diverse: la scelta va fatta in funzione dell’edificio e della normativa antincendio.</li>
@@ -93,7 +93,7 @@ const articoli = [
   <tr><td>Gres porcellanato</td><td>Molte finiture, anche grandi formati</td><td>Medio-alto</td><td>Molto bassa</td><td>Residenziale, pubblico, terziario</td></tr>
   <tr><td>Fibrocemento</td><td>Uniforme, opaco, essenziale</td><td>Medio</td><td>Bassa</td><td>Architettura contemporanea, scuole, uffici</td></tr>
   <tr><td>WPC</td><td>Caldo, effetto legno, a doghe</td><td>Basso</td><td>Molto bassa</td><td>Ville, edifici nel verde, frangisole</td></tr>
-  <tr><td>Composito</td><td>Planare, metallico, continuo</td><td>Basso</td><td>Bassa</td><td>Commerciale, direzionale, industriale</td></tr>
+  <tr><td>Alluminio composito</td><td>Planare, metallico, continuo</td><td>Basso</td><td>Bassa</td><td>Commerciale, direzionale, industriale</td></tr>
 </table></div>
 
 <h2>Come orientarsi</h2>

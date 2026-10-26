@@ -145,7 +145,7 @@ fs.writeFileSync(path.join(DIR, 'chi-siamo.html'), head({
     <ul class="motivi">
       <li><span>1</span><b>Meno dipendenza dall’intonaco</b><em>Trovare maestranze esperte nell’intonaco è sempre più difficile. La facciata ventilata si monta a secco, con componenti industriali: un sistema preciso, ripetibile e dai risultati costanti.</em></li>
       <li><span>2</span><b>Un’alternativa al cappotto tradizionale</b><em>Niente più isolante incollato e rasato sul muro: il rivestimento è fissato a una sottostruttura metallica, staccato dalla parete, con un’intercapedine d’aria che lavora a favore dell’edificio.</em></li>
-      <li><span>3</span><b>Un salto di qualità estetico</b><em>Gres porcellanato e ceramica, fibrocemento, HPL, composito e WPC permettono di trasformare un immobile datato in un edificio di pregio, dal linguaggio contemporaneo.</em></li>
+      <li><span>3</span><b>Un salto di qualità estetico</b><em>Gres porcellanato e ceramica, fibrocemento, HPL, alluminio composito e WPC permettono di trasformare un immobile datato in un edificio di pregio, dal linguaggio contemporaneo.</em></li>
     </ul>
 
     <p>Seguiamo ogni intervento dal sopralluogo alla consegna, con un unico referente e i materiali dei migliori produttori del settore. Scopri <a href="lavorazioni.html" style="text-decoration:underline">cosa fa una facciata ventilata e i sistemi che posiamo</a>.</p>
@@ -165,7 +165,7 @@ console.log('chi siamo: chi-siamo.html');
 // ---------------------------------------------------------------------
 fs.writeFileSync(path.join(DIR, 'lavorazioni.html'), head({
   titolo: 'Lavorazioni',
-  desc: 'Facciate ventilate in gres porcellanato, fibrocemento, HPL, composito e WPC: comfort termico, zero manutenzione e un nuovo valore per l’edificio.',
+  desc: 'Facciate ventilate in gres porcellanato, fibrocemento, HPL, alluminio composito e WPC: comfort termico, zero manutenzione e un nuovo valore per l’edificio.',
   css: 'chi-siamo.css',
 }) + `
   <div class="intro">
@@ -200,7 +200,7 @@ fs.writeFileSync(path.join(DIR, 'lavorazioni.html'), head({
       <li><span>1</span><b>Gres porcellanato e ceramica</b><em>Lastre anche di grande formato (Laminam, Dekton), stabili nel colore e resistentissime: per facciate che restano come nuove nel tempo.</em></li>
       <li><span>2</span><b>Fibrocemento</b><em>Pannelli materici dal linguaggio architettonico essenziale (Equitone), con un’ottima resistenza al fuoco.</em></li>
       <li><span>3</span><b>WPC – Wood Polymer Composite</b><em>Doghe, lamelle e frangisole Dèco Ultrashield: il calore del legno, senza oliature né scolorimenti.</em></li>
-      <li><span>4</span><b>HPL e composito</b><em>Pannelli leggeri e planari per superfici continue, lisce e moderne.</em></li>
+      <li><span>4</span><b>HPL e alluminio composito</b><em>Pannelli leggeri e planari per superfici continue, lisce e moderne.</em></li>
     </ul>
     <div class="box">
       <b>Sotto il rivestimento</b>
