@@ -24,7 +24,7 @@ const articoli = [
   <li><span>2</span><b>Isolante termico</b><em>Pannelli continui fissati alla parete, che avvolgono l’edificio senza interruzioni in corrispondenza di solai e pilastri.</em></li>
   <li><span>3</span><b>Sottostruttura</b><em>Staffe e profili, generalmente in alluminio, che reggono il rivestimento e permettono di correggere i fuori piombo del muro.</em></li>
   <li><span>4</span><b>Intercapedine ventilata</b><em>Lo spazio d’aria tra isolante e rivestimento, aperto in basso e in alto.</em></li>
-  <li><span>5</span><b>Rivestimento</b><em>La “pelle” visibile: lastre in gres porcellanato, fibrocemento, doghe in legno o pannelli in composito.</em></li>
+  <li><span>5</span><b>Rivestimento</b><em>La “pelle” visibile: lastre in gres porcellanato, fibrocemento, doghe in WPC o pannelli in composito.</em></li>
 </ol>
 
 <h2>L’effetto camino</h2>
@@ -50,7 +50,7 @@ const articoli = [
   },
   {
     slug: 'gres-fibrocemento-legno-composito',
-    titolo: 'Gres, fibrocemento, legno o composito: come scegliere il rivestimento',
+    titolo: 'Gres, fibrocemento, WPC o composito: come scegliere il rivestimento',
     lead: 'Quattro materiali, quattro caratteri diversi. Un confronto pratico per orientarsi tra estetica, peso, manutenzione e campi d’impiego.',
     categoria: 'Materiali',
     data: '12 ottobre 2026',
@@ -73,11 +73,11 @@ const articoli = [
   <li><strong>Da considerare:</strong> la gamma di finiture è più sobria; la resa estetica dipende molto dal disegno dei giunti.</li>
 </ul>
 
-<h2>Legno</h2>
-<p>Doghe, listelli e frangisole che danno alla facciata un aspetto caldo e naturale. Oltre al legno vero e proprio, trattato per l’esterno, esistono prodotti tecnici che ne riproducono l’aspetto con manutenzione ridotta.</p>
+<h2>WPC (Wood Polymer Composite)</h2>
+<p>Doghe, listelli e frangisole in un composito di fibre di legno e polimeri: hanno l’aspetto caldo del legno, ma a differenza del legno naturale non si spaccano, non scoloriscono e non vanno verniciati né oliati.</p>
 <ul>
-  <li><strong>Punti di forza:</strong> grande valore estetico, ottima integrazione nel verde, possibilità di schermare il sole con frangisole.</li>
-  <li><strong>Da considerare:</strong> il legno naturale cambia colore con il tempo e richiede una manutenzione periodica; va valutato con attenzione anche il comportamento al fuoco.</li>
+  <li><strong>Punti di forza:</strong> grande valore estetico, ottima integrazione nel verde, possibilità di schermare il sole con frangisole, manutenzione minima (basta un lavaggio con acqua).</li>
+  <li><strong>Da considerare:</strong> la classe di reazione al fuoco dipende dal prodotto e va verificata in progetto sulla scheda tecnica.</li>
 </ul>
 
 <h2>Composito</h2>
@@ -92,7 +92,7 @@ const articoli = [
   <tr><th>Materiale</th><th>Aspetto</th><th>Peso</th><th>Manutenzione</th><th>Impieghi tipici</th></tr>
   <tr><td>Gres porcellanato</td><td>Molte finiture, anche grandi formati</td><td>Medio-alto</td><td>Molto bassa</td><td>Residenziale, pubblico, terziario</td></tr>
   <tr><td>Fibrocemento</td><td>Uniforme, opaco, essenziale</td><td>Medio</td><td>Bassa</td><td>Architettura contemporanea, scuole, uffici</td></tr>
-  <tr><td>Legno</td><td>Caldo, naturale, a doghe</td><td>Basso</td><td>Periodica (legno naturale)</td><td>Ville, edifici nel verde, frangisole</td></tr>
+  <tr><td>WPC</td><td>Caldo, effetto legno, a doghe</td><td>Basso</td><td>Molto bassa</td><td>Ville, edifici nel verde, frangisole</td></tr>
   <tr><td>Composito</td><td>Planare, metallico, continuo</td><td>Basso</td><td>Bassa</td><td>Commerciale, direzionale, industriale</td></tr>
 </table></div>
 
@@ -103,7 +103,7 @@ const articoli = [
   <li><strong>Com’è esposto?</strong> Sole, vento, vicinanza al mare e altezza dell’edificio incidono su materiali, fissaggi e requisiti.</li>
   <li><strong>Quanta manutenzione si è disposti a fare?</strong> Su un condominio, ad esempio, conta molto ridurre gli interventi futuri.</li>
 </ol>
-<p>Sulla stessa facciata si possono anche combinare due materiali: ad esempio gres per le superfici principali e legno per i frangisole o per l’ingresso.</p>
+<p>Sulla stessa facciata si possono anche combinare due materiali: ad esempio gres per le superfici principali e WPC per i frangisole o per l’ingresso.</p>
 
 <div class="box"><b>Il nostro consiglio</b><p>Durante il sopralluogo valutiamo l’edificio e confrontiamo con il committente campioni e soluzioni, così da scegliere il rivestimento sulla base di dati concreti e non solo di un’immagine di catalogo.</p></div>
 `,

@@ -145,7 +145,7 @@ fs.writeFileSync(path.join(DIR, 'chi-siamo.html'), head({
     <ul class="motivi">
       <li><span>1</span><b>Meno dipendenza dall’intonaco</b><em>Trovare maestranze esperte nell’intonaco è sempre più difficile. La facciata ventilata si monta a secco, con componenti industriali: un sistema preciso, ripetibile e dai risultati costanti.</em></li>
       <li><span>2</span><b>Un’alternativa al cappotto tradizionale</b><em>Niente più isolante incollato e rasato sul muro: il rivestimento è fissato a una sottostruttura metallica, staccato dalla parete, con un’intercapedine d’aria che lavora a favore dell’edificio.</em></li>
-      <li><span>3</span><b>Un salto di qualità estetico</b><em>Gres porcellanato e ceramica, fibrocemento, HPL, composito e legno permettono di trasformare un immobile datato in un edificio di pregio, dal linguaggio contemporaneo.</em></li>
+      <li><span>3</span><b>Un salto di qualità estetico</b><em>Gres porcellanato e ceramica, fibrocemento, HPL, composito e WPC permettono di trasformare un immobile datato in un edificio di pregio, dal linguaggio contemporaneo.</em></li>
     </ul>
 
     <p>Seguiamo ogni intervento dal sopralluogo alla consegna, con un unico referente e i materiali dei migliori produttori del settore. Scopri <a href="lavorazioni.html" style="text-decoration:underline">cosa fa una facciata ventilata e i sistemi che posiamo</a>.</p>
@@ -165,7 +165,7 @@ console.log('chi siamo: chi-siamo.html');
 // ---------------------------------------------------------------------
 fs.writeFileSync(path.join(DIR, 'lavorazioni.html'), head({
   titolo: 'Lavorazioni',
-  desc: 'Facciate ventilate in gres porcellanato, fibrocemento, HPL, composito e legno: comfort termico, zero manutenzione e un nuovo valore per l’edificio.',
+  desc: 'Facciate ventilate in gres porcellanato, fibrocemento, HPL, composito e WPC: comfort termico, zero manutenzione e un nuovo valore per l’edificio.',
   css: 'chi-siamo.css',
 }) + `
   <div class="intro">
@@ -199,7 +199,7 @@ fs.writeFileSync(path.join(DIR, 'lavorazioni.html'), head({
     <ul class="motivi">
       <li><span>1</span><b>Gres porcellanato e ceramica</b><em>Lastre anche di grande formato (Laminam, Dekton), stabili nel colore e resistentissime: per facciate che restano come nuove nel tempo.</em></li>
       <li><span>2</span><b>Fibrocemento</b><em>Pannelli materici dal linguaggio architettonico essenziale (Equitone), con un’ottima resistenza al fuoco.</em></li>
-      <li><span>3</span><b>Legno composito</b><em>Doghe, lamelle e frangisole Dèco Ultrashield: il calore del legno, senza oliature né scolorimenti.</em></li>
+      <li><span>3</span><b>WPC – Wood Polymer Composite</b><em>Doghe, lamelle e frangisole Dèco Ultrashield: il calore del legno, senza oliature né scolorimenti.</em></li>
       <li><span>4</span><b>HPL e composito</b><em>Pannelli leggeri e planari per superfici continue, lisce e moderne.</em></li>
     </ul>
     <div class="box">
@@ -224,7 +224,7 @@ console.log('lavorazioni: lavorazioni.html');
 const PROGETTI = [
   {
     file: 'progetto-barbuti-san-leucio.html',
-    etichetta: 'Legno composito',
+    etichetta: 'WPC',
     titolo: 'Le Sete di San Leucio',
     sottotitolo: 'Nuova sede produttiva Barbuti S.p.A.',
     luogo: 'San Leucio, Caserta',
@@ -235,7 +235,7 @@ const PROGETTI = [
       ['Opera', 'Nuova produzione delle Sete di San Leucio'],
       ['Luogo', 'San Leucio, Caserta'],
       ['Intervento', 'Facciata a lamelle verticali'],
-      ['Rivestimento', 'Dèco Ultrashield Stilo, barra 3 × 10 cm posata di taglio'],
+      ['Rivestimento', 'WPC Dèco Ultrashield Stilo, barra 3 × 10 cm posata di taglio'],
       ['Sottostruttura', 'Alluminio preverniciato'],
       ['Realizzazione', 'Ventilàrt'],
     ],
@@ -246,9 +246,9 @@ const PROGETTI = [
     <p>Le lamelle sono fissate a una <strong>sottostruttura in alluminio preverniciato</strong>, nello stesso tono del rivestimento: la struttura si confonde con le doghe e la facciata si legge come un’unica superficie.</p>
 
     <h2>Cos’è il Dèco Ultrashield</h2>
-    <p><strong>Ultrashield</strong> è il legno composito di <strong>Dèco</strong> pensato per l’esterno: ha l’aspetto e il calore del legno, ma non ne ha i limiti.</p>
+    <p><strong>Ultrashield</strong> è il <strong>WPC (Wood Polymer Composite)</strong> di <strong>Dèco</strong> pensato per l’esterno: ha l’aspetto e il calore del legno, ma non ne ha i limiti.</p>
     <ul class="strati">
-      <li><span>1</span><b>Anima in legno composito</b><em>Fibre di legno duro rigenerate unite a plastica riciclata: oltre il 95% del materiale viene dal riciclo.</em></li>
+      <li><span>1</span><b>Anima in WPC</b><em>Fibre di legno duro rigenerate unite a plastica riciclata: oltre il 95% del materiale viene dal riciclo.</em></li>
       <li><span>2</span><b>Scudo esterno</b><em>Un guscio protettivo avvolge il profilo e lo difende da raggi UV, umidità, macchie, muffe e salsedine.</em></li>
     </ul>
     <div class="box">
@@ -263,7 +263,7 @@ const PROGETTI = [
   },
   {
     file: 'progetto-scuola-don-milani-parete.html',
-    etichetta: 'Frangisole',
+    etichetta: 'WPC',
     titolo: 'Scuola Don Milani',
     sottotitolo: 'IC Basile Don Milani',
     luogo: 'Parete, Caserta',
@@ -274,14 +274,14 @@ const PROGETTI = [
       ['Opera', 'Scuola IC Basile Don Milani'],
       ['Luogo', 'Parete, Caserta'],
       ['Intervento', 'Frangisole per le finestre delle aule'],
-      ['Rivestimento', 'Doghe Dèco Ultrashield 60 × 40 mm, posate in orizzontale'],
+      ['Rivestimento', 'Doghe in WPC Dèco Ultrashield 60 × 40 mm, posate in orizzontale'],
       ['Sottostruttura', 'Alluminio preverniciato con staffe regolabili'],
       ['Realizzazione', 'Ventilàrt'],
     ],
     corpo: `
     <h2>Il progetto</h2>
     <p>Per la scuola <strong>IC Basile Don Milani</strong> di Parete, su incarico di <strong>Costruzioni Vitale S.r.l.</strong>, abbiamo progettato e posato un <strong>sistema di frangisole</strong> davanti alle finestre delle aule: una schermatura a doghe orizzontali che avvolge il primo piano dell’edificio.</p>
-    <p>Le doghe <strong>Dèco Ultrashield da 60 × 40 mm</strong> sono distanziate in modo da fermare il sole diretto lasciando passare la luce e la vista verso l’esterno. Il risultato è una facciata calda e uniforme, che cambia completamente l’immagine dell’edificio scolastico.</p>
+    <p>Le doghe in <strong>WPC Dèco Ultrashield da 60 × 40 mm</strong> sono distanziate in modo da fermare il sole diretto lasciando passare la luce e la vista verso l’esterno. Il risultato è una facciata calda e uniforme, che cambia completamente l’immagine dell’edificio scolastico.</p>
     <p>Le doghe sono fissate a montanti in <strong>alluminio preverniciato</strong> su <strong>staffe regolabili</strong>: la regolazione permette di recuperare i fuori piombo del muro e di ottenere linee perfettamente dritte e parallele su tutta la facciata.</p>
 
     <h2>Cosa cambia per le aule</h2>
@@ -292,7 +292,7 @@ const PROGETTI = [
     </ul>
     <div class="box">
       <b>Il materiale</b>
-      <p>Dèco Ultrashield è un legno composito con anima in fibre di legno e plastica riciclata, protetta da uno scudo esterno contro UV, umidità e macchie. Lo abbiamo raccontato meglio nel progetto <a href="progetto-barbuti-san-leucio.html" style="text-decoration:underline">Le Sete di San Leucio</a>.</p>
+      <p>Dèco Ultrashield è un <strong>WPC (Wood Polymer Composite)</strong>: anima in fibre di legno e plastica riciclata, protetta da uno scudo esterno contro UV, umidità e macchie. Lo abbiamo raccontato meglio nel progetto <a href="progetto-barbuti-san-leucio.html" style="text-decoration:underline">Le Sete di San Leucio</a>.</p>
     </div>`,
     foto: [
       ['don-milani-parete-posa.jpg', 'Posa delle doghe sui montanti: piattaforma aerea in quota e squadra a terra.'],
@@ -306,15 +306,15 @@ const PROGETTI = [
     titolo: 'Residenze in via San Rocco',
     sottotitolo: 'CRG | Crafted Residential Group',
     luogo: 'Casoria, Napoli',
-    riassunto: 'Facciata ventilata in gres porcellanato effetto travertino, lastre 270 × 180 cm su montanti a T e staffe Hilti.',
-    copertina: 'san-rocco-casoria-facciata.jpg',
-    copertinaAlt: 'Le lastre in gres effetto travertino con i profili neri in alluminio',
+    riassunto: 'Facciata ventilata in gres porcellanato effetto travertino, lastre retinate 270 × 180 cm su montanti a T e staffe Hilti.',
+    copertina: 'san-rocco-casoria-dettaglio.jpg',
+    copertinaAlt: 'La superficie in gres effetto travertino con il profilo nero da 5 cm',
     scheda: [
       ['Committente', 'CRG | Crafted Residential Group'],
       ['Opera', 'Edificio residenziale di nuova costruzione'],
       ['Luogo', 'Via San Rocco, Casoria (NA)'],
       ['Intervento', 'Facciata ventilata'],
-      ['Rivestimento', 'Gres porcellanato effetto travertino, lastre 270 × 180 cm'],
+      ['Rivestimento', 'Gres porcellanato effetto travertino, lastre retinate 270 × 180 cm'],
       ['Sottostruttura', 'Montanti a T in alluminio su staffe Hilti'],
       ['Dettagli', 'Profili in alluminio preverniciato nero da 5 cm'],
       ['Stato', 'In fase di completamento'],
@@ -323,7 +323,7 @@ const PROGETTI = [
     corpo: `
     <h2>Il progetto</h2>
     <p>Per un nuovo edificio residenziale in <strong>via San Rocco a Casoria</strong>, CRG | Crafted Residential Group ci ha affidato la realizzazione della <strong>facciata ventilata in gres porcellanato</strong>: un intervento che dà valore al fabbricato fin dalla sua costruzione, sia sul piano estetico sia su quello energetico.</p>
-    <p>Il rivestimento è composto da <strong>lastre di grande formato da 270 × 180 cm</strong> in gres <strong>effetto travertino</strong>: poche fughe, superfici ampie e la materia calda della pietra naturale, con la resistenza e la stabilità del gres.</p>
+    <p>Il rivestimento è composto da <strong>lastre di grande formato da 270 × 180 cm</strong> in gres <strong>effetto travertino</strong>: poche fughe, superfici ampie e la materia calda della pietra naturale, con la resistenza e la stabilità del gres. Le lastre sono <strong>retinate</strong> sul retro: la rete di rinforzo aumenta la sicurezza della facciata, perché in caso di rottura trattiene i frammenti.</p>
     <p>Seguendo le indicazioni del progetto architettonico, tra le lastre abbiamo inserito <strong>profili da 5 cm in alluminio preverniciato nero</strong>: le linee scure scandiscono la facciata e creano l’<strong>effetto sfalsato</strong> delle lastre che caratterizza l’edificio.</p>
     <p>I lavori sono <strong>in fase di completamento</strong>: le foto mostrano il cantiere in corso, i render l’edificio come sarà a lavori finiti.</p>
 
@@ -331,7 +331,7 @@ const PROGETTI = [
     <ul class="strati">
       <li><span>1</span><b>Staffe Hilti</b><em>Ancorate alla struttura dell’edificio, regolano la distanza dal muro e assorbono i fuori piombo.</em></li>
       <li><span>2</span><b>Montanti a T in alluminio</b><em>Il telaio verticale che porta le lastre e crea l’intercapedine d’aria della facciata ventilata.</em></li>
-      <li><span>3</span><b>Lastre in gres 270 × 180 cm</b><em>Fissate ai montanti, staccate dalla parete: proteggono l’edificio dal sole e dalla pioggia senza bisogno di manutenzione.</em></li>
+      <li><span>3</span><b>Lastre retinate in gres 270 × 180 cm</b><em>Fissate ai montanti, staccate dalla parete: proteggono l’edificio dal sole e dalla pioggia senza bisogno di manutenzione.</em></li>
     </ul>`,
     progettazione: [
       ['san-rocco-casoria-render-angolo.jpg', 'Render di progetto: il volume rivestito in lastre effetto travertino.'],
@@ -340,7 +340,7 @@ const PROGETTI = [
     ],
     foto: [
       ['san-rocco-casoria-cantiere.jpg', 'L’edificio durante i lavori, con il ponteggio.'],
-      ['san-rocco-casoria-dettaglio.jpg', 'La superficie effetto travertino e il profilo nero da 5 cm.'],
+      ['san-rocco-casoria-facciata.jpg', 'Le lastre posate lungo la facciata, con i profili neri tra una lastra e l’altra.'],
       ['san-rocco-casoria-staffe.jpg', 'Le staffe Hilti fissate alla parete, prima dei montanti.'],
     ],
   },

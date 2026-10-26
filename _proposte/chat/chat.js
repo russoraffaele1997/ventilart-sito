@@ -67,13 +67,13 @@
       sostenibilita: 'I pannelli Equitone sono **riciclabili**, hanno la certificazione **Cradle to Cradle® Bronze** e sono **conformi ai CAM** (Criteri Ambientali Minimi), utili negli appalti pubblici.',
     },
     legno: {
-      nome: 'legno',
-      parole: ['legno', 'deco', 'dèco', 'ultrashield', 'stilo', 'frangisole', 'frangi sole', 'doghe', 'listelli', 'lamelle', 'wpc', 'legno composito', 'brise soleil', 'teak', 'cedro'],
-      intro: '**Legno (Dèco Ultrashield)**\nPer doghe e frangisole usiamo **Ultrashield di Dèco**: un legno composito protetto da uno scudo esterno. Ha il calore del legno ma **non si spacca, non scolorisce e non va trattato**.\n• resistente a muffe, parassiti, cloro, salsedine e raggi UV\n• realizzato al **95% con materiali riciclati** (fibre di legno rigenerate e bottiglie di plastica)\n• frangisole **Stilo** orizzontali o verticali, fissi, scorrevoli o mobili',
+      nome: 'WPC',
+      parole: ['legno', 'deco', 'dèco', 'ultrashield', 'stilo', 'frangisole', 'frangi sole', 'doghe', 'listelli', 'lamelle', 'wpc', 'wood polymer', 'legno composito', 'brise soleil', 'teak', 'cedro'],
+      intro: '**WPC – Wood Polymer Composite (Dèco Ultrashield)**\nPer doghe e frangisole usiamo **Ultrashield di Dèco**: un WPC, cioè un composito di fibre di legno e polimeri, protetto da uno scudo esterno. Ha il calore del legno ma **non si spacca, non scolorisce e non va trattato**.\n• resistente a muffe, parassiti, cloro, salsedine e raggi UV\n• realizzato al **95% con materiali riciclati** (fibre di legno rigenerate e bottiglie di plastica)\n• frangisole **Stilo** orizzontali o verticali, fissi, scorrevoli o mobili',
       spessore: 'I frangisole **Stilo Ultrashield** hanno cinque profili:\n• **Stilo S**: 60×42 mm\n• **Stilo M**: 100×52 mm\n• **Stilo L**: 120×62 mm\n• **Stilo Slim**: 108×31 mm\n• **Stilo Extra Slim**: 56×31 mm',
       formati: 'I frangisole **Stilo Ultrashield** hanno cinque profili:\n• **Stilo S**: 60×42 mm\n• **Stilo M**: 100×52 mm\n• **Stilo L**: 120×62 mm\n• **Stilo Slim**: 108×31 mm\n• **Stilo Extra Slim**: 56×31 mm\nSi montano in orizzontale o in verticale, con passo e inclinazione decisi in progetto.',
       peso: 'Il peso dipende dal profilo scelto e dal passo dei frangisole: lo calcoliamo in progetto insieme alla struttura di sostegno.',
-      fuoco: 'Per il legno composito la classe di reazione al fuoco dipende dal prodotto e dall’uso: la verifichiamo in progetto sulla scheda tecnica, in base ai requisiti antincendio dell’edificio.',
+      fuoco: 'Per il WPC la classe di reazione al fuoco dipende dal prodotto e dall’uso: la verifichiamo in progetto sulla scheda tecnica, in base ai requisiti antincendio dell’edificio.',
       fissaggio: 'Dèco ha un sistema di fissaggio brevettato, **Easyclip**: piastre di base con tasselli e perni, senza telai aggiuntivi. Permette di **regolare l’inclinazione** dei frangisole e di posarli a filo di pavimenti e soffitti.',
       manutenzione: 'Ultrashield **non richiede oliature né trattamenti** speciali: è resistente a spaccature e scolorimento dei raggi UV. Basta una pulizia periodica con acqua.',
       durata: 'Lo scudo protettivo che avvolge il profilo lo rende **immune a muffe, parassiti, cloro, salsedine e intemperie** e molto resistente alle spaccature e allo scolorimento UV.',
@@ -159,15 +159,15 @@
       pulsanti: ['Quali sono i vantaggi?'] },
 
     { id: 'materiali', parole: ['materiali', 'quali materiali', 'che materiali', 'rivestimenti', 'che rivestimenti', 'cosa posate', 'soluzioni', 'sistemi'],
-      testo: 'Realizziamo facciate ventilate con **quattro sistemi**:\n• **gres porcellanato** (Laminam, Dekton): lastre grandi, resistentissime\n• **fibrocemento** (Equitone): pannelli materici dal design sobrio\n• **legno** (Dèco Ultrashield): doghe e frangisole senza manutenzione\n• **composito**: pannelli in alluminio leggeri, lisci e moderni\nDi quale vuoi sapere di più?',
-      pulsanti: ['Gres porcellanato', 'Fibrocemento', 'Legno', 'Composito', 'Come scelgo il materiale?'] },
+      testo: 'Realizziamo facciate ventilate con **quattro sistemi**:\n• **gres porcellanato** (Laminam, Dekton): lastre grandi, resistentissime\n• **fibrocemento** (Equitone): pannelli materici dal design sobrio\n• **WPC – Wood Polymer Composite** (Dèco Ultrashield): doghe e frangisole senza manutenzione\n• **composito**: pannelli in alluminio leggeri, lisci e moderni\nDi quale vuoi sapere di più?',
+      pulsanti: ['Gres porcellanato', 'Fibrocemento', 'WPC', 'Composito', 'Come scelgo il materiale?'] },
 
     { id: 'scegliere', parole: ['come scelgo', 'quale scegliere', 'quale conviene', 'quale e meglio', 'migliore', 'confront', 'differenze tra', 'differenza tra', 'consigli', 'consiglia', 'cosa mi consigli'],
-      testo: 'Dipende da cosa conta di più per te:\n• **massima resistenza e zero manutenzione** → gres porcellanato\n• **aspetto architettonico e materico, ottima resistenza al fuoco** → fibrocemento Equitone\n• **calore del legno e schermatura solare** → legno Dèco con frangisole\n• **superfici lisce, leggere, grandi o curve** → composito\nSpesso li combiniamo sullo stesso edificio. Leggi il [confronto completo](' + PAG.artMateriali + ') o raccontaci il tuo progetto.',
+      testo: 'Dipende da cosa conta di più per te:\n• **massima resistenza e zero manutenzione** → gres porcellanato\n• **aspetto architettonico e materico, ottima resistenza al fuoco** → fibrocemento Equitone\n• **calore del legno e schermatura solare** → WPC Dèco con frangisole\n• **superfici lisce, leggere, grandi o curve** → composito\nSpesso li combiniamo sullo stesso edificio. Leggi il [confronto completo](' + PAG.artMateriali + ') o raccontaci il tuo progetto.',
       pulsanti: ['Richiedere un sopralluogo', 'Quanto costa?'] },
 
     { id: 'altri', parole: ['hpl', 'pietra', 'marmo', 'vetro', 'cotto', 'terracotta', 'klinker', 'trespa', 'zinco', 'rame', 'corten'],
-      testo: 'Lavoriamo principalmente con **gres porcellanato, fibrocemento, legno e composito**. Se il tuo progetto prevede un materiale diverso, scrivici: valutiamo insieme la soluzione e la sottostruttura più adatte.',
+      testo: 'Lavoriamo principalmente con **gres porcellanato, fibrocemento, WPC e composito**. Se il tuo progetto prevede un materiale diverso, scrivici: valutiamo insieme la soluzione e la sottostruttura più adatte.',
       pulsanti: ['Richiedere un sopralluogo', 'Quali materiali usate?'] },
 
     { id: 'costo', parole: ['costa', 'costi', 'costo', 'costano', 'prezz', 'quanto viene', 'quanto si spende', 'spesa', 'euro', 'al metro', 'al mq', 'mq', 'metro quadro', 'economic', 'budget', 'preventiv'],
@@ -196,7 +196,7 @@
 
     { id: 'lavori', parole: ['realizzaz', 'lavori fatti', 'lavori realizzati', 'progetti', 'referenz', 'esempi', 'cantieri fatti', 'avete gia', 'avete fatto', 'fatto lavori', 'fatto dei lavori', 'lavori eseguiti', 'portfolio', 'don milani', 'barbuti', 'san leucio', 'sete', 'san rocco', 'casoria', 'travertino'],
       testo: 'Tra i nostri lavori:\n• la facciata ventilata in **gres porcellanato effetto travertino** (lastre 270 × 180 cm) per un edificio residenziale in **via San Rocco a Casoria (NA)**: [guarda il progetto](' + PAG.progSanRocco + ')\n• la facciata a lamelle in **Dèco Ultrashield Stilo** per la nuova produzione delle **Sete di San Leucio** di **Barbuti S.p.A.** (Caserta): [guarda il progetto](' + PAG.progBarbuti + ')\n• i **frangisole Dèco Ultrashield Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**, per Costruzioni Vitale S.r.l.: [guarda il progetto](' + PAG.progDonMilani + ')\nTrovi foto e schede nella pagina [I nostri progetti](' + PAG.progetti + ').',
-      pulsanti: ['Legno', 'Richiedere un sopralluogo'] },
+      pulsanti: ['WPC', 'Richiedere un sopralluogo'] },
 
     { id: 'zona', parole: ['zona', 'dove lavorate', 'dove operate', 'provinc', 'citta', 'regione', 'venite', 'lavorate a', 'lavorate in', 'campania', 'napoli', 'caserta', 'salerno', 'fuori'],
       testo: 'La nostra sede è a **Casoria (NA)**. Per sapere se possiamo seguire il tuo intervento, dicci il **comune del cantiere**: chiedi un sopralluogo qui in chat oppure chiamaci al [' + C.tel + '](' + C.telLink + ').',
@@ -242,7 +242,7 @@
     { campo: 'edificio', domanda: 'Che tipo di edificio è?', scelte: ['Condominio', 'Casa o villa', 'Edificio pubblico o scuola', 'Commerciale o industriale', 'Altro'] },
     { campo: 'intervento', domanda: 'Di che intervento si tratta?', scelte: ['Nuova costruzione', 'Rifacimento di una facciata esistente', 'Solo frangisole', 'Non so ancora'] },
     { campo: 'superficie', domanda: 'Più o meno, quanta superficie di facciata?', scelte: ['Meno di 100 m²', '100–500 m²', '500–1.000 m²', 'Oltre 1.000 m²', 'Non lo so'] },
-    { campo: 'materiale', domanda: 'Hai già in mente un materiale?', scelte: ['Gres porcellanato', 'Fibrocemento', 'Legno', 'Composito', 'Consigliatemi voi'] },
+    { campo: 'materiale', domanda: 'Hai già in mente un materiale?', scelte: ['Gres porcellanato', 'Fibrocemento', 'WPC', 'Composito', 'Consigliatemi voi'] },
     { campo: 'telefono', domanda: 'Ultima cosa: a quale **numero di telefono** possiamo richiamarti?', valida: function (v) { return v.replace(/[^\d]/g, '').length >= 8; }, errore: 'Il numero non mi sembra completo: me lo riscrivi?' },
   ];
 
