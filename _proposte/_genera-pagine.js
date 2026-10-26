@@ -317,6 +317,7 @@ const PROGETTI = [
       ['Rivestimento', 'Gres porcellanato effetto travertino, lastre 270 × 180 cm'],
       ['Sottostruttura', 'Montanti a T in alluminio su staffe Hilti'],
       ['Dettagli', 'Profili in alluminio preverniciato nero da 5 cm'],
+      ['Stato', 'In fase di completamento'],
       ['Realizzazione', 'Ventilàrt'],
     ],
     corpo: `
@@ -324,6 +325,7 @@ const PROGETTI = [
     <p>Per un nuovo edificio residenziale in <strong>via San Rocco a Casoria</strong>, CRG | Crafted Residential Group ci ha affidato la realizzazione della <strong>facciata ventilata in gres porcellanato</strong>: un intervento che dà valore al fabbricato fin dalla sua costruzione, sia sul piano estetico sia su quello energetico.</p>
     <p>Il rivestimento è composto da <strong>lastre di grande formato da 270 × 180 cm</strong> in gres <strong>effetto travertino</strong>: poche fughe, superfici ampie e la materia calda della pietra naturale, con la resistenza e la stabilità del gres.</p>
     <p>Seguendo le indicazioni del progetto architettonico, tra le lastre abbiamo inserito <strong>profili da 5 cm in alluminio preverniciato nero</strong>: le linee scure scandiscono la facciata e creano l’<strong>effetto sfalsato</strong> delle lastre che caratterizza l’edificio.</p>
+    <p>I lavori sono <strong>in fase di completamento</strong>: le foto mostrano il cantiere in corso, i render l’edificio come sarà a lavori finiti.</p>
 
     <h2>Sotto il rivestimento</h2>
     <ul class="strati">
