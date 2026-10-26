@@ -303,15 +303,16 @@ const PROGETTI = [
   {
     file: 'progetto-san-rocco-casoria.html',
     etichetta: 'Gres porcellanato',
-    titolo: 'Residenze in via San Rocco',
+    titolo: 'Palazzo Rue – Casoria',
     sottotitolo: 'CRG | Crafted Residential Group',
     luogo: 'Casoria, Napoli',
     riassunto: 'Facciata ventilata in gres porcellanato effetto travertino, lastre retinate 270 × 180 cm su montanti a T e staffe Hilti.',
-    copertina: 'san-rocco-casoria-dettaglio.jpg',
-    copertinaAlt: 'La superficie in gres effetto travertino con il profilo nero da 5 cm',
+    copertina: 'san-rocco-casoria-cantiere.jpg',
+    copertinaAlt: 'Palazzo Rue durante i lavori, visto da lontano',
+    stato: 'In corso…',
     scheda: [
       ['Committente', 'CRG | Crafted Residential Group'],
-      ['Opera', 'Edificio residenziale di nuova costruzione'],
+      ['Opera', 'Palazzo Rue, edificio residenziale di nuova costruzione'],
       ['Luogo', 'Via San Rocco, Casoria (NA)'],
       ['Intervento', 'Facciata ventilata'],
       ['Rivestimento', 'Gres porcellanato effetto travertino, lastre retinate 270 × 180 cm'],
@@ -322,7 +323,7 @@ const PROGETTI = [
     ],
     corpo: `
     <h2>Il progetto</h2>
-    <p>Per un nuovo edificio residenziale in <strong>via San Rocco a Casoria</strong>, CRG | Crafted Residential Group ci ha affidato la realizzazione della <strong>facciata ventilata in gres porcellanato</strong>: un intervento che dà valore al fabbricato fin dalla sua costruzione, sia sul piano estetico sia su quello energetico.</p>
+    <p>Per <strong>Palazzo Rue</strong>, nuovo edificio residenziale in <strong>via San Rocco a Casoria</strong>, CRG | Crafted Residential Group ci ha affidato la realizzazione della <strong>facciata ventilata in gres porcellanato</strong>: un intervento che dà valore al fabbricato fin dalla sua costruzione, sia sul piano estetico sia su quello energetico.</p>
     <p>Il rivestimento è composto da <strong>lastre di grande formato da 270 × 180 cm</strong> in gres <strong>effetto travertino</strong>: poche fughe, superfici ampie e la materia calda della pietra naturale, con la resistenza e la stabilità del gres. Le lastre sono <strong>retinate</strong> sul retro: la rete di rinforzo aumenta la sicurezza della facciata, perché in caso di rottura trattiene i frammenti.</p>
     <p>Seguendo le indicazioni del progetto architettonico, tra le lastre abbiamo inserito <strong>profili da 5 cm in alluminio preverniciato nero</strong>: le linee scure scandiscono la facciata e creano l’<strong>effetto sfalsato</strong> delle lastre che caratterizza l’edificio.</p>
     <p>I lavori sono <strong>in fase di completamento</strong>: le foto mostrano il cantiere in corso, i render l’edificio come sarà a lavori finiti.</p>
@@ -339,7 +340,7 @@ const PROGETTI = [
       ['san-rocco-casoria-prospetti.jpg', 'I prospetti di progetto con la disposizione sfalsata delle lastre.', 'largo'],
     ],
     foto: [
-      ['san-rocco-casoria-cantiere.jpg', 'L’edificio durante i lavori, con il ponteggio.'],
+      ['san-rocco-casoria-dettaglio.jpg', 'La superficie effetto travertino e il profilo nero da 5 cm.'],
       ['san-rocco-casoria-facciata.jpg', 'Le lastre posate lungo la facciata, con i profili neri tra una lastra e l’altra.'],
       ['san-rocco-casoria-staffe.jpg', 'Le staffe Hilti fissate alla parete, prima dei montanti.'],
     ],
@@ -358,7 +359,7 @@ fs.writeFileSync(path.join(DIR, 'progetti.html'), head({
   </div>
   <div class="posts progetti">
 ${PROGETTI.map((p) => `    <a class="post" href="${p.file}">
-      <div class="im"><img src="${FOTO}/${p.copertina}" alt="${p.titolo}" loading="lazy"><span class="pill dark">${p.etichetta}</span></div>
+      <div class="im"><img src="${FOTO}/${p.copertina}" alt="${p.titolo}" loading="lazy"><span class="pill dark">${p.etichetta}</span>${p.stato ? `<span class="pill dark stato">${p.stato}</span>` : ''}</div>
       <div class="b">
         <h3>${p.titolo}</h3>
         <p>${p.riassunto}</p>
@@ -379,7 +380,7 @@ for (const p of PROGETTI) {
     <p class="lead">${p.sottotitolo} — ${p.riassunto}</p>
     <div class="meta-row"><span class="pill">${p.luogo}</span><span class="pill">${p.etichetta}</span></div>
   </div>
-  <div class="cover verticale"><img src="${FOTO}/${p.copertina}" alt="${p.copertinaAlt || p.titolo + ': la facciata finita'}"></div>
+  <div class="cover verticale">${p.stato ? `<span class="pill dark stato">${p.stato}</span>` : ''}<img src="${FOTO}/${p.copertina}" alt="${p.copertinaAlt || p.titolo + ': la facciata finita'}"></div>
   <div class="scheda table"><table>
 ${p.scheda.map(([k, v]) => `    <tr><td>${k}</td><td>${v}</td></tr>`).join('\n')}
   </table></div>

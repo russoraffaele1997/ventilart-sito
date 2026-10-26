@@ -24,3 +24,6 @@
 .progettazione figure.largo img{background:#fff}
 .progettazione figcaption{font-size:14px;color:var(--mut);padding:12px 8px 6px;line-height:1.5}
 @media (max-width:620px){.progettazione{grid-template-columns:1fr}}
+.wrap .cover.verticale{position:relative}
+.pill.stato{position:absolute;top:14px;right:14px;left:auto;z-index:1;background:var(--red);color:#fff;border-color:transparent}
+.post .im .pill.stato{left:auto;right:14px;background:var(--red)}
