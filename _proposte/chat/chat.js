@@ -19,6 +19,8 @@
     artFacciata: BASE + 'blog/cos-e-una-facciata-ventilata.html',
     artMateriali: BASE + 'blog/gres-fibrocemento-legno-composito.html',
     artEsistente: BASE + 'blog/facciata-ventilata-edificio-esistente.html',
+    progetti: BASE + 'progetti.html',
+    progBarbuti: BASE + 'progetto-barbuti-san-leucio.html',
   };
 
   // ======================= CONTATTI =======================
@@ -75,7 +77,7 @@
       durata: 'Lo scudo protettivo che avvolge il profilo lo rende **immune a muffe, parassiti, cloro, salsedine e intemperie** e molto resistente alle spaccature e allo scolorimento UV.',
       finiture: 'Le finiture di Ultrashield Stilo sono: **Teak, Red Cedar, Cedar, Snow, Antique Walnut e Charcoal**.',
       sostenibilita: 'Ultrashield è fatto al **95% con materiali riciclati** (fibre di legno duro rigenerate e bottiglie di plastica) ed è certificato **FSC** ed **EPD**.',
-      extra: 'Abbiamo posato frangisole **Dèco Ultrashield Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**: ombreggiano le aule, riducono il surriscaldamento estivo e danno all’edificio un aspetto caldo e contemporaneo.',
+      extra: 'Con Ultrashield abbiamo realizzato la facciata a lamelle delle **Sete di San Leucio** (Barbuti S.p.A.): barre **Stilo da 3 × 10 cm posate di taglio** su struttura in alluminio preverniciato ([guarda il progetto](' + PAG.progBarbuti + ')). Abbiamo posato anche i frangisole **Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**.',
     },
     comp: {
       nome: 'composito',
@@ -190,8 +192,8 @@
       testo: '**Ventilàrt** è un’impresa specializzata nella **progettazione e posa di facciate ventilate**, con sede a **Casoria (NA)**. Seguiamo tutto l’intervento, dal sopralluogo alla consegna, con un unico referente.\nLavoriamo con materiali e sistemi **Dèco, Laminam, Dekton, Equitone e Hilti**.',
       pulsanti: ['Quali materiali usate?', 'Avete già realizzato lavori?', 'Contatti'] },
 
-    { id: 'lavori', parole: ['realizzaz', 'lavori fatti', 'lavori realizzati', 'progetti', 'referenz', 'esempi', 'cantieri fatti', 'avete gia', 'avete fatto', 'fatto lavori', 'fatto dei lavori', 'lavori eseguiti', 'portfolio', 'don milani'],
-      testo: 'Tra i nostri lavori: i **frangisole Dèco Ultrashield Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**. Stiamo preparando la pagina con le foto e le schede dei nostri cantieri.',
+    { id: 'lavori', parole: ['realizzaz', 'lavori fatti', 'lavori realizzati', 'progetti', 'referenz', 'esempi', 'cantieri fatti', 'avete gia', 'avete fatto', 'fatto lavori', 'fatto dei lavori', 'lavori eseguiti', 'portfolio', 'don milani', 'barbuti', 'san leucio', 'sete'],
+      testo: 'Tra i nostri lavori:\n• la facciata a lamelle in **Dèco Ultrashield Stilo** per la nuova produzione delle **Sete di San Leucio** di **Barbuti S.p.A.** (Caserta): [guarda il progetto](' + PAG.progBarbuti + ')\n• i **frangisole Dèco Ultrashield Stilo M** sulla scuola **IC Basile Don Milani di Parete (CE)**\nTrovi foto e schede nella pagina [I nostri progetti](' + PAG.progetti + ').',
       pulsanti: ['Legno', 'Richiedere un sopralluogo'] },
 
     { id: 'zona', parole: ['zona', 'dove lavorate', 'dove operate', 'provinc', 'citta', 'regione', 'venite', 'lavorate a', 'lavorate in', 'campania', 'napoli', 'caserta', 'salerno', 'fuori'],

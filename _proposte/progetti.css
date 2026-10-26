@@ -1,0 +1,18 @@
+/* Pagine dei progetti: elenco e scheda del singolo lavoro (stile del blog) */
+.posts.progetti{grid-template-columns:repeat(2,1fr);max-width:1100px;margin:0 auto}
+.posts.progetti .post .im{height:420px}
+.scheda{max-width:720px;margin:34px auto 0;background:var(--card);border-radius:var(--r2);padding:8px 8px 4px}
+.scheda table{min-width:0}
+.scheda td:first-child{width:38%;color:var(--mut);font-weight:500}
+.scheda td:last-child{font-weight:500}
+.strati{list-style:none;margin:20px 0 26px!important;display:grid;gap:10px}
+.strati li{background:var(--card);border-radius:16px;padding:16px 20px;margin:0;display:grid;grid-template-columns:44px 1fr;gap:4px 14px;align-items:baseline}
+.strati li span{grid-row:span 2;font-size:28px;font-weight:300;color:var(--red);line-height:1}
+.strati li em{font-style:normal;color:var(--mut);font-size:15px}
+.galleria{max-width:1100px;margin:64px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.galleria figure{background:var(--card);border-radius:var(--r2);padding:8px;margin:0}
+.galleria .ft{aspect-ratio:3/4;border-radius:14px;overflow:hidden}
+.galleria figcaption{font-size:14px;color:var(--mut);padding:12px 8px 6px;line-height:1.5}
+.wrap .cover.verticale{height:min(130vw,780px);width:min(100%,600px);margin:0 auto}
+@media (max-width:960px){.galleria{grid-template-columns:1fr 1fr}.posts.progetti .post .im{height:340px}}
+@media (max-width:620px){.galleria,.posts.progetti{grid-template-columns:1fr}}

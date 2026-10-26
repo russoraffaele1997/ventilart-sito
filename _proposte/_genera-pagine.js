@@ -23,13 +23,6 @@ const pagine = [
     prossimamente: 'Le schede dettagliate di ogni sistema: materiali, finiture, sottostruttura e campi di impiego.',
   },
   {
-    file: 'progetti.html',
-    voce: 'I nostri progetti',
-    titolo: 'I nostri progetti',
-    desc: 'Le facciate ventilate realizzate da Ventilàrt.',
-    prossimamente: 'Le foto e le schede dei nostri cantieri, man mano che vengono completati.',
-  },
-  {
     file: 'contatti.html',
     voce: 'Contatti',
     titolo: 'Contatti',
@@ -67,6 +60,8 @@ const head = (p) => `<!doctype html>
 <link rel="stylesheet" href="blog/blog.css">
 <link rel="stylesheet" href="chat/chat.css">
 <link rel="stylesheet" href="anim/anim.css">
+${p.css ? `<link rel="stylesheet" href="${p.css}">` : ''}
+${p.og ? `<meta property="og:image" content="${p.og}">` : ''}
 </head>
 <body>
 <div class="wrap">
@@ -130,3 +125,101 @@ ${p.extra || ''}
 ` + foot);
 }
 console.log('create:', pagine.map((p) => p.file).join(', '));
+
+// ---------------------------------------------------------------------
+// I NOSTRI PROGETTI: elenco e una scheda per ogni lavoro.
+// Per aggiungere un progetto: un nuovo oggetto in PROGETTI (foto in assets/foto/progetti/).
+// ---------------------------------------------------------------------
+const PROGETTI = [
+  {
+    file: 'progetto-barbuti-san-leucio.html',
+    etichetta: 'Legno composito',
+    titolo: 'Le Sete di San Leucio',
+    sottotitolo: 'Nuova sede produttiva Barbuti S.p.A.',
+    luogo: 'San Leucio, Caserta',
+    riassunto: 'Facciata a lamelle verticali in Dèco Ultrashield Stilo, posate di taglio su sottostruttura in alluminio preverniciato.',
+    copertina: 'barbuti-san-leucio-facciata.jpg',
+    scheda: [
+      ['Committente', 'Barbuti S.p.A.'],
+      ['Opera', 'Nuova produzione delle Sete di San Leucio'],
+      ['Luogo', 'San Leucio, Caserta'],
+      ['Intervento', 'Facciata a lamelle verticali'],
+      ['Rivestimento', 'Dèco Ultrashield Stilo, barra 3 × 10 cm posata di taglio'],
+      ['Sottostruttura', 'Alluminio preverniciato'],
+      ['Realizzazione', 'Ventilàrt'],
+    ],
+    corpo: `
+    <h2>Il progetto</h2>
+    <p>Per l’apertura della nuova produzione delle <strong>Sete di San Leucio</strong>, Barbuti S.p.A. ci ha affidato la facciata dell’ingresso: un rivestimento a <strong>lamelle verticali</strong> che accompagna il portale ad arco e dà all’edificio un’immagine calda, ordinata e contemporanea.</p>
+    <p>Le barre <strong>Dèco Ultrashield Stilo</strong> da 3 × 10 cm sono posate <strong>di taglio</strong>: verso l’esterno si vede il lato da 3 cm, mentre i 10 cm di profondità creano un ritmo fitto di lamelle che filtra luce e vista e disegna la facciata con giochi d’ombra che cambiano durante il giorno.</p>
+    <p>Le lamelle sono fissate a una <strong>sottostruttura in alluminio preverniciato</strong>, nello stesso tono del rivestimento: la struttura si confonde con le doghe e la facciata si legge come un’unica superficie.</p>
+
+    <h2>Cos’è il Dèco Ultrashield</h2>
+    <p><strong>Ultrashield</strong> è il legno composito di <strong>Dèco</strong> pensato per l’esterno: ha l’aspetto e il calore del legno, ma non ne ha i limiti.</p>
+    <ul class="strati">
+      <li><span>1</span><b>Anima in legno composito</b><em>Fibre di legno duro rigenerate unite a plastica riciclata: oltre il 95% del materiale viene dal riciclo.</em></li>
+      <li><span>2</span><b>Scudo esterno</b><em>Un guscio protettivo avvolge il profilo e lo difende da raggi UV, umidità, macchie, muffe e salsedine.</em></li>
+    </ul>
+    <div class="box">
+      <b>In pratica</b>
+      <p>Non si spacca, non si deforma e non scolorisce; non va oliato né verniciato. Per mantenerlo basta un lavaggio con acqua. È certificato FSC ed EPD.</p>
+    </div>`,
+    foto: [
+      ['barbuti-san-leucio-posa.jpg', 'Posa delle lamelle: piattaforma aerea in quota e squadra a terra.'],
+      ['barbuti-san-leucio-struttura.jpg', 'Montaggio della sottostruttura in alluminio preverniciato.'],
+      ['barbuti-san-leucio-dettaglio.jpg', 'Le lamelle di taglio viste da vicino, con i fissaggi alla struttura.'],
+    ],
+  },
+];
+
+const FOTO = `${A}/foto/progetti`;
+
+fs.writeFileSync(path.join(DIR, 'progetti.html'), head({
+  titolo: 'I nostri progetti', desc: 'Le facciate ventilate realizzate da Ventilàrt.', css: 'progetti.css',
+}) + `
+  <div class="intro">
+    <span class="pill">I nostri progetti</span>
+    <h1>I nostri progetti</h1>
+    <p>Le facciate realizzate da Ventilàrt: materiali, soluzioni e foto dal cantiere.</p>
+  </div>
+  <div class="posts progetti">
+${PROGETTI.map((p) => `    <a class="post" href="${p.file}">
+      <div class="im"><img src="${FOTO}/${p.copertina}" alt="${p.titolo}" loading="lazy"><span class="pill dark">${p.etichetta}</span></div>
+      <div class="b">
+        <h3>${p.titolo}</h3>
+        <p>${p.riassunto}</p>
+        <div class="meta"><span>${p.sottotitolo} · ${p.luogo}</span><span>Vedi il progetto →</span></div>
+      </div>
+    </a>`).join('\n')}
+  </div>
+</div>
+` + foot);
+
+for (const p of PROGETTI) {
+  fs.writeFileSync(path.join(DIR, p.file), head({
+    titolo: `${p.titolo} · ${p.sottotitolo}`, desc: p.riassunto, css: 'progetti.css', og: `${FOTO}/${p.copertina}`,
+  }) + `
+  <div class="ahead">
+    <a class="pill" href="progetti.html">← I nostri progetti</a>
+    <h1>${p.titolo}</h1>
+    <p class="lead">${p.sottotitolo} — ${p.riassunto}</p>
+    <div class="meta-row"><span class="pill">${p.luogo}</span><span class="pill">${p.etichetta}</span></div>
+  </div>
+  <div class="cover verticale"><img src="${FOTO}/${p.copertina}" alt="${p.titolo}: la facciata finita"></div>
+  <div class="scheda table"><table>
+${p.scheda.map(([k, v]) => `    <tr><td>${k}</td><td>${v}</td></tr>`).join('\n')}
+  </table></div>
+  <article class="body">${p.corpo}
+  </article>
+  <div class="galleria">
+${p.foto.map(([img, did]) => `    <figure><div class="ft"><img src="${FOTO}/${img}" alt="${did}" loading="lazy"></div><figcaption>${did}</figcaption></figure>`).join('\n')}
+  </div>
+  <div class="cta">
+    <img src="${A}/logo/ventilart-simbolo.svg" alt="">
+    <div><h2>Hai un progetto simile?</h2><p>Raccontaci l’edificio: veniamo a fare un sopralluogo e ti proponiamo il sistema più adatto.</p></div>
+    <a class="btn light" href="d-moderno.html#contatti">Richiedi un sopralluogo</a>
+  </div>
+</div>
+` + foot);
+}
+console.log('progetti:', ['progetti.html', ...PROGETTI.map((p) => p.file)].join(', '));

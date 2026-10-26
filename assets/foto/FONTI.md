@@ -7,6 +7,7 @@ Foto provvisorie, da sostituire con foto dei cantieri Ventilàrt quando ci saran
 | File | Dove è usata | Fonte |
 |---|---|---|
 | hero-legno.jpg | Foto in alto (scorrimento), legno | Foto di Raffaele Russo (sua, nessun permesso da chiedere) |
+| progetti/barbuti-san-leucio-*.jpg (4 foto) | Progetto "Le Sete di San Leucio" (Barbuti S.p.A.) | Foto di cantiere Ventilàrt, inviate da Raffaele Russo il 26/10/2026. Ridotte per il web, dati GPS/EXIF tolti, targa dell'auto sfocata. Si vedono i volti della squadra: serve il consenso delle persone ritratte. |
 
 ## Foto dei produttori — chiedere il permesso PRIMA di mettere il sito online
 Sono prese dai siti ufficiali e appartengono ai produttori. Prima della pubblicazione chiedere
