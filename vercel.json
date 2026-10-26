@@ -1,9 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "",
   "installCommand": "",
-  "outputDirectory": "online",
+  "buildCommand": "rm -rf pubblico && mkdir pubblico && cp -r _proposte assets pubblico/ && cp online/favicon.svg online/v.svg pubblico/ && rm -f pubblico/_proposte/_genera-pagine.js pubblico/_proposte/blog/_genera.js pubblico/_proposte/a-galleria.html pubblico/_proposte/b-studio.html pubblico/_proposte/c-preventivo.html pubblico/assets/foto/FONTI.md",
+  "outputDirectory": "pubblico",
+  "redirects": [
+    { "source": "/", "destination": "/_proposte/d-moderno.html", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -11,7 +14,8 @@
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; script-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'" }
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'" }
       ]
     }
   ]
