@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "",
-  "buildCommand": "rm -rf pubblico && mkdir pubblico && cp -r _proposte assets pubblico/ && cp online/favicon.svg online/v.svg pubblico/ && rm -f pubblico/_proposte/_genera-pagine.js pubblico/_proposte/blog/_genera.js pubblico/_proposte/a-galleria.html pubblico/_proposte/b-studio.html pubblico/_proposte/c-preventivo.html pubblico/assets/foto/FONTI.md",
+  "buildCommand": "sh pubblica.sh",
   "outputDirectory": "pubblico",
   "redirects": [
     { "source": "/", "destination": "/_proposte/d-moderno.html", "permanent": false }
