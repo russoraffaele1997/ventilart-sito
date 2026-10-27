@@ -27,3 +27,5 @@
 .wrap .cover.verticale{position:relative}
 .pill.stato{position:absolute;top:14px;right:14px;left:auto;z-index:1;background:var(--red);color:#fff;border-color:transparent}
 .post .im .pill.stato{left:auto;right:14px;background:var(--red)}
+.correlati{max-width:1100px;margin:64px auto 0}
+.correlati h2{margin:0 0 18px}

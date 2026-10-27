@@ -46,7 +46,7 @@ const head = (p) => `<!doctype html>
 <link rel="stylesheet" href="blog/blog.css">
 <link rel="stylesheet" href="chat/chat.css">
 <link rel="stylesheet" href="anim/anim.css">
-${p.css ? `<link rel="stylesheet" href="${p.css}">` : ''}
+${[].concat(p.css || []).map((c) => `<link rel="stylesheet" href="${c}">`).join('\n')}
 ${p.og ? `<meta property="og:image" content="${p.og}">` : ''}
 </head>
 <body>
@@ -197,10 +197,10 @@ fs.writeFileSync(path.join(DIR, 'lavorazioni.html'), head({
 
     <h2>I sistemi che posiamo</h2>
     <ul class="motivi">
-      <li><span>1</span><b>Gres porcellanato e ceramica</b><em>Lastre anche di grande formato (Laminam, Dekton), stabili nel colore e resistentissime: per facciate che restano come nuove nel tempo.</em></li>
-      <li><span>2</span><b>Fibrocemento</b><em>Pannelli materici dal linguaggio architettonico essenziale (Equitone), con un’ottima resistenza al fuoco.</em></li>
-      <li><span>3</span><b>WPC – Wood Polymer Composite</b><em>Doghe, lamelle e frangisole Dèco Ultrashield: il calore del legno, senza oliature né scolorimenti.</em></li>
-      <li><span>4</span><b>HPL e alluminio composito</b><em>Pannelli leggeri e planari per superfici continue, lisce e moderne.</em></li>
+      <li><span>1</span><b><a href="lavorazione-gres-porcellanato.html">Gres porcellanato e ceramica</a></b><em>Lastre anche di grande formato (Laminam, Dekton), stabili nel colore e resistentissime: per facciate che restano come nuove nel tempo. <a class="scopri" href="lavorazione-gres-porcellanato.html">Scopri il sistema →</a></em></li>
+      <li><span>2</span><b><a href="lavorazione-fibrocemento.html">Fibrocemento</a></b><em>Pannelli materici dal linguaggio architettonico essenziale (Equitone), con un’ottima resistenza al fuoco. <a class="scopri" href="lavorazione-fibrocemento.html">Scopri il sistema →</a></em></li>
+      <li><span>3</span><b><a href="lavorazione-wpc.html">WPC – Wood Polymer Composite</a></b><em>Doghe, lamelle e frangisole Dèco Ultrashield: il calore del legno, senza oliature né scolorimenti. <a class="scopri" href="lavorazione-wpc.html">Scopri il sistema →</a></em></li>
+      <li><span>4</span><b><a href="lavorazione-alluminio-composito.html">HPL e alluminio composito</a></b><em>Pannelli leggeri e planari per superfici continue, lisce e moderne. <a class="scopri" href="lavorazione-alluminio-composito.html">Scopri il sistema →</a></em></li>
     </ul>
     <div class="box">
       <b>Sotto il rivestimento</b>
@@ -402,3 +402,184 @@ ${p.foto.map(([img, did]) => `    <figure><div class="ft"><img src="${FOTO}/${im
 ` + foot);
 }
 console.log('progetti:', ['progetti.html', ...PROGETTI.map((p) => p.file)].join(', '));
+
+// ---------------------------------------------------------------------
+// LE QUATTRO LAVORAZIONI: una pagina per sistema.
+// I dati tecnici sono gli stessi dell'assistente virtuale (chat/chat.js, MATERIALI).
+// ---------------------------------------------------------------------
+const LAVORAZIONI = [
+  {
+    file: 'lavorazione-gres-porcellanato.html',
+    titolo: 'Gres porcellanato',
+    lead: 'Lastre ceramiche cotte ad altissima temperatura: compatte, praticamente impermeabili e stabili nel colore. Per le facciate usiamo lastre di grande formato e superfici ultracompatte.',
+    foto: 'progetti/san-rocco-casoria-dettaglio.jpg',
+    fotoAlt: 'Lastre in gres effetto travertino posate da Ventilàrt a Palazzo Rue, Casoria',
+    verticale: true,
+    scheda: [
+      ['Marchi', 'Laminam, Dekton'],
+      ['Spessore', 'Da 6 a 12 mm (Dekton anche 8 e 20 mm)'],
+      ['Formati più usati', '60 × 120, 120 × 240, 120 × 278, 160 × 320 cm e sottomoduli; Dekton da 320 × 144 cm'],
+      ['Fissaggio', 'A vista, a scomparsa o con incollaggio strutturale'],
+      ['Reazione al fuoco', 'Materiale minerale, non alimenta le fiamme; Dekton in classe A1'],
+      ['Manutenzione', 'Praticamente nessuna'],
+    ],
+    corpo: `
+    <h2>Perché sceglierlo</h2>
+    <ul class="strati">
+      <li><span>1</span><b>Non assorbe acqua</b><em>Resiste a gelo, sbalzi termici, raggi UV, smog e agenti chimici: mantiene planarità e aspetto nel tempo.</em></li>
+      <li><span>2</span><b>Colori che non cambiano</b><em>Il gres è cotto, non verniciato: il colore è stabile e non scolorisce al sole.</em></li>
+      <li><span>3</span><b>Sicuro</b><em>Le lastre per facciata hanno sul retro una rete in fibra di vetro incollata: in caso di urto trattiene i frammenti.</em></li>
+      <li><span>4</span><b>Zero manutenzione</b><em>Si pulisce con acqua e detergenti neutri; esistono anche finiture autopulenti.</em></li>
+    </ul>
+    <div class="box">
+      <b>Finiture</b>
+      <p>Effetto pietra, cemento, marmo, legno, metallo e tinta unita, opache o lucide. Si possono abbinare formati diversi sulla stessa facciata, e oltre ai moduli standard si lavora anche su grandi lastre di progetto, come le lastre retinate 270 × 180 cm effetto travertino di Palazzo Rue.</p>
+    </div>
+    <h2>Come si fissa</h2>
+    <p>Le lastre si montano su una sottostruttura in alluminio, con tre famiglie di fissaggio:</p>
+    <ul>
+      <li><strong>a vista</strong>, con graffe (clip) o rivetti: semplice e veloce da posare;</li>
+      <li><strong>a scomparsa</strong>, con ganci fissati sul retro della lastra: facciata pulita, senza elementi visibili;</li>
+      <li><strong>incollaggio strutturale</strong> su profili verticali.</li>
+    </ul>
+    <p>La scelta dipende dal formato, dall’altezza dell’edificio e dall’effetto voluto: la facciamo insieme in fase di progetto.</p>
+    <h2>Sostenibilità</h2>
+    <p>Il gres è un materiale minerale, inerte e durevole. Laminam dichiara lastre composte al 100% da materiali riciclati e riciclabili.</p>`,
+    progetti: ['progetto-san-rocco-casoria.html'],
+  },
+  {
+    file: 'lavorazione-fibrocemento.html',
+    titolo: 'Fibrocemento',
+    lead: 'Pannelli a base di cemento, fibre e additivi, colorati in massa: superficie opaca e materica, per facciate dal linguaggio sobrio e architettonico.',
+    foto: 'hero-fibrocemento-equitone.jpg',
+    fotoAlt: 'Facciata ventilata in pannelli di fibrocemento Equitone',
+    scheda: [
+      ['Marchio', 'Equitone'],
+      ['Spessore', '8–10 mm'],
+      ['Formato', 'Circa 305 × 122 cm, tagliabile in qualsiasi dimensione o forma'],
+      ['Fissaggio', 'A vista con rivetti, anche in tinta, oppure a scomparsa con ganci'],
+      ['Reazione al fuoco', 'Classe A2-s1, d0 (EN 13501-1)'],
+      ['Durata', 'Oltre 50 anni, secondo il produttore'],
+    ],
+    corpo: `
+    <h2>Perché sceglierlo</h2>
+    <ul class="strati">
+      <li><span>1</span><b>Colore nella massa</b><em>Il colore attraversa tutto il pannello: la superficie resta uniforme e la forma stabile nel tempo.</em></li>
+      <li><span>2</span><b>Leggero e su misura</b><em>Pannelli leggeri e molto stabili anche nei grandi formati, che si tagliano in qualsiasi forma: la facciata si disegna su misura.</em></li>
+      <li><span>3</span><b>Ottimo comportamento al fuoco</b><em>Classe A2-s1, d0: combustibilità limitata, bassissima produzione di fumo, nessuna goccia incandescente.</em></li>
+      <li><span>4</span><b>Posa libera</b><em>Verticale, orizzontale, sfalsata o libera, per disegnare la facciata come vuole il progetto.</em></li>
+    </ul>
+    <div class="box">
+      <b>Finiture</b>
+      <p>Equitone ha diverse linee: [natura] e [pictura] con superfici lisce colorate, [tectiva] levigata con venature naturali, [textura] leggermente materica, [linea] rigata tridimensionale e [lunara] effetto pietra. Le tinte sono molte, anche personalizzabili.</p>
+    </div>
+    <h2>Manutenzione</h2>
+    <p>Bassa: i pannelli resistono ad acqua, temperature estreme, agenti chimici e organismi viventi, e la ventilazione retrostante tiene lontani umidità, muffa e gelo. Sono possibili trattamenti antigraffiti e antismog, e i singoli pannelli si smontano facilmente se serve.</p>
+    <h2>Sostenibilità</h2>
+    <p>I pannelli Equitone sono riciclabili, hanno la certificazione Cradle to Cradle® Bronze e sono conformi ai CAM (Criteri Ambientali Minimi): un vantaggio concreto negli appalti pubblici.</p>`,
+    progetti: [],
+  },
+  {
+    file: 'lavorazione-wpc.html',
+    titolo: 'WPC – Wood Polymer Composite',
+    lead: 'Doghe, lamelle e frangisole in un composito di fibre di legno e polimeri: il calore del legno, senza i suoi limiti. Usiamo Dèco Ultrashield.',
+    foto: 'progetti/barbuti-san-leucio-facciata.jpg',
+    fotoAlt: 'Facciata a lamelle in WPC Dèco Ultrashield realizzata da Ventilàrt per le Sete di San Leucio',
+    verticale: true,
+    scheda: [
+      ['Marchio', 'Dèco Ultrashield'],
+      ['Profili Stilo', 'S 60 × 42 · M 100 × 52 · L 120 × 62 · Slim 108 × 31 · Extra Slim 56 × 31 mm'],
+      ['Posa', 'Orizzontale o verticale; frangisole fissi, scorrevoli o mobili'],
+      ['Finiture', 'Teak, Red Cedar, Cedar, Snow, Antique Walnut, Charcoal'],
+      ['Materiale riciclato', '95%, certificato FSC ed EPD'],
+      ['Manutenzione', 'Nessuna oliatura o trattamento: basta acqua'],
+    ],
+    corpo: `
+    <h2>Com’è fatto</h2>
+    <ul class="strati">
+      <li><span>1</span><b>Anima in WPC</b><em>Fibre di legno duro rigenerate unite a plastica riciclata: oltre il 95% del materiale viene dal riciclo.</em></li>
+      <li><span>2</span><b>Scudo esterno</b><em>Un guscio protettivo avvolge il profilo e lo difende da raggi UV, umidità, macchie, muffe, parassiti, cloro e salsedine.</em></li>
+    </ul>
+    <h2>Perché sceglierlo</h2>
+    <div class="due">
+      <div class="box">
+        <b>Il legno senza pensieri</b>
+        <p>Non si spacca, non si deforma e non scolorisce; non va oliato né verniciato. Per mantenerlo basta un lavaggio con acqua.</p>
+      </div>
+      <div class="box">
+        <b>Frangisole che lavorano</b>
+        <p>Davanti alle finestre schermano il sole diretto, riducono il surriscaldamento e lasciano passare luce e vista, con passo e inclinazione decisi in progetto.</p>
+      </div>
+    </div>
+    <h2>Come si fissa</h2>
+    <p>Le doghe si fissano a una sottostruttura in alluminio, anche preverniciata nel tono del rivestimento, come nei nostri progetti. Per i frangisole Dèco ha anche un sistema brevettato, <strong>Easyclip</strong>: piastre di base con tasselli e perni, senza telai aggiuntivi, che permettono di regolare l’inclinazione e di posare a filo di pavimenti e soffitti.</p>
+    <p>La classe di reazione al fuoco dipende dal prodotto e dall’uso: la verifichiamo in progetto sulla scheda tecnica, in base ai requisiti antincendio dell’edificio.</p>`,
+    progetti: ['progetto-barbuti-san-leucio.html', 'progetto-scuola-don-milani-parete.html'],
+  },
+  {
+    file: 'lavorazione-alluminio-composito.html',
+    titolo: 'Alluminio composito',
+    lead: 'Pannelli formati da due lamiere di alluminio con un nucleo interno: leggeri, rigidi e perfettamente planari, per superfici continue e moderne, anche curve.',
+    foto: 'composito-a.jpg',
+    fotoAlt: 'Facciata ventilata in pannelli di alluminio composito',
+    scheda: [
+      ['Composizione', 'Due lamiere di alluminio con nucleo interno'],
+      ['Formati', 'Larghezza 100–120 cm (o multipli), altezza da 100 a 600 cm, anche su misura'],
+      ['Fissaggio', 'A vista con rivetti, oppure a cassetta senza fissaggi visibili'],
+      ['Reazione al fuoco', 'Gamme in classe A2-s1, d0 con nucleo minerale'],
+      ['Finiture', 'Colori RAL, opache, lucide, metallizzate ed effetto legno'],
+      ['Manutenzione', 'Lavaggio periodico con acqua e detergente neutro'],
+    ],
+    corpo: `
+    <h2>Perché sceglierlo</h2>
+    <ul class="strati">
+      <li><span>1</span><b>Leggerissimo</b><em>Uno dei rivestimenti più leggeri: lamiere sottili e nucleo leggero facilitano trasporto e posa, anche in quota.</em></li>
+      <li><span>2</span><b>Perfettamente planare</b><em>Superfici continue e spigoli netti; i pannelli restano rigidi e planari anche sugli edifici alti.</em></li>
+      <li><span>3</span><b>Anche curvo</b><em>Con sottostrutture adatte si realizzano facciate curve e forme particolari.</em></li>
+    </ul>
+    <h2>Come si fissa</h2>
+    <p>Due soluzioni sulla sottostruttura in alluminio: <strong>a vista con rivetti</strong> su profili verticali, oppure <strong>a cassetta</strong>, con il pannello piegato e agganciato, senza fissaggi visibili.</p>
+    <div class="box">
+      <b>Sicurezza antincendio</b>
+      <p>La reazione al fuoco dipende dal nucleo del pannello. Per le facciate si usano gamme in classe A2-s1, d0 con nucleo minerale: la classe giusta si sceglie in base all’altezza e al tipo di edificio.</p>
+    </div>
+    <h2>Durata e sostenibilità</h2>
+    <p>I trattamenti di finitura proteggono colore e superficie da raggi UV, pioggia e smog. L’alluminio è un materiale riciclabile; il contenuto di riciclato preciso dipende dal pannello scelto.</p>`,
+    progetti: [],
+  },
+];
+
+for (const l of LAVORAZIONI) {
+  const correlati = l.progetti.map((f) => PROGETTI.find((p) => p.file === f));
+  fs.writeFileSync(path.join(DIR, l.file), head({
+    titolo: l.titolo, desc: l.lead, css: ['progetti.css', 'chi-siamo.css'], og: `${A}/foto/${l.foto}`,
+  }) + `
+  <div class="ahead">
+    <a class="pill" href="lavorazioni.html">← Lavorazioni</a>
+    <h1>${l.titolo}</h1>
+    <p class="lead">${l.lead}</p>
+  </div>
+  <div class="cover${l.verticale ? ' verticale' : ''}"><img src="${A}/foto/${l.foto}" alt="${l.fotoAlt}"></div>
+  <div class="scheda table"><table>
+${l.scheda.map(([k, v]) => `    <tr><td>${k}</td><td>${v}</td></tr>`).join('\n')}
+  </table></div>
+  <article class="body">${l.corpo}
+  </article>
+${correlati.length ? `  <div class="correlati">
+    <h2>I nostri progetti</h2>
+    <div class="posts progetti">
+${correlati.map((p) => `      <a class="post" href="${p.file}">
+        <div class="im"><img src="${FOTO}/${p.copertina}" alt="${p.titolo}" loading="lazy"><span class="pill dark">${p.etichetta}</span>${p.stato ? `<span class="pill dark stato">${p.stato}</span>` : ''}</div>
+        <div class="b"><h3>${p.titolo}</h3><p>${p.riassunto}</p><div class="meta"><span>${p.luogo}</span><span>Vedi il progetto →</span></div></div>
+      </a>`).join('\n')}
+    </div>
+  </div>
+` : ''}  <div class="cta">
+    <img src="${A}/logo/ventilart-simbolo.svg" alt="">
+    <div><h2>Ti interessa questo sistema?</h2><p>Veniamo a fare un sopralluogo e ti diciamo se è la soluzione giusta per il tuo edificio.</p></div>
+    <a class="btn light" href="d-moderno.html#contatti">Richiedi un sopralluogo</a>
+  </div>
+</div>
+` + foot);
+}
+console.log('lavorazioni:', LAVORAZIONI.map((l) => l.file).join(', '));
