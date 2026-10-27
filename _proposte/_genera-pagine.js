@@ -412,9 +412,9 @@ const LAVORAZIONI = [
     file: 'lavorazione-gres-porcellanato.html',
     titolo: 'Gres porcellanato',
     lead: 'Lastre ceramiche cotte ad altissima temperatura: compatte, praticamente impermeabili e stabili nel colore. Per le facciate usiamo lastre di grande formato e superfici ultracompatte.',
-    foto: 'progetti/san-rocco-casoria-dettaglio.jpg',
-    fotoAlt: 'Lastre in gres effetto travertino posate da Ventilàrt a Palazzo Rue, Casoria',
-    verticale: true,
+    foto: 'gres-laminam.jpg',
+    fotoAlt: 'Facciata ventilata in lastre Laminam',
+    credito: 'Laminam',
     scheda: [
       ['Marchi', 'Laminam, Dekton'],
       ['Spessore', 'Da 6 a 12 mm (Dekton anche 8 e 20 mm)'],
@@ -453,6 +453,7 @@ const LAVORAZIONI = [
     lead: 'Pannelli a base di cemento, fibre e additivi, colorati in massa: superficie opaca e materica, per facciate dal linguaggio sobrio e architettonico.',
     foto: 'hero-fibrocemento-equitone.jpg',
     fotoAlt: 'Facciata ventilata in pannelli di fibrocemento Equitone',
+    credito: 'Equitone',
     scheda: [
       ['Marchio', 'Equitone'],
       ['Spessore', '8–10 mm'],
@@ -483,9 +484,10 @@ const LAVORAZIONI = [
     file: 'lavorazione-wpc.html',
     titolo: 'WPC – Wood Polymer Composite',
     lead: 'Doghe, lamelle e frangisole in un composito di fibre di legno e polimeri: il calore del legno, senza i suoi limiti. Usiamo Dèco Ultrashield.',
-    foto: 'progetti/barbuti-san-leucio-facciata.jpg',
-    fotoAlt: 'Facciata a lamelle in WPC Dèco Ultrashield realizzata da Ventilàrt per le Sete di San Leucio',
+    foto: 'legno-deco.jpg',
+    fotoAlt: 'Frangisole in WPC Dèco Ultrashield',
     verticale: true,
+    credito: 'Dèco',
     scheda: [
       ['Marchio', 'Dèco Ultrashield'],
       ['Profili Stilo', 'S 60 × 42 · M 100 × 52 · L 120 × 62 · Slim 108 × 31 · Extra Slim 56 × 31 mm'],
@@ -560,7 +562,8 @@ for (const l of LAVORAZIONI) {
     <p class="lead">${l.lead}</p>
   </div>
   <div class="cover${l.verticale ? ' verticale' : ''}"><img src="${A}/foto/${l.foto}" alt="${l.fotoAlt}"></div>
-  <div class="scheda table"><table>
+${l.credito ? `  <p class="credito">Foto: ${l.credito}</p>
+` : ''}  <div class="scheda table"><table>
 ${l.scheda.map(([k, v]) => `    <tr><td>${k}</td><td>${v}</td></tr>`).join('\n')}
   </table></div>
   <article class="body">${l.corpo}

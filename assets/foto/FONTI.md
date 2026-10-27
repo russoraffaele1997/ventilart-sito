@@ -18,6 +18,9 @@ se possibile, le versioni ad alta risoluzione.
 
 | File | Dove è usata | Fonte |
 |---|---|---|
+| gres-laminam.jpg | Pagina "Gres porcellanato" | Laminam — Ospedale San Raffaele, https://www.laminam.com/wp-content/uploads/2023/08/ExternalFacade-SanRaffaeleHospital-Italy2.jpg (1920×1080) |
+| hero-fibrocemento-equitone.jpg | Anche pagina "Fibrocemento" | vedi riga sotto |
+| legno-deco.jpg | Anche pagina "WPC" | vedi riga sotto |
 | fibrocemento-equitone.jpg | Scheda "Fibrocemento" | Equitone (Etex) — https://www.equitone.com/siteassets/images/design/equitone-augsburg-city-house.jpg (solo 880×650 px) |
 | hero-fibrocemento-equitone.jpg | Foto in alto (scorrimento), fibrocemento | Equitone (Etex), angolo di edificio con pannelli e cielo — originale 6048 px: https://etex.azureedge.net/img_354304_global/original/-1657794111/_kam0014-2203 |
 | legno-deco.jpg | Scheda "Legno" | Dèco — frangisole Ultrashield, https://www.decodecking.it/wp-content/uploads/2019/04/carozzi_frangisole_ultrashield_4.jpg |
