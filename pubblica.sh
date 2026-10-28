@@ -15,3 +15,5 @@ rm -f pubblico/assets/foto/FONTI.md
 # i link alla home puntano a "/" invece che a d-moderno.html
 find pubblico -name '*.html' -exec sed -i 's#"\(\.\./\)\{0,1\}d-moderno\.html#"/#g' {} +
 sed -i "s#BASE + 'd-moderno.html\#contatti'#'/\#contatti'#" pubblico/chat/chat.js
+# le pagine del blog si aprono sia da /blog che da /blog/: i loro link relativi partono sempre da /blog/
+sed -i 's#<head>#<head>\n<base href="/blog/">#' pubblico/blog/*.html
