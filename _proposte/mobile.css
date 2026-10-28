@@ -1,0 +1,59 @@
+/* Telefono: impaginazione più compatta, caricata per ultima su tutte le pagine */
+@media (max-width:620px){
+  section{padding-top:56px}
+  .center{margin-bottom:28px}
+
+  /* foto iniziale della home */
+  .hero{height:calc(100vh - 96px);height:calc(100svh - 96px);min-height:500px;border-radius:22px}
+  .hero .txt{left:20px;right:20px;bottom:24px}
+  .hero h1{font-size:38px;margin:12px 0 10px}
+  .hero p{font-size:16px;margin-bottom:18px}
+  .hero .dots{display:none}
+  .hbtns .btn{flex:1 1 100%;justify-content:center}
+
+  /* vantaggi: due per riga */
+  .feats{grid-template-columns:1fr 1fr;gap:10px}
+  .feat{padding:16px}
+  .feat h3{font-size:15px;margin:10px 0 4px}
+  .feat p{font-size:13px;line-height:1.45}
+
+  /* home: niente logo grande, schede più basse */
+  .about .mark{display:none}
+  .work{height:280px;border-width:6px}
+  .work h3{font-size:26px}
+  .work .foot{left:18px;right:18px;bottom:18px}
+  .slider{min-height:260px;border-width:6px}
+  .panel,.contact .info,form.card{padding:22px}
+  .banner{min-height:0;padding:44px 20px}
+  .inline{flex-direction:column;border-radius:20px;padding:8px}
+  .inline input{padding:12px 14px}
+  .inline .btn{justify-content:center}
+  .faq{gap:20px}
+  footer{margin-top:64px;padding:40px 0 100px}
+
+  /* pagine interne */
+  .intro{margin:36px auto 28px}
+  .ahead{margin:28px auto 24px}
+  .ahead .lead{font-size:17px}
+  .cover{border-width:6px;border-radius:22px}
+  .cover img{border-radius:16px}
+  .wrap .cover.verticale{height:min(120vw,560px)}
+  .body{margin-top:32px}
+  .body h2{margin:36px 0 12px}
+  .box{padding:20px;margin:22px 0}
+  .scheda{margin-top:22px}
+  .scheda td{padding:10px 12px;font-size:14px}
+  .cta{margin-top:44px;padding:24px;gap:16px}
+  .cta h2{font-size:24px}
+  .cta .btn{justify-content:center}
+  .galleria,.progettazione,.correlati,.more{margin-top:40px}
+  .persona{padding:22px}
+  .motivi li,.strati li{padding:14px 16px;grid-template-columns:30px 1fr}
+  .post .im{height:200px}
+  .posts.progetti .post .im{height:300px}
+
+  /* assistente virtuale: solo l'icona, senza fumetto */
+  .vchat-btn{width:56px;min-width:56px;padding:0;justify-content:center}
+  .vchat-btn .lbl{display:none}
+  .vchat-hint{display:none}
+}

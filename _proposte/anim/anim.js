@@ -3,6 +3,7 @@
 (function () {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia && matchMedia('(max-width: 760px)').matches) return;
   document.documentElement.classList.add('anim');
 
   // elementi singoli

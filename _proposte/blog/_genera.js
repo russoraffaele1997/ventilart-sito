@@ -164,6 +164,7 @@ const head = (titolo, desc, base) => `<!doctype html>
 <link rel="stylesheet" href="blog.css">
 <link rel="stylesheet" href="../chat/chat.css">
 <link rel="stylesheet" href="../anim/anim.css">
+<link rel="stylesheet" href="../mobile.css">
 </head>
 <body>
 <div class="wrap">

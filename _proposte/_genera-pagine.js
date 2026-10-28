@@ -46,6 +46,7 @@ const head = (p) => `<!doctype html>
 <link rel="stylesheet" href="blog/blog.css">
 <link rel="stylesheet" href="chat/chat.css">
 <link rel="stylesheet" href="anim/anim.css">
+<link rel="stylesheet" href="mobile.css">
 ${[].concat(p.css || []).map((c) => `<link rel="stylesheet" href="${c}">`).join('\n')}
 ${p.og ? `<meta property="og:image" content="${p.og}">` : ''}
 </head>
