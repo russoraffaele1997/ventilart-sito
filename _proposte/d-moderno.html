@@ -142,6 +142,13 @@
   .contact .info dl{display:grid;gap:14px;font-size:15px}
   .contact .info dt{font-size:12px;color:#aab0b4}
   form.card{background:var(--card);border-radius:var(--r);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .trappola{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+  .esito{font-size:14px;line-height:1.45;min-height:0}
+  .esito:empty{display:none}
+  .esito.ok{color:#1f7a4d}
+  .esito.ko{color:#c4161c}
+  .nota-dati{font-size:12px;color:var(--mut)}
+  .banner .esito{margin-top:12px;background:#fff;border-radius:12px;padding:10px 14px;max-width:460px;margin-left:auto;margin-right:auto}
   form.card .full{grid-column:1/-1}
   form.card label{display:grid;gap:6px;font-size:13px;color:var(--mut)}
   form.card input,form.card select,form.card textarea{border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;color:var(--ink);background:var(--bg)}
@@ -343,7 +350,8 @@
         <img class="bmark" src="../assets/logo/ventilart-simbolo-bianco.svg" alt=""><span class="pill dark">Sopralluogo</span>
         <h2>Hai un intervento da valutare?</h2>
         <p>Lasciaci un recapito: ti contattiamo per fissare un sopralluogo tecnico.</p>
-        <form class="inline" onsubmit="return false"><input placeholder="Telefono o email"><button class="btn">Invia</button></form>
+        <form class="inline" data-richiesta="recapito"><input name="recapito" required maxlength="120" placeholder="Telefono o email" aria-label="Telefono o email"><input name="sito_web" tabindex="-1" autocomplete="off" aria-hidden="true" class="trappola"><button class="btn">Invia</button></form>
+        <p class="esito" data-esito role="status" aria-live="polite"></p>
       </div>
     </div>
   </section>
@@ -377,14 +385,17 @@
           <div><dt>Sede</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Padula+19+Casoria+NA" target="_blank" rel="noopener">Via Padula 19, 80026 Casoria (NA)</a></dd></div>
         </dl>
       </div>
-      <form class="card" onsubmit="return false">
-        <label>Nome e cognome<input></label>
-        <label>Telefono<input></label>
-        <label>Email<input type="email"></label>
-        <label>Comune del cantiere<input></label>
-        <label class="full">Lavorazione<select><option>Da valutare</option><option>Gres porcellanato</option><option>Fibrocemento</option><option>WPC</option><option>Alluminio composito</option></select></label>
-        <label class="full">Descrizione dell'intervento<textarea rows="4"></textarea></label>
+      <form class="card" data-richiesta="sopralluogo">
+        <label>Nome e cognome *<input name="nome" required minlength="2" maxlength="100" autocomplete="name"></label>
+        <label>Telefono<input name="telefono" type="tel" maxlength="40" autocomplete="tel"></label>
+        <label>Email<input name="email" type="email" maxlength="120" autocomplete="email"></label>
+        <label>Comune del cantiere<input name="comune" maxlength="100"></label>
+        <label class="full">Lavorazione<select name="lavorazione"><option>Da valutare</option><option>Gres porcellanato</option><option>Fibrocemento</option><option>WPC</option><option>Alluminio composito</option></select></label>
+        <label class="full">Descrizione dell'intervento<textarea name="descrizione" rows="4" maxlength="3000"></textarea></label>
+        <input name="sito_web" tabindex="-1" autocomplete="off" aria-hidden="true" class="trappola">
+        <p class="nota-dati full">Lascia almeno un telefono o un'email. I dati servono solo per ricontattarti su questa richiesta.</p>
         <button class="btn full" style="justify-content:center">Invia richiesta</button>
+        <p class="esito full" data-esito role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -440,5 +451,6 @@
 </script>
 <script src="anim/anim.js"></script>
 <script src="chat/chat.js" data-base=""></script>
+<script src="richiesta.js"></script>
 </body>
 </html>
