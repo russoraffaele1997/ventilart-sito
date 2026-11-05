@@ -13,11 +13,12 @@ const pagine = [
     voce: 'Contatti',
     titolo: 'Contatti',
     desc: 'Richiedi un sopralluogo o un’informazione a Ventilàrt.',
-    prossimamente: 'Orari, email e il modulo per richiedere un sopralluogo direttamente da questa pagina.',
+    prossimamente: 'Orari e il modulo per richiedere un sopralluogo direttamente da questa pagina.',
     extra: `
   <div class="recapiti">
-    <a class="rec" href="tel:+393318364042"><span class="ico">☎</span><b>Telefono</b><span>331 836 4042</span></a>
-    <a class="rec" href="https://wa.me/393318364042" target="_blank" rel="noopener"><span class="ico">✆</span><b>WhatsApp</b><span>Scrivici un messaggio</span></a>
+    <a class="rec" href="tel:+393793016458"><span class="ico">☎</span><b>Telefono</b><span>379 301 6458</span></a>
+    <a class="rec" href="mailto:ventilart@ventilart.it"><span class="ico">✉</span><b>Email</b><span>ventilart@ventilart.it</span></a>
+    <a class="rec" href="https://wa.me/393793016458" target="_blank" rel="noopener"><span class="ico">✆</span><b>WhatsApp</b><span>Scrivici un messaggio</span></a>
     <a class="rec" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Padula+19+Casoria+NA" target="_blank" rel="noopener"><span class="ico">⌖</span><b>Sede</b><span>Via Padula 19, 80026 Casoria (NA)</span></a>
   </div>
 `,
@@ -64,7 +65,7 @@ ${p.og ? `<meta property="og:image" content="${p.og}">` : ''}
 const foot = `
 <footer>
   <div class="wrap">
-    <div><img src="${A}/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><p>Progettazione e posa di facciate ventilate.</p><p style="margin-top:14px">Via Padula 19, 80026 Casoria (NA)<br>Tel. <a href="tel:+393318364042">331 836 4042</a></p><p style="margin-top:14px">© Ventilàrt · P.IVA [da inserire]</p></div>
+    <div><img src="${A}/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><p>Progettazione e posa di facciate ventilate.</p><p style="margin-top:14px">Via Padula 19, 80026 Casoria (NA)<br>Tel. <a href="tel:+393793016458">379 301 6458</a><br>Email <a href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a></p><p style="margin-top:14px">© Ventilàrt · P.IVA [da inserire]</p></div>
     <div><h4>Sito</h4><ul>${MENU.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join('')}</ul></div>
     <div><h4>Informazioni</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Cookie</a></li></ul></div>
   </div>
@@ -78,9 +79,9 @@ ${MENU.map(([t, h]) => `    <a href="${h}">${t}</a>`).join('\n')}
   </nav>
   <div class="df">
     <b>Contatti</b>
-    <span>Tel. <a href="tel:+393318364042">331 836 4042</a></span>
+    <span>Tel. <a href="tel:+393793016458">379 301 6458</a></span>
     <span>Via Padula 19, 80026 Casoria (NA)</span>
-    <span>[email da inserire]</span>
+    <span><a href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a></span>
     <a class="btn" href="d-moderno.html#contatti">Richiedi un sopralluogo</a>
   </div>
 </aside>

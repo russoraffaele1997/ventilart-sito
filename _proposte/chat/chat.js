@@ -27,9 +27,9 @@
 
   // ======================= CONTATTI =======================
   var C = {
-    tel: '331 836 4042',
-    telLink: 'tel:+393318364042',
-    wa: '393318364042',
+    tel: '379 301 6458',
+    telLink: 'tel:+393793016458',
+    wa: '393793016458',
     sede: 'Via Padula 19, 80026 Casoria (NA)',
     mappa: 'https://www.google.com/maps/search/?api=1&query=Via+Padula+19+Casoria+NA',
   };
