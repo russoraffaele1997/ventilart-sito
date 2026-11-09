@@ -5,7 +5,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:17px/1.75 'Manrope',sans-serif;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font:17px/1.75 'Jost',sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{display:block;width:100%;height:100%;object-fit:cover}
 .wrap{max-width:1440px;margin:0 auto;padding:0 24px}
@@ -121,12 +121,12 @@ footer img{height:52px;width:auto;margin-bottom:18px}
   .layers li{grid-template-columns:34px 1fr}
 }
 
-/* menu definitivo: antracite e rosso, carattere Barlow Condensed */
+/* menu definitivo: antracite e rosso, carattere Jost */
 .veil{background:rgba(10,12,13,.6);backdrop-filter:none}
 .drawer{top:0;right:0;bottom:0;border-radius:0;width:min(390px,100vw);padding:28px 32px 32px;background:url(../../assets/logo/ventilart-v-filigrana-chiara.svg) no-repeat right -40px bottom -60px/78% auto,linear-gradient(180deg,#2b3135 0%,#16191b 100%);border-left:4px solid #E31E2B;transition:transform .55s cubic-bezier(.77,0,.18,1)}
-.drawer nav a{font-family:'Barlow Condensed','Manrope',sans-serif;font-weight:600;text-transform:uppercase;font-size:32px;letter-spacing:.03em;line-height:1;padding:11px 0;border-color:rgba(255,255,255,.07);position:relative;z-index:0;opacity:1;transform:none;clip-path:inset(0 0 100% 0);transition:clip-path .6s cubic-bezier(.77,0,.18,1),color .25s,padding .3s}
+.drawer nav a{font-family:'Jost',sans-serif;font-weight:500;text-transform:uppercase;font-size:28px;letter-spacing:.03em;line-height:1;padding:11px 0;border-color:rgba(255,255,255,.07);position:relative;z-index:0;opacity:1;transform:none;clip-path:inset(0 0 100% 0);transition:clip-path .6s cubic-bezier(.77,0,.18,1),color .25s,padding .3s}
 body.menu-open .drawer nav a{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
-.drawer nav a small{font-family:'Manrope',sans-serif;font-weight:600;font-size:13px;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.5)}
+.drawer nav a small{font-family:'Jost',sans-serif;font-weight:600;font-size:13px;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.5)}
 .drawer nav a::before{content:"";position:absolute;inset:0;background:#E31E2B;transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.77,0,.18,1);z-index:-1}
 .drawer nav a:hover{color:#fff;padding-left:14px}
 .drawer nav a:hover::before{transform:scaleX(1)}
