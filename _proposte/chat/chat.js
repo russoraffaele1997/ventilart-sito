@@ -426,7 +426,7 @@
 
   // ---- flusso guidato ----
   function avviaFlusso() {
-    S.flusso = 0; S.dati = {};
+    S.flusso = 0; S.dati = {}; S.pronta = null; S.avviato = Date.now();
     return { testi: [domandaPasso(0)], pulsanti: (PASSI[0].scelte || []).concat(['Annulla']) };
   }
   function domandaPasso(i) { var d = PASSI[i].domanda; return typeof d === 'function' ? d(S.dati) : d; }
@@ -447,6 +447,7 @@
   }
   function riepilogo() {
     var d = S.dati;
+    S.pronta = { dati: d, wa: null };
     var righe = [
       'Richiesta di sopralluogo — sito Ventilàrt',
       'Nome: ' + d.nome,
@@ -457,13 +458,13 @@
       'Materiale: ' + d.materiale,
       'Telefono: ' + d.telefono,
     ];
-    var wa = 'https://wa.me/' + C.wa + '?text=' + encodeURIComponent(righe.join('\n')).replace(/[()*]/g, function (c) { return '%' + c.charCodeAt(0).toString(16).toUpperCase(); });
+    var wa = S.pronta.wa = 'https://wa.me/' + C.wa + '?text=' + encodeURIComponent(righe.join('\n')).replace(/[()*]/g, function (c) { return '%' + c.charCodeAt(0).toString(16).toUpperCase(); });
     return {
       testi: [
         'Grazie ' + d.nome.split(' ')[0] + ', ecco il riepilogo:\n• **Comune**: ' + d.comune + '\n• **Edificio**: ' + d.edificio + '\n• **Intervento**: ' + d.intervento + '\n• **Superficie**: ' + d.superficie + '\n• **Materiale**: ' + d.materiale + '\n• **Telefono**: ' + d.telefono,
-        'Per inviarla tocca **[Invia la richiesta su WhatsApp](' + wa + ')**: si apre WhatsApp con il messaggio già scritto, devi solo premere invio.\nPreferisci parlarci subito? Chiama il [' + C.tel + '](' + C.telLink + ').\nI dati non vengono salvati sul sito: li invii tu.',
+        'Se è tutto giusto tocca **Invia la richiesta**: ci arriva subito per email e ti richiamiamo noi.\nPreferisci WhatsApp? [Inviala su WhatsApp](' + wa + '). Oppure chiamaci al [' + C.tel + '](' + C.telLink + ').',
       ],
-      pulsanti: ['Ricomincia la richiesta', 'Ho un’altra domanda'],
+      pulsanti: ['Invia la richiesta', 'Ricomincia la richiesta', 'Ho un’altra domanda'],
     };
   }
 
@@ -522,8 +523,36 @@
       setTimeout(function () { dots.remove(); msg(t, 'bot'); setTimeout(prossimo, 250); }, attesa);
     })();
   }
+  // Invio della richiesta di sopralluogo per email: passa dal gestionale, come i moduli della home.
+  var MATERIALI_EMAIL = ['Gres porcellanato', 'Fibrocemento', 'WPC', 'Alluminio composito'];
+  function inviaRichiesta() {
+    var p = S.pronta, d = p.dati, risposta = null;
+    var corpo = {
+      tipo: 'sopralluogo', _t: S.avviato || 0, nome: d.nome, telefono: d.telefono, comune: d.comune,
+      lavorazione: MATERIALI_EMAIL.indexOf(d.materiale) > -1 ? d.materiale : 'Da valutare',
+      descrizione: 'Richiesta arrivata dall’assistente virtuale del sito.\nEdificio: ' + d.edificio + '\nIntervento: ' + d.intervento +
+        '\nSuperficie indicativa: ' + d.superficie + '\nMateriale: ' + d.materiale,
+    };
+    function mostraEsito() {
+      if (risposta.ok) {
+        S.pronta = null; salva();
+        scrivi(['Fatto, ' + d.nome.split(' ')[0] + '! La tua richiesta ci è arrivata: ti richiamiamo al ' + d.telefono + ' il prima possibile.'], ['Ho un’altra domanda']);
+      } else {
+        scrivi([(risposta.errore || 'Non sono riuscito a inviare la richiesta.') + '\nPuoi [inviarla su WhatsApp](' + p.wa + ') oppure chiamarci al [' + C.tel + '](' + C.telLink + ').'],
+          ['Invia la richiesta', 'Ricomincia la richiesta']);
+      }
+    }
+    var scritto = false;
+    scrivi(['Invio la richiesta…'], [], function () { scritto = true; if (risposta) mostraEsito(); });
+    fetch('https://gestionale.ventilart.it/api/richiesta-sito', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok && !!j.ok, errore: j.errore }; }); })
+      .catch(function () { return { ok: false, errore: 'Non riesco a collegarmi: controlla la connessione.' }; })
+      .then(function (x) { risposta = x; if (scritto) mostraEsito(); });
+  }
+
   function invia(testo) {
     if (occupato) return;
+    if (S.pronta && /^ ?invia la richiesta ?$/.test(norm(testo))) { msg(testo, 'me'); salva(); inviaRichiesta(); return; }
     msg(testo, 'me');
     var r = rispondi(testo); salva();
     scrivi(r.testi, r.pulsanti);
