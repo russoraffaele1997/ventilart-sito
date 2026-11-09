@@ -9,6 +9,7 @@ Foto provvisorie, da sostituire con foto dei cantieri Ventilàrt quando ci saran
 | hero-legno.jpg | Foto in alto (scorrimento), legno | Foto di Raffaele Russo (sua, nessun permesso da chiedere) |
 | progetti/barbuti-san-leucio-*.jpg (4 foto) | Progetto "Le Sete di San Leucio" (Barbuti S.p.A.) | Foto di cantiere Ventilàrt, inviate da Raffaele Russo il 26/10/2026. Ridotte per il web, dati GPS/EXIF tolti, targa dell'auto sfocata. Si vedono i volti della squadra: serve il consenso delle persone ritratte. |
 | progetti/san-rocco-casoria-*.jpg (7 immagini) | Progetto "Residenze in via San Rocco" (Casoria, per CRG) | Inviate da Raffaele Russo il 26/10/2026: 4 foto di cantiere Ventilàrt, 2 render e 1 tavola dei prospetti del progetto architettonico. Ridotte per il web. Render e prospetti sono di Raffaele Russo (confermato il 26/10/2026): nessun permesso esterno necessario. Lavoro in fase di completamento. |
+| fibrocemento-doghe.jpg | Scheda "Fibrocemento" in home e foto in alto della pagina "Fibrocemento" | Inviata da Raffaele Russo il 09/11/2026. Fonte da confermare: se è di un produttore, serve il permesso. |
 | progetti/don-milani-parete-*.jpg (4 foto) | Progetto "Scuola Don Milani" (Parete, CE, per Costruzioni Vitale S.r.l.) | Foto di cantiere Ventilàrt, inviate da Raffaele Russo il 26/10/2026. Convertite in JPG, dati EXIF tolti. Si vedono i volti della squadra: serve il consenso delle persone ritratte. |
 
 ## Foto dei produttori — chiedere il permesso PRIMA di mettere il sito online

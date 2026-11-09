@@ -453,9 +453,9 @@ const LAVORAZIONI = [
     file: 'lavorazione-fibrocemento.html',
     titolo: 'Fibrocemento',
     lead: 'Pannelli a base di cemento, fibre e additivi, colorati in massa: superficie opaca e materica, per facciate dal linguaggio sobrio e architettonico.',
-    foto: 'hero-fibrocemento-equitone.jpg',
-    fotoAlt: 'Facciata ventilata in pannelli di fibrocemento Equitone',
-    credito: 'Equitone',
+    foto: 'fibrocemento-doghe.jpg',
+    fotoAlt: 'Facciata ventilata in lastre di fibrocemento rigate, angolo di edificio',
+    credito: null,
     scheda: [
       ['Marchio', 'Equitone'],
       ['Spessore', '8–10 mm'],
