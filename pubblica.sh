@@ -5,6 +5,20 @@
 set -e
 rm -rf pubblico
 mkdir pubblico
+
+# MODALITÀ MANUTENZIONE: se esiste il file MANUTENZIONE-ATTIVA, online va solo la pagina
+# "Stiamo rinnovando il sito" (anche al posto di ogni altro indirizzo).
+# Per rimettere online il sito completo basta cancellare il file MANUTENZIONE-ATTIVA.
+if [ -f MANUTENZIONE-ATTIVA ]; then
+  mkdir pubblico/assets
+  cp -r assets/logo pubblico/assets/logo
+  cp -r assets/firma pubblico/assets/firma   # logo delle firme email: deve restare online
+  cp online/favicon.svg online/v.svg pubblico/
+  cp manutenzione/index.html pubblico/index.html
+  cp manutenzione/index.html pubblico/404.html
+  exit 0
+fi
+
 cp -r _proposte/. pubblico/
 cp -r assets pubblico/assets
 cp online/favicon.svg online/v.svg pubblico/
