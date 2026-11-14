@@ -260,7 +260,7 @@
   try { if (sessionStorage.getItem('vt-intro') && !/[?&]intro/.test(location.search)) document.documentElement.classList.add('senza-intro'); } catch (e) {}
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('senza-intro');
 </script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="../assets/js/gsap.min.js"></script>
 <style>
   #preloader{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;pointer-events:auto}
   #preloader .pl-fondo{position:absolute;inset:0;background:#F4F4F2}
