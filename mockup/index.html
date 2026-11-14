@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ventilàrt — Mockup nuovo sito</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nero:#141719; --antracite:#30363B; --bianco:#fff; --carta:#f4f2ee;
+    --pietra:#d8d0c3; --salvia:#b9c4b5; --ardesia:#5d7280; --rosso:#d7202b;
+    --tenue:rgba(20,23,25,.62); --linea:rgba(20,23,25,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bianco);color:var(--nero);font:17px/1.65 'Jost',sans-serif;-webkit-font-smoothing:antialiased}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1360px;margin:0 auto;padding:0 40px}
+  .occhiello{font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--tenue)}
+  .maiuscolo{font-weight:400;text-transform:uppercase;letter-spacing:-.01em;line-height:.98}
+  h2.maiuscolo{font-size:clamp(40px,6.4vw,92px)}
+  .sottile{font-weight:300;letter-spacing:-.02em;line-height:1.08}
+  .bottone{display:inline-flex;align-items:center;gap:10px;background:var(--nero);color:#fff;padding:14px 26px;border-radius:99px;font-size:15px;font-weight:500}
+  .bottone.chiaro{background:#fff;color:var(--nero)}
+  .bottone.rosso{background:var(--rosso)}
+
+  /* barra in alto + menu */
+  .striscia{background:var(--carta);text-align:center;font-size:14px;padding:9px 16px}
+  .striscia a{text-decoration:underline;text-underline-offset:3px;font-weight:500}
+  header{position:sticky;top:0;z-index:20;background:var(--nero);color:#fff}
+  header .wrap{display:flex;align-items:center;gap:32px;height:68px}
+  header .logo{height:30px;width:auto}
+  header nav{display:flex;gap:26px;font-size:14px;margin-left:auto}
+  header nav a{opacity:.85}
+  header nav a:hover{opacity:1}
+  header .bottone{padding:10px 18px;font-size:14px}
+
+  /* hero */
+  .hero{position:relative;height:calc(100vh - 106px);min-height:560px;overflow:hidden;background:#e9e1d4}
+  .hero > img{position:absolute;inset:0;object-position:center center}
+  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 40% 55% at 82% 50%,rgba(244,240,233,.6),rgba(244,240,233,0) 100%)}
+  .hero .centro{position:absolute;top:0;bottom:0;left:66%;right:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px}
+  .hero .centro{--lw:clamp(200px,18vw,280px)}
+  .hero .marchio{width:var(--lw);height:auto;object-fit:contain}
+  .hero .slogan{margin-top:14px;font-size:calc(var(--lw) / 22.2);font-weight:400;letter-spacing:.16em;margin-right:-.16em;text-transform:uppercase;color:#3A3F45;white-space:nowrap}
+  .hero .scorri{position:absolute;left:83%;bottom:26px;z-index:1;transform:translateX(-50%);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--tenue)}
+  .hero .scorri::after{content:"";display:block;width:1px;height:34px;background:var(--tenue);margin:10px auto 0}
+
+  /* intro */
+  .intro{padding:120px 0 90px}
+  .intro .griglia{display:block;max-width:860px}
+  .intro h2{margin-top:18px}
+  .intro p.sotto{margin-top:22px;color:inherit;font-size:22px;line-height:1.5;max-width:760px}
+  .intro p{font-size:19px;color:var(--tenue);max-width:560px}
+
+  /* mosaico a blocchi */
+  .mosaico{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:380px 380px}
+  .mosaico > div{position:relative;padding:44px;overflow:hidden}
+  .mosaico .grande{grid-row:span 2;background:var(--nero);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+  .mosaico .grande h3{font-size:clamp(48px,5.4vw,84px);font-weight:300;line-height:.98;letter-spacing:-.03em}
+  .mosaico .grande p{color:rgba(255,255,255,.7);max-width:420px}
+  .mosaico h4{font-size:32px;font-weight:400;line-height:1.1;margin-bottom:14px}
+  .mosaico p{font-size:16px}
+  .mosaico .ardesia{background:var(--ardesia);color:#fff}
+  .mosaico .ardesia p{color:rgba(255,255,255,.82)}
+  .mosaico .pietra{background:var(--pietra)}
+  .mosaico .foto{padding:0}
+  
+
+  /* stratigrafia */
+  .strati{padding:130px 0;background:var(--carta)}
+  .strati .griglia{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center;margin-top:56px}
+  .strati svg{width:100%;height:auto}
+  .strati ol{list-style:none;counter-reset:s}
+  .strati li{counter-increment:s;display:grid;grid-template-columns:52px 1fr;padding:18px 0;border-top:1px solid var(--linea)}
+  .strati li::before{content:counter(s,decimal-leading-zero);font-size:14px;font-weight:600;color:var(--rosso);padding-top:4px}
+  .strati li b{display:block;font-weight:500;font-size:19px}
+  .strati li span{color:var(--tenue);font-size:15px}
+
+  /* stagioni */
+  .stagioni{display:grid;grid-template-columns:1fr 1fr}
+  .stagioni > div{padding:90px 60px;min-height:440px;display:flex;flex-direction:column;justify-content:flex-start}
+  .stagioni .icona{width:56px;height:56px;margin-bottom:28px;display:block}
+  .stagioni .estate .icona{color:#c8862a}
+  .stagioni .inverno .icona{color:#9ec3dc}
+  .stagioni .estate{background:var(--pietra)}
+  .stagioni .inverno{background:var(--antracite);color:#fff}
+  .stagioni .inverno p{color:rgba(255,255,255,.78)}
+  .stagioni h3{font-size:clamp(30px,3.2vw,48px);font-weight:300;text-transform:uppercase;line-height:1.05;margin:14px 0 22px;white-space:nowrap}
+  @media (max-width:900px){.stagioni h3{white-space:normal}}
+  .stagioni p{max-width:480px}
+
+  /* fisarmonica vantaggi */
+  .vantaggi{padding:130px 0}
+  .vantaggi details{border-bottom:1px solid var(--linea)}
+  .vantaggi details:first-of-type{border-top:1px solid var(--linea);margin-top:48px}
+  .vantaggi summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 0;font-size:clamp(32px,4.8vw,72px);text-transform:uppercase;line-height:1;letter-spacing:-.01em}
+  .vantaggi summary::-webkit-details-marker{display:none}
+  .vantaggi summary::after{content:"+";font-weight:300;font-size:.7em;transition:transform .25s}
+  .vantaggi details[open] summary::after{transform:rotate(45deg)}
+  .vantaggi details p{max-width:720px;color:var(--tenue);font-size:18px;padding:0 0 30px}
+
+  /* sistemi */
+  .sistemi{padding:120px 0;background:var(--nero);color:#fff}
+  .sistemi .testa{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:46px}
+  .sistemi .occhiello{color:rgba(255,255,255,.6)}
+  .sistemi h2{font-size:clamp(36px,4.6vw,64px);font-weight:300;letter-spacing:-.02em;line-height:1.05;margin-top:14px}
+  .sistemi .frecce{display:flex;gap:14px;font-size:28px;opacity:.8}
+  .carosello{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 72px)/4);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+  .carosello article{scroll-snap-align:start}
+  .carosello .im{aspect-ratio:3/4;overflow:hidden;border-radius:2px;margin-bottom:18px}
+  .carosello .im img{transition:transform .6s}
+  .carosello article:hover img{transform:scale(1.04)}
+  .carosello h3{font-size:26px;font-weight:400}
+  .carosello p{color:rgba(255,255,255,.68);font-size:15px;margin-top:6px}
+  .carosello .scopri{display:inline-block;margin-top:14px;font-size:14px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:2px}
+
+  /* metodo: fasi in orizzontale */
+  .metodo{padding:130px 0;background:var(--salvia)}
+  .metodo h2{font-size:clamp(36px,4.6vw,64px);font-weight:300;letter-spacing:-.02em;margin:14px 0 50px}
+  .fasi{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+  .fasi div{background:rgba(255,255,255,.55);padding:22px 18px;min-height:190px;border-radius:2px}
+  .fasi b{display:block;font-size:13px;color:var(--rosso);letter-spacing:.12em;margin-bottom:10px}
+  .fasi h4{font-weight:500;font-size:18px;line-height:1.2;margin-bottom:8px}
+  .fasi p{font-size:14px;color:var(--tenue);line-height:1.5}
+  .barra{position:relative;height:6px;background:rgba(255,255,255,.6);margin-top:26px;border-radius:9px}
+  .barra i{position:absolute;left:0;top:0;bottom:0;width:100%;background:linear-gradient(90deg,var(--antracite),var(--rosso));border-radius:9px}
+  .barra-et{display:flex;justify-content:space-between;font-size:13px;margin-top:8px;color:var(--tenue)}
+
+  /* didascalia dei nostri cantieri */
+  .cant{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 14px;background:linear-gradient(transparent,rgba(0,0,0,.55));color:#fff;font-size:12px;letter-spacing:.06em;line-height:1.3}
+  .cant b{font-weight:500}
+  .carosello .im,.chi .foto{position:relative}
+  .cantieri-foto{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+  .cantieri-foto figure{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;border-radius:2px}
+  .cantieri-foto figcaption{position:absolute;left:0;right:0;bottom:0}
+  .dettagli{padding:130px 0}
+  .dettagli .griglia{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:50px}
+  .dettagli .cella{background:#fff;padding:30px 26px;min-height:230px}
+  .dettagli svg{width:56px;height:56px;margin-bottom:22px}
+  .dettagli h4{font-size:20px;font-weight:500;margin-bottom:8px}
+  .dettagli p{font-size:15px;color:var(--tenue)}
+
+  /* progetti */
+  .progetti{padding:0 0 130px}
+  .progetti .testa{display:flex;justify-content:space-between;align-items:end;margin-bottom:40px}
+  .progetti h2{font-size:clamp(36px,4.6vw,64px);font-weight:300;letter-spacing:-.02em;margin-top:14px}
+  .lavori{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:320px 320px;gap:16px}
+  .lavori a{position:relative;overflow:hidden;color:#fff}
+  .lavori a:first-child{grid-row:span 2}
+  .lavori a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.65))}
+  .lavori .t{position:absolute;left:26px;right:26px;bottom:22px;z-index:1}
+  .lavori .t small{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+  .lavori .t h3{font-size:30px;font-weight:400;line-height:1.1;margin-top:4px}
+  .lavori .stato{position:absolute;top:18px;left:18px;z-index:1;background:var(--rosso);font-size:12px;font-weight:500;padding:4px 10px;border-radius:99px}
+
+  /* chi siamo */
+  .chi{display:grid;grid-template-columns:1fr 1fr;min-height:620px}
+  .chi .foto img{filter:grayscale(.15)}
+  .chi .testo{background:var(--carta);padding:100px 70px;display:flex;flex-direction:column;justify-content:center}
+  .chi h2{font-size:clamp(36px,4.2vw,58px);font-weight:300;letter-spacing:-.02em;line-height:1.05;margin:14px 0 24px}
+  .chi p{color:var(--tenue);margin-bottom:16px;max-width:540px}
+  .punti{display:grid;grid-template-columns:1fr 1fr;gap:18px 30px;margin-top:22px}
+  .punti div{border-top:2px solid var(--nero);padding-top:12px;font-weight:500}
+  .punti small{display:block;font-weight:400;color:var(--tenue);font-size:14px}
+  .partner{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:36px;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue)}
+
+  /* chiusura */
+  .cta{background:var(--rosso);color:#fff;padding:110px 0}
+  .cta .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:50px;align-items:end}
+  .cta h2{font-size:clamp(44px,6vw,88px);font-weight:400;text-transform:uppercase;line-height:.95;letter-spacing:-.02em}
+  .cta p{font-size:19px;opacity:.9;margin-bottom:26px}
+  footer{background:var(--nero);color:rgba(255,255,255,.7);padding:70px 0 40px;font-size:15px}
+  footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  footer img{height:34px;width:auto;margin-bottom:18px}
+  footer h5{color:#fff;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-bottom:14px}
+  footer li{list-style:none;margin-bottom:6px}
+  footer .fondo{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:22px;font-size:13px;display:flex;justify-content:space-between}
+  .da-fare{background:#fff3b0;color:#5a4a00;padding:0 6px;border-radius:4px}
+
+  /* menu a tendina Sistemi */
+  .tendina{position:relative}
+  .tendina > button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;opacity:.85}
+  .tendina > button:hover,.tendina.aperta > button{opacity:1}
+  .tendina > button svg{width:10px;height:10px;transition:transform .2s}
+  .tendina.aperta > button svg{transform:rotate(180deg)}
+  .pannello{position:absolute;top:calc(100% + 24px);left:50%;width:560px;transform:translate(-50%,-6px);background:#fff;color:var(--nero);padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:6px;box-shadow:0 24px 60px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s}
+  .pannello::before{content:"";position:absolute;left:0;right:0;top:-24px;height:24px}
+  .tendina.aperta .pannello{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  .pannello a{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center;padding:10px;opacity:1;border-radius:2px;transition:background .15s}
+  .pannello a:hover,.pannello a[aria-current]{background:var(--carta)}
+  .pannello img{width:64px;height:64px;object-fit:cover}
+  .pannello b{display:block;font-weight:500;font-size:15px;line-height:1.2}
+  .pannello small{display:block;font-size:13px;color:var(--tenue);line-height:1.35;margin-top:3px}
+
+  /* telefono */
+  @media (max-width:900px){
+    .wrap{padding:0 20px}
+    header nav{display:none}
+    header .bottone{margin-left:auto}
+    .intro .griglia,.strati .griglia,.chi,.cta .wrap,.stagioni{grid-template-columns:1fr}
+    .intro{padding:80px 0 60px}.intro .griglia{gap:24px}
+    .mosaico{grid-template-columns:1fr;grid-template-rows:auto}
+    .mosaico > div{min-height:300px;padding:32px 24px}
+    .mosaico .grande{grid-row:auto;min-height:420px}
+    .stagioni > div{padding:60px 24px;min-height:360px}
+    .carosello{grid-auto-columns:78%}
+    .fasi{grid-template-columns:1fr 1fr}
+    .cantieri-foto{grid-template-columns:1fr}
+    .dettagli .griglia{grid-template-columns:1fr 1fr}
+    .lavori{grid-template-columns:1fr;grid-template-rows:380px 260px 260px}
+    .lavori a:first-child{grid-row:auto}
+    .chi .foto{height:360px}
+    .chi .testo{padding:60px 24px}
+    footer .wrap{grid-template-columns:1fr 1fr}
+    .hero .centro{--lw:250px}
+    /* telefono: sopra la foto con persona e mano, sotto logo e slogan su fondo pietra */
+    .hero{height:auto;min-height:0;display:flex;flex-direction:column;background:var(--pietra)}
+    .hero > img{position:static;height:50vh;object-position:40% center}
+    .hero::after{display:none}
+    .hero .centro{position:static;padding:44px 24px 40px}
+    .hero .scorri{display:none}
+    .strati,.vantaggi,.sistemi,.metodo,.dettagli,.cta{padding:80px 0}
+    .progetti{padding-bottom:80px}
+  }
+
+  /* menu a tre linee (telefono) */
+  .burger{all:unset;display:none;cursor:pointer;width:44px;height:44px;margin-right:-10px;position:relative}
+  .burger span,.burger span::before,.burger span::after{position:absolute;left:11px;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .2s}
+  .burger span{top:21px}
+  .burger span::before,.burger span::after{content:"";left:0}
+  .burger span::before{top:-7px}
+  .burger span::after{top:7px}
+  .menu-tel{position:fixed;inset:0;z-index:50;background:var(--nero);color:#fff;display:flex;flex-direction:column;padding:0 24px 32px;overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+  .menu-tel.aperto{opacity:1;visibility:visible}
+  .menu-tel .alto{display:flex;align-items:center;justify-content:space-between;height:68px;flex-shrink:0}
+  .menu-tel .alto img{height:28px;width:auto}
+  .menu-tel .chiudi{all:unset;cursor:pointer;width:44px;height:44px;margin-right:-10px;font-size:34px;line-height:44px;text-align:center;font-weight:300}
+  .menu-tel nav{display:flex;flex-direction:column;margin-top:18px}
+  .menu-tel nav > a,.menu-tel nav > button{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:28px;font-weight:300;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .menu-tel nav > button svg{width:16px;height:16px;transition:transform .2s}
+  .menu-tel nav > button[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .menu-tel .sotto{display:none;flex-direction:column;padding:8px 0 14px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .menu-tel .sotto.aperto{display:flex}
+  .menu-tel .sotto a{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;padding:8px 0;font-size:17px}
+  .menu-tel .sotto img{width:52px;height:52px;object-fit:cover}
+  .menu-tel .sotto a[aria-current]{color:#fff;font-weight:500}
+  .menu-tel .contatti{margin-top:auto;padding-top:34px;display:flex;flex-direction:column;gap:6px;font-size:15px;color:rgba(255,255,255,.7)}
+  .menu-tel .contatti .bottone{margin-top:16px;justify-content:center}
+  body.menu-aperto{overflow:hidden}
+  @media (max-width:900px){ .burger{display:block} }
+</style>
+<!-- PRELOADER (testa) -->
+<script>
+  // il preloader si vede una volta per visita; con ?intro nell'indirizzo si rivede sempre
+  try { if (sessionStorage.getItem('vt-intro') && !/[?&]intro/.test(location.search)) document.documentElement.classList.add('senza-intro'); } catch (e) {}
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('senza-intro');
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style>
+  #preloader{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;pointer-events:auto}
+  #preloader .pl-fondo{position:absolute;inset:0;background:#F4F4F2}
+  #preloader .pl-logo{position:relative;width:min(300px,58vw);aspect-ratio:1600 / 1312;perspective:1400px;transform-origin:50% 50%}
+  #preloader .pl-logo svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;backface-visibility:hidden}
+  #preloader .pl-pz,#preloader .pl-scritta{opacity:0}
+  html.senza-intro #preloader{display:none}
+  html.intro-in-corso{overflow:hidden}
+  html.intro-in-corso .hero .marchio{visibility:hidden}
+</style>
+<!-- /PRELOADER (testa) -->
+</head>
+<body>
+<!-- PRELOADER: una facciata che prende forma -->
+<div id="preloader" aria-hidden="true">
+  <div class="pl-fondo"></div>
+  <div class="pl-logo">
+    <svg class="pl-pz grigio" viewBox="2 -1 1600 1312" style="transform-origin:30.44% 62.63%" data-x="-1.2" data-y="0.15" data-ry="60" data-z="-200" aria-hidden="true"><path fill="#3A3F45" fill-rule="evenodd" d="M347.33 969.17C347.15 968.98 347.00 902.30 347.00 820.99L347.00 673.14 L406.38 672.82C439.03 672.64 502.43 672.36 547.26 672.18L628.76 671.86 L629.39 672.61L630.01 673.36 L630.53 706.31L631.05 739.25 L630.90 854.25L630.75 969.25 L489.21 969.38C411.36 969.45 347.52 969.35 347.33 969.17ZM374.35 705.44C377.49 704.17 378.00 703.76 378.98 701.68C380.26 698.95 380.26 697.85 378.95 695.15L377.90 692.98 L375.74 691.49L373.57 690.00 L371.85 690.00L370.13 690.00 L368.69 691.12C365.60 693.51 364.04 696.05 364.02 698.72L364.00 700.69 L365.12 702.33L366.25 703.98 L368.50 704.95C371.15 706.09 372.45 706.20 374.35 705.44Z"/></svg>
+    <svg class="pl-pz grigio" viewBox="2 -1 1600 1312" style="transform-origin:44.63% 63.15%" data-y="1" data-rx="-55" data-z="-200" aria-hidden="true"><path fill="#3A3F45" fill-rule="evenodd" d="M643.69 968.79C643.28 967.71 643.89 689.00 644.31 686.35C644.48 685.31 644.80 684.52 645.02 684.60C645.24 684.68 646.48 686.77 647.77 689.25C662.39 717.24 740.71 872.95 771.87 936.00C789.00 970.65 787.92 968.13 785.88 968.69C785.26 968.87 753.09 969.15 714.39 969.33L644.03 969.66 L643.69 968.79Z"/></svg>
+    <svg class="pl-pz grigio" viewBox="2 -1 1600 1312" style="transform-origin:56.18% 63.64%" data-x="0.25" data-y="1" data-rx="-55" data-z="-200" aria-hidden="true"><path fill="#3A3F45" fill-rule="evenodd" d="M831.31 969.09C831.05 968.67 832.74 965.23 849.35 932.50C854.59 922.19 863.88 903.85 870.00 891.75C876.13 879.65 884.50 863.14 888.60 855.06C892.71 846.99 900.02 832.59 904.84 823.06C918.97 795.20 935.29 763.21 941.74 750.75C948.26 738.14 954.80 725.43 960.24 714.75C965.96 703.53 968.82 698.50 969.48 698.50C970.40 698.50 970.66 730.28 970.71 846.75L970.75 969.25 L901.16 969.38C862.88 969.45 831.45 969.32 831.31 969.09ZM983.26 674.51C982.89 673.91 983.35 673.00 984.03 673.00C984.64 673.00 984.64 674.35 984.03 674.73C983.78 674.89 983.43 674.79 983.26 674.51Z"/></svg>
+    <svg class="pl-pz grigio" viewBox="2 -1 1600 1312" style="transform-origin:30.44% 38.48%" data-x="-1.2" data-ry="60" data-z="-200" aria-hidden="true"><path fill="#3A3F45" fill-rule="evenodd" d="M347.12 504.44L347.25 348.25 L358.75 347.61L370.25 346.97 L423.63 347.13L477.00 347.29 L477.75 348.04C478.45 348.74 576.18 543.84 593.08 578.29C620.35 633.87 627.67 649.03 630.22 655.22L631.03 657.19 L630.10 658.12L629.18 659.05 L622.71 659.54L616.25 660.04 L481.62 660.34L347.00 660.63 L347.12 504.44ZM376.35 379.48C377.18 379.19 378.17 378.37 378.55 377.65L379.25 376.34 L379.25 372.70L379.25 369.07 L377.78 367.53L376.31 366.00 L373.65 366.00L370.98 366.00 L368.24 367.82C366.73 368.83 365.03 370.39 364.47 371.29L363.46 372.93 L364.18 374.65C365.83 378.62 371.91 381.03 376.35 379.48Z"/></svg>
+    <svg class="pl-pz grigio" viewBox="2 -1 1600 1312" style="transform-origin:50.34% 40.63%" data-z="700" data-rx="18" aria-hidden="true"><path fill="#3A3F45" fill-rule="evenodd" d="M804.89 705.12C801.70 698.59 796.91 688.75 794.25 683.25C791.58 677.75 787.87 670.10 786.00 666.25C784.13 662.40 780.98 655.88 779.00 651.75C777.01 647.62 773.70 640.76 771.63 636.50C769.57 632.24 766.47 625.83 764.74 622.25C763.02 618.67 759.87 612.15 757.74 607.75C750.34 592.45 744.25 579.81 738.36 567.50C736.85 564.34 733.93 558.26 731.87 554.00C726.62 543.10 722.59 534.72 719.24 527.75C717.66 524.45 714.96 518.83 713.25 515.25C711.53 511.68 709.11 506.61 707.86 504.00C706.62 501.39 703.98 495.88 702.00 491.75C700.02 487.62 697.50 482.34 696.39 480.00C692.70 472.19 690.14 466.80 687.24 460.75C684.20 454.39 681.08 447.81 678.01 441.25C675.06 434.96 666.79 417.80 658.24 400.25C646.94 377.03 646.28 375.54 644.43 368.75L643.75 366.25 L643.77 357.34L643.79 348.44 L644.43 348.04C645.90 347.13 666.94 347.00 814.53 347.00L969.81 347.00 L970.46 372.99L971.11 398.98 L901.32 538.62C818.98 703.34 812.07 717.00 811.07 717.00C810.86 717.00 808.08 711.66 804.89 705.12ZM948.05 379.99C951.00 379.17 954.00 375.85 954.00 373.41C954.00 367.39 944.28 364.19 939.97 368.78L938.75 370.08 L938.75 373.01L938.75 375.94 L940.49 377.74C941.99 379.29 943.96 380.30 945.75 380.45C946.02 380.48 947.06 380.27 948.05 379.99ZM673.22 379.42C673.91 379.11 674.58 378.49 674.69 378.05C675.41 375.35 675.52 374.07 675.21 371.63L674.87 368.91 L673.31 367.96L671.75 367.00 L668.61 367.00L665.46 367.00 L664.24 367.81C663.56 368.25 662.75 369.46 662.44 370.51L661.87 372.40 L662.21 374.63C662.62 377.42 663.43 378.54 665.57 379.32C667.74 380.10 671.61 380.16 673.22 379.42ZM983.19 368.94C983.36 368.08 983.50 367.01 983.51 366.56L983.51 365.75 L984.17 367.00L984.82 368.25 L984.33 369.38C984.06 369.99 983.62 370.50 983.36 370.50L982.88 370.50 L983.19 368.94Z"/></svg>
+    <svg class="pl-pz grigio" viewBox="2 -1 1600 1312" style="transform-origin:25.40% 16.09%" data-x="-1.2" data-y="-0.15" data-ry="60" data-z="-200" aria-hidden="true"><path fill="#3A3F45" fill-rule="evenodd" d="M347.05 210.06C347.13 141.00 347.38 84.50 347.60 84.50C347.83 84.50 356.59 101.77 367.07 122.88C377.55 143.98 396.59 182.29 409.38 208.00C440.61 270.79 457.69 305.54 467.81 326.86C469.02 329.40 470.00 331.93 470.00 332.48L470.00 333.48 L468.88 333.69C468.26 333.80 466.40 334.17 464.75 334.50L461.75 335.11 L404.33 335.37L346.91 335.62 L347.05 210.06Z"/></svg>
+    <svg class="pl-pz grigio" viewBox="2 -1 1600 1312" style="transform-origin:30.44% 12.82%" data-y="-1" data-rx="55" data-z="-200" aria-hidden="true"><path fill="#3A3F45" fill-rule="evenodd" d="M627.53 332.79C626.39 330.96 608.17 294.54 602.99 283.75C601.28 280.18 597.96 273.31 595.62 268.50C590.48 257.90 585.09 246.74 581.38 239.00C579.86 235.84 577.16 230.21 575.37 226.50C572.32 220.17 570.36 216.08 563.25 201.25C561.67 197.95 559.03 192.44 557.38 189.00C555.73 185.56 553.26 180.39 551.89 177.50C550.52 174.61 547.99 169.32 546.26 165.75C544.53 162.18 542.05 157.00 540.75 154.25C539.44 151.50 537.02 146.44 535.37 143.00C533.72 139.56 531.53 134.95 530.50 132.75C529.47 130.55 527.16 125.71 525.37 122.00C523.58 118.29 521.22 113.34 520.12 111.00C515.36 100.89 513.75 97.47 511.65 93.00C510.42 90.39 509.05 87.46 508.62 86.50C508.18 85.54 507.40 84.13 506.88 83.37L505.93 81.99 L427.09 82.00C383.73 82.00 347.97 82.00 347.62 82.00L347.00 82.00 L347.00 41.00L347.00 0.00 L489.00 0.00L631.00 0.00 L631.00 136.88C631.00 259.86 630.59 322.37 629.72 331.38C629.56 333.09 629.23 334.50 629.00 334.50C628.77 334.50 628.11 333.73 627.53 332.79ZM376.81 32.97C377.54 32.30 378.58 30.77 379.12 29.57L380.10 27.38 L379.49 25.23C379.16 24.04 378.41 22.63 377.82 22.08C376.07 20.47 373.07 19.00 371.53 19.00L370.10 19.00 L367.65 21.68C366.31 23.15 364.91 25.27 364.53 26.40L363.86 28.44 L364.66 30.12C366.21 33.41 368.40 34.56 372.62 34.34L375.49 34.19 L376.81 32.97Z"/></svg>
+    <svg class="pl-pz grigio" viewBox="2 -1 1600 1312" style="transform-origin:50.32% 12.86%" data-y="-1" data-rx="55" data-z="-200" aria-hidden="true"><path fill="#3A3F45" fill-rule="evenodd" d="M643.66 179.63L643.97 23.75 L644.48 12.79C644.77 6.76 645.13 1.70 645.29 1.54C646.04 0.79 692.57 0.45 826.13 0.21L971.00 -0.05 L970.88 167.60L970.75 335.25 L807.05 335.38L643.36 335.50 L643.66 179.63ZM672.19 33.81C673.10 33.43 674.39 32.36 675.05 31.43L676.25 29.75 L676.25 27.45C676.25 24.44 675.33 22.83 672.34 20.63L669.89 18.83 L668.42 18.83L666.95 18.83 L664.53 21.22L662.10 23.62 L661.50 25.76C660.52 29.26 661.71 32.13 664.84 33.76C666.62 34.69 670.03 34.71 672.19 33.81ZM951.28 32.35C953.77 29.86 954.35 28.14 953.58 25.58L953.03 23.75 L950.64 21.38L948.24 19.02 L946.66 18.71L945.07 18.39 L942.58 20.72C938.34 24.69 937.51 27.81 939.80 31.18C941.36 33.47 943.41 34.45 946.69 34.48L949.13 34.50 L951.28 32.35Z"/></svg>
+    <svg class="pl-pz rosso" viewBox="2 -1 1600 1312" style="transform-origin:69.75% 62.69%" data-x="1.3" data-y="0.2" data-ry="-75" data-z="-260" aria-hidden="true"><path fill="#D81F28" fill-rule="evenodd" d="M985.35 969.14C984.85 969.02 984.23 968.36 983.97 967.68L983.50 966.43 L983.50 820.93L983.50 675.43 L984.02 674.47L984.54 673.50 L1117.92 673.50L1251.30 673.50 L1251.90 674.10L1252.50 674.70 L1252.50 821.31L1252.50 967.93 L1251.71 968.72L1250.92 969.51 L1118.58 969.44C1045.80 969.40 985.84 969.27 985.35 969.14ZM1232.62 704.38L1234.31 703.10 L1234.97 701.08L1235.64 699.07 L1234.78 696.91C1233.31 693.22 1232.04 691.61 1229.74 690.49L1227.51 689.42 L1225.88 689.77C1223.89 690.19 1223.24 690.70 1221.42 693.20L1220.00 695.15 L1220.00 698.01L1220.00 700.87 L1221.11 702.31C1223.38 705.26 1224.97 706.03 1228.34 705.83L1230.93 705.67 L1232.62 704.38Z"/></svg>
+    <svg class="pl-pz rosso" viewBox="2 -1 1600 1312" style="transform-origin:69.96% 38.44%" data-x="1.3" data-ry="-75" data-z="-260" aria-hidden="true"><path fill="#D81F28" fill-rule="evenodd" d="M999.75 659.52C995.35 659.37 991.47 659.07 991.12 658.85C990.42 658.39 990.28 656.69 990.92 656.30C991.15 656.15 992.97 652.71 994.95 648.64C996.94 644.58 998.75 640.91 998.99 640.50C999.23 640.09 1001.14 636.38 1003.25 632.25C1005.36 628.12 1007.28 624.41 1007.52 624.00C1007.75 623.59 1009.62 619.88 1011.67 615.75C1013.71 611.62 1017.20 604.76 1019.40 600.50C1024.30 591.04 1027.78 584.30 1034.50 571.25C1045.53 549.82 1048.40 544.22 1056.00 529.25C1060.33 520.73 1065.33 510.94 1067.12 507.50C1068.91 504.06 1070.71 500.57 1071.12 499.75C1071.53 498.93 1072.21 497.57 1072.63 496.75C1073.06 495.93 1075.13 491.88 1077.24 487.75C1079.36 483.62 1081.27 479.91 1081.51 479.50C1081.74 479.09 1083.07 476.44 1084.47 473.61C1085.87 470.78 1087.21 468.08 1087.45 467.61C1087.69 467.14 1088.14 466.19 1088.45 465.50C1088.75 464.81 1090.60 461.21 1092.55 457.50C1094.51 453.79 1099.54 444.00 1103.73 435.75C1114.72 414.15 1131.36 381.67 1136.63 371.50C1138.42 368.06 1141.61 361.88 1143.72 357.75C1147.98 349.44 1148.83 348.31 1151.45 347.41L1153.25 346.78 L1159.25 346.82C1162.55 346.85 1171.78 347.10 1179.75 347.39C1187.72 347.68 1207.08 347.94 1222.75 347.97C1238.42 347.99 1251.53 348.19 1251.88 348.41L1252.50 348.81 L1252.38 504.28L1252.25 659.75 L1130.00 659.77C1062.76 659.79 1004.15 659.68 999.75 659.52ZM1231.07 379.92L1233.00 379.34 L1234.25 377.11C1235.76 374.42 1235.78 373.75 1234.52 370.81L1233.55 368.53 L1231.15 367.39L1228.75 366.25 L1226.13 366.25L1223.52 366.25 L1221.92 367.85L1220.32 369.45 L1220.10 372.45L1219.88 375.44 L1221.02 377.28C1222.85 380.25 1226.64 381.25 1231.07 379.92ZM983.74 366.47C983.56 365.90 983.58 361.73 983.78 357.19L984.14 348.93 L984.87 348.20L985.61 347.46 L989.63 347.61L993.64 347.75 L994.18 348.60L994.71 349.45 L992.02 354.85C990.54 357.82 988.68 361.21 987.88 362.38C987.09 363.55 986.21 365.18 985.92 366.01C985.32 367.73 984.22 367.97 983.74 366.47Z"/></svg>
+    <svg class="pl-pz rosso" viewBox="2 -1 1600 1312" style="transform-origin:69.75% 12.86%" data-x="1.3" data-y="-0.2" data-ry="-75" data-z="-260" aria-hidden="true"><path fill="#D81F28" fill-rule="evenodd" d="M984.16 334.88C983.93 334.53 983.69 259.04 983.62 167.12L983.49 -0.00 L1118.00 -0.00L1252.50 0.00 L1252.38 167.62L1252.25 335.25 L1118.41 335.38L984.56 335.50 L984.16 334.88ZM1229.52 34.87C1232.50 33.83 1233.79 32.69 1234.71 30.28L1235.60 27.97 L1234.76 25.86C1233.45 22.52 1231.61 20.20 1229.32 18.98L1227.20 17.86 L1225.35 18.74C1224.32 19.22 1222.76 20.54 1221.87 21.66L1220.25 23.71 L1220.25 26.98L1220.25 30.25 L1221.50 31.94C1222.59 33.42 1225.80 35.38 1227.25 35.46C1227.53 35.47 1228.55 35.21 1229.52 34.87Z"/></svg>
+    <svg class="pl-scritta" viewBox="2 -1 1600 1312" aria-hidden="true"><path fill="#3A3F45" fill-rule="evenodd" d="M645.21 1296.35L644.50 1295.95 L644.47 1245.60C644.45 1217.91 644.25 1186.59 644.04 1176.00L643.65 1156.75 L642.90 1154.99C642.49 1154.03 641.33 1152.52 640.33 1151.64L638.52 1150.05 L635.14 1149.08C627.06 1146.78 621.56 1146.52 580.30 1146.46L547.36 1146.41 L541.43 1152.32L535.50 1158.23 L535.38 1227.24L535.25 1296.25 L514.62 1296.38L494.00 1296.51 L494.00 1289.38C493.98 1264.77 495.08 1178.57 495.54 1167.75C496.35 1149.06 497.14 1144.42 500.63 1138.00C506.13 1127.89 513.50 1121.44 524.54 1117.06L529.75 1115.00 L541.50 1114.51C556.68 1113.88 608.97 1113.88 630.50 1114.51L647.25 1115.00 L650.50 1115.71C655.02 1116.71 656.36 1117.16 659.50 1118.75C668.07 1123.08 674.62 1129.35 679.10 1137.50C682.77 1144.17 683.68 1149.48 684.47 1169.00C685.18 1186.53 686.19 1295.51 685.65 1296.05C685.10 1296.60 646.16 1296.88 645.21 1296.35ZM900.35 1296.68C900.16 1296.49 900.00 1255.19 900.00 1204.91L900.00 1113.49 L919.38 1113.62L938.75 1113.75 L938.88 1205.12L939.00 1296.50 L920.54 1296.50C910.39 1296.50 901.77 1296.62 901.39 1296.77C901.01 1296.91 900.54 1296.87 900.35 1296.68ZM1305.69 1296.25L1305.04 1295.75 L1305.52 1252.00C1306.14 1194.94 1306.91 1157.11 1307.54 1152.75C1308.82 1143.94 1310.10 1140.37 1314.29 1133.98C1319.14 1126.56 1326.76 1120.49 1335.25 1117.26C1337.17 1116.53 1339.14 1115.72 1339.62 1115.46C1341.52 1114.45 1359.55 1113.91 1394.25 1113.83L1430.75 1113.75 L1430.75 1130.00L1430.75 1146.25 L1394.59 1146.39L1358.43 1146.53 L1352.47 1152.45L1346.50 1158.38 L1346.50 1227.43L1346.50 1296.48 L1326.42 1296.61L1306.35 1296.75 L1305.69 1296.25ZM317.25 1295.97C292.06 1295.11 286.58 1293.23 275.00 1281.48L270.75 1277.16 L268.92 1273.46C266.18 1267.90 265.87 1266.61 264.73 1256.00L264.00 1249.25 L264.02 1217.25L264.03 1185.25 L264.77 1166.75C265.67 1143.99 265.85 1142.87 269.49 1136.26C275.83 1124.78 281.98 1120.35 298.25 1115.51C299.07 1115.26 302.45 1114.77 305.75 1114.41L311.75 1113.76 L356.50 1113.75L401.25 1113.75 L407.75 1114.43C424.28 1116.16 430.26 1118.77 440.06 1128.53L444.86 1133.31 L446.90 1137.54L448.93 1141.76 L449.92 1147.00C451.82 1157.09 452.63 1171.02 453.24 1204.09L453.49 1217.94 L452.62 1218.15C452.14 1218.27 418.56 1218.33 378.00 1218.27C337.44 1218.22 303.85 1218.38 303.37 1218.61L302.49 1219.04 L302.73 1231.90L302.98 1244.75 L303.69 1248.00C304.09 1249.79 304.81 1252.46 305.30 1253.93L306.19 1256.61 L308.22 1258.83L310.25 1261.06 L316.50 1261.49C331.85 1262.57 378.80 1263.85 417.50 1264.25C431.66 1264.40 444.77 1264.66 446.62 1264.82L450.00 1265.13 L450.00 1280.26L450.00 1295.40 L443.38 1295.68C433.01 1296.13 328.97 1296.36 317.25 1295.97ZM788.00 1296.16C781.67 1295.81 775.72 1294.13 769.25 1290.88C763.91 1288.20 761.53 1286.51 758.07 1282.95L755.16 1279.96 L753.11 1275.86C749.62 1268.87 747.57 1259.32 746.47 1245.00L745.91 1237.75 L746.06 1192.40C746.14 1167.45 746.08 1146.92 745.93 1146.76C745.67 1146.50 735.40 1146.16 724.41 1146.05L719.57 1146.00 L718.71 1145.14L717.85 1144.27 L718.23 1132.51C718.44 1126.04 718.75 1119.17 718.93 1117.25L719.25 1113.75 L732.09 1113.62L744.94 1113.48 L745.19 1112.62C745.33 1112.14 745.57 1103.09 745.73 1092.50C745.89 1081.91 746.15 1070.54 746.30 1067.22L746.59 1061.19 L749.67 1060.57C756.68 1059.18 758.01 1058.95 763.75 1058.20C767.05 1057.77 771.33 1057.20 773.25 1056.95C775.17 1056.69 778.94 1056.35 781.62 1056.18L786.49 1055.88 L786.62 1084.57L786.75 1113.25 L823.75 1113.50L860.75 1113.75 L860.88 1129.72L861.01 1145.68 L860.42 1146.05C859.96 1146.34 835.02 1146.49 788.33 1146.50L786.41 1146.50 L786.72 1180.88C787.17 1231.18 787.88 1249.64 789.62 1255.64C790.33 1258.11 792.48 1260.30 794.85 1260.99C798.31 1261.99 814.46 1262.95 837.50 1263.52C850.01 1263.83 860.42 1264.25 860.63 1264.45C860.84 1264.65 860.95 1271.89 860.88 1280.53L860.75 1296.25 L825.75 1296.28C806.50 1296.30 789.51 1296.25 788.00 1296.16ZM988.52 1204.13C988.55 1113.09 989.09 1041.09 989.76 1039.37C989.95 1038.89 990.70 1038.33 991.43 1038.14C992.16 1037.95 1000.51 1037.78 1010.00 1037.77L1027.25 1037.75 L1027.25 1167.00L1027.25 1296.25 L1007.88 1296.38L988.50 1296.51 L988.52 1204.13ZM1530.75 1295.97C1513.81 1294.93 1506.50 1292.04 1497.73 1282.93C1492.96 1277.98 1490.91 1274.88 1489.31 1270.20C1485.39 1258.75 1485.00 1251.88 1484.99 1193.59C1484.99 1168.38 1484.80 1147.46 1484.57 1147.10L1484.16 1146.45 L1471.20 1145.91L1458.25 1145.37 L1457.93 1144.87C1457.76 1144.60 1457.45 1139.62 1457.25 1133.81C1457.06 1128.00 1456.73 1121.22 1456.53 1118.75C1456.32 1116.28 1456.25 1114.08 1456.36 1113.88C1456.47 1113.67 1462.72 1113.50 1470.25 1113.50L1483.94 1113.50 L1484.26 1112.98C1484.44 1112.69 1484.80 1101.16 1485.07 1087.35C1485.34 1073.55 1485.63 1062.00 1485.73 1061.70C1485.99 1060.90 1492.99 1059.62 1506.00 1058.00C1510.54 1057.43 1515.38 1056.72 1516.75 1056.43C1518.13 1056.14 1519.82 1055.98 1520.50 1056.07L1521.74 1056.25 L1522.38 1057.59L1523.02 1058.93 L1523.50 1068.84C1523.77 1074.29 1523.99 1086.57 1523.99 1096.12L1524.00 1113.50 L1562.00 1113.50L1600.00 1113.50 L1600.00 1129.70L1600.00 1145.89 L1598.70 1146.22C1597.99 1146.40 1580.87 1146.51 1560.67 1146.48C1540.46 1146.44 1523.84 1146.49 1523.74 1146.59C1523.49 1146.85 1524.37 1226.34 1524.80 1241.64L1525.14 1254.02 L1528.45 1256.93C1532.63 1260.62 1533.75 1261.33 1536.82 1262.24L1539.30 1262.98 L1549.28 1263.48C1554.76 1263.76 1568.42 1263.99 1579.62 1263.99L1600.00 1264.00 L1600.00 1280.25L1600.00 1296.50 L1568.38 1296.42C1550.98 1296.37 1534.05 1296.17 1530.75 1295.97ZM1112.50 1294.99C1105.08 1294.66 1100.13 1294.06 1096.63 1293.04C1093.66 1292.18 1086.99 1287.82 1083.57 1284.50C1077.21 1278.33 1073.92 1272.84 1072.68 1266.29L1072.00 1262.75 L1072.00 1241.00L1072.00 1219.25 L1072.67 1215.75C1073.88 1209.42 1077.01 1204.09 1083.06 1198.07C1089.20 1191.97 1094.22 1189.30 1102.88 1187.55C1107.18 1186.68 1135.13 1185.96 1179.25 1185.60L1220.75 1185.25 L1220.90 1173.25L1221.05 1161.25 L1220.49 1159.25C1219.53 1155.80 1218.63 1154.37 1214.89 1150.35L1211.25 1146.46 L1148.80 1146.47C1114.45 1146.48 1085.14 1146.35 1083.67 1146.18L1080.99 1145.86 L1081.12 1129.81L1081.25 1113.75 L1143.50 1113.76L1205.75 1113.77 L1214.25 1114.40C1218.92 1114.75 1223.76 1115.25 1225.00 1115.52C1230.57 1116.69 1234.40 1117.67 1236.25 1118.39C1242.76 1120.94 1252.07 1130.00 1255.37 1137.00C1259.64 1146.04 1260.23 1157.41 1260.80 1242.12L1261.17 1295.50 L1190.71 1295.41C1151.96 1295.37 1116.76 1295.18 1112.50 1294.99ZM1220.88 1240.04L1221.01 1216.34 L1177.63 1216.67C1153.77 1216.85 1130.91 1217.23 1126.83 1217.51L1119.40 1218.03 L1118.08 1218.72C1111.74 1222.03 1108.91 1233.13 1110.57 1248.11L1111.14 1253.25 L1112.12 1255.36C1112.66 1256.53 1113.80 1258.17 1114.67 1259.01L1116.23 1260.54 L1118.74 1261.22C1126.99 1263.44 1137.99 1263.87 1185.25 1263.80L1220.75 1263.75 L1220.88 1240.04ZM396.50 1186.57L412.75 1186.25 L412.90 1177.75C412.99 1173.08 412.81 1166.83 412.51 1163.88L411.97 1158.51 L410.99 1156.22C410.45 1154.96 408.91 1152.85 407.58 1151.53L405.15 1149.13 L402.39 1148.10L399.63 1147.06 L389.69 1146.51C384.22 1146.21 366.59 1145.93 350.50 1145.89L321.25 1145.82 L318.50 1146.45C315.01 1147.26 310.85 1149.22 308.79 1151.03C306.59 1152.96 304.75 1156.83 303.57 1162.00C302.96 1164.70 302.22 1184.33 302.67 1186.12L302.99 1187.37 L341.62 1187.13C362.87 1187.00 387.56 1186.75 396.50 1186.57ZM1151.75 1090.20C1148.34 1086.22 1136.47 1072.99 1132.73 1069.00C1131.06 1067.21 1128.35 1064.29 1126.72 1062.50C1125.09 1060.71 1123.63 1059.14 1123.49 1059.00C1121.15 1056.76 1108.50 1042.45 1108.50 1042.05L1108.50 1041.50 L1131.47 1041.50L1154.45 1041.50 L1166.31 1057.38C1172.83 1066.11 1181.17 1077.27 1184.83 1082.17C1188.50 1087.08 1191.50 1091.27 1191.50 1091.48C1191.50 1091.69 1187.17 1092.01 1181.88 1092.18C1176.58 1092.36 1168.20 1092.64 1163.25 1092.81L1154.25 1093.12 L1151.75 1090.20ZM900.00 1064.00L900.00 1041.49 L919.38 1041.62L938.75 1041.75 L938.75 1064.00L938.75 1086.25 L919.38 1086.38L900.00 1086.51 L900.00 1064.00Z"/><path fill="#D81F28" d="M91.07 1220.26 L90.99 1221.13 L134.81 1309.48 L148.02 1309.83 L193.15 1220.43 L149.24 1220.26 L148.37 1220.87 L141.98 1233.20 L135.25 1220.26ZM243.01 1121.86 L197.96 1122.03 L150.55 1216.93 L195.25 1216.67ZM42.27 1121.86 L88.89 1216.76 L133.67 1216.93 L88.45 1121.95ZM2.73 1042.17 L40.17 1118.01 L86.35 1118.01 L49.96 1042.09Z"/></svg>
+  </div>
+</div>
+<script>
+  (function () {
+    var el = document.getElementById('preloader'), html = document.documentElement;
+    if (!el || html.classList.contains('senza-intro')) return;
+    html.classList.add('intro-in-corso');
+    var finito = false;
+    function fine() {
+      if (finito) return; finito = true;
+      html.classList.remove('intro-in-corso');
+      var m = document.querySelector('.hero .marchio'); if (m) m.style.visibility = '';
+      el.remove();
+      try { sessionStorage.setItem('vt-intro', '1'); } catch (e) {}
+    }
+    setTimeout(fine, 9000); // rete di sicurezza: il sito non resta mai bloccato
+    el.addEventListener('click', fine); // un clic salta l'animazione
+
+    function parti() {
+      if (!window.gsap) return fine();
+      var logo = el.querySelector('.pl-logo'), L = logo.offsetWidth;
+      var tl = gsap.timeline();
+
+      // 1-4) i pannelli arrivano uno alla volta e si agganciano al loro posto
+      el.querySelectorAll('.pl-pz').forEach(function (p, i) {
+        var d = p.dataset, rosso = p.classList.contains('rosso');
+        var at = rosso ? 1.75 + (i - 8) * 0.15 : 0.2 + i * 0.15;
+        tl.fromTo(p,
+          { x: (+d.x || 0) * L, y: (+d.y || 0) * L, z: +d.z || 0, rotationX: +d.rx || 0, rotationY: +d.ry || 0 },
+          { x: 0, y: 0, z: 0, rotationX: 0, rotationY: 0, duration: rosso ? 0.6 : 0.62,
+            ease: rosso ? 'back.out(1.25)' : 'power3.out' }, at);
+        tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.22, ease: 'none' }, at);
+      });
+
+      // 5) la scritta compare, con il suo carattere originale, da sinistra a destra
+      var s = el.querySelector('.pl-scritta');
+      tl.fromTo(s, { opacity: 1, clipPath: 'inset(76% 100% 0% 0%)', y: 8 },
+        { clipPath: 'inset(76% 0% 0% 0%)', y: 0, duration: 1.0, ease: 'power2.inOut' }, 2.5)
+        .set(s, { clipPath: 'none' });
+
+      // 6) breve pausa, poi il logo va al suo posto nella hero e lo sfondo si dissolve
+      tl.call(function () {
+        var m = document.querySelector('.hero .marchio');
+        var r = m && m.getBoundingClientRect(), a = logo.getBoundingClientRect();
+        var t = gsap.timeline({ onComplete: fine });
+        if (r && r.width && r.bottom > 0 && r.top < innerHeight) {
+          html.classList.remove('intro-in-corso'); // la pagina torna scorrevole; il marchio resta nascosto finché il logo non arriva
+          m.style.visibility = 'hidden';
+          t.to(logo, { x: r.left + r.width / 2 - (a.left + a.width / 2), y: r.top + r.height / 2 - (a.top + a.height / 2),
+            scale: r.width / a.width, duration: 1.4, ease: 'power2.inOut' }, 0)
+           .to(el.querySelector('.pl-fondo'), { opacity: 0, duration: 1.2, ease: 'power1.inOut' }, 0.2)
+           .add(function () { m.style.visibility = ''; });
+        } else {
+          t.to(el, { opacity: 0, duration: 1.0, ease: 'power1.inOut' });
+        }
+      }, null, '+=0.5');
+    }
+    if (window.gsap) parti(); else document.addEventListener('DOMContentLoaded', parti);
+  })();
+</script>
+<!-- /PRELOADER -->
+
+<div class="striscia">Hai un edificio da riqualificare? <a href="#contatti">Richiedi un sopralluogo tecnico</a></div>
+
+<header>
+  <div class="wrap">
+    <img class="logo" src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt">
+    <nav>
+      <a href="#facciata">La facciata ventilata</a>
+      <div class="tendina">
+        <button type="button" aria-expanded="false" aria-controls="menu-sistemi">Sistemi <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 3l4 4 4-4"/></svg></button>
+        <div class="pannello" id="menu-sistemi">
+          <a href="sistema-ceramico.html"><img src="../assets/foto/rivestimento-ceramico-travertino.jpg" alt=""><span><b>Rivestimento ceramico</b><small>Lastre in gres porcellanato e ceramica</small></span></a>
+          <a href="sistema-fibrocemento.html"><img src="../assets/foto/fibrocemento-doghe.jpg" alt=""><span><b>Fibrocemento</b><small>Pannelli colorati in massa, opachi e materici</small></span></a>
+          <a href="sistema-wpc.html"><img src="../assets/foto/progetti/barbuti-san-leucio-facciata.jpg" alt=""><span><b>WPC</b><small>Doghe e frangisole effetto legno</small></span></a>
+          <a href="sistema-alluminio-composito.html"><img src="../assets/foto/composito-a.jpg" alt=""><span><b>Alluminio composito</b><small>Pannelli leggeri e planari, anche curvi</small></span></a>
+        </div>
+      </div>
+      <a href="#metodo">Metodo</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <a class="bottone chiaro" href="#contatti">Sopralluogo</a>
+    <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu-tel"><span></span></button>
+  </div>
+</header>
+
+<div class="menu-tel" id="menu-tel" aria-hidden="true">
+  <div class="alto"><img src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><button class="chiudi" type="button" aria-label="Chiudi il menu">×</button></div>
+  <nav>
+    <a href="#facciata">La facciata ventilata</a>
+    <button type="button" aria-expanded="false" aria-controls="sotto-sistemi">Sistemi <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 3l4 4 4-4"/></svg></button>
+    <div class="sotto" id="sotto-sistemi">
+      <a href="sistema-ceramico.html"><img src="../assets/foto/rivestimento-ceramico-travertino.jpg" alt=""><span>Rivestimento ceramico</span></a>
+      <a href="sistema-fibrocemento.html"><img src="../assets/foto/fibrocemento-doghe.jpg" alt=""><span>Fibrocemento</span></a>
+      <a href="sistema-wpc.html"><img src="../assets/foto/progetti/barbuti-san-leucio-facciata.jpg" alt=""><span>WPC</span></a>
+      <a href="sistema-alluminio-composito.html"><img src="../assets/foto/composito-a.jpg" alt=""><span>Alluminio composito</span></a>
+    </div>
+    <a href="#metodo">Metodo</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+  <div class="contatti">
+    <a href="tel:+393793016458">Tel. 379 301 6458</a>
+    <a href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a>
+    <span>Via Padula 19, 80026 Casoria (NA)</span>
+    <a class="bottone chiaro" href="#contatti">Richiedi un sopralluogo</a>
+  </div>
+</div>
+
+<!-- HERO: foto omogenea, logo al centro e slogan -->
+<section class="hero">
+  <img src="../assets/foto/hero-mano-travertino.jpg" alt="Una persona tocca una facciata ventilata in lastre effetto travertino">
+  <div class="centro">
+    <h1 style="margin:0"><img class="marchio" src="../assets/logo/ventilart-logo-sito.svg" alt="Ventilàrt · Facciate ventilate"></h1>
+    <p class="slogan">L'abito giusto per il tuo immobile</p>
+  </div>
+  <a class="scorri" href="#facciata">Scopri</a>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="facciata">
+  <div class="wrap griglia">
+    <div>
+      <span class="occhiello">Cos'è una facciata ventilata</span>
+      <h2 class="maiuscolo">Più di un rivestimento</h2>
+      <p class="sotto">Più che un semplice sistema di rivestimento, la facciata ventilata è un organismo articolato composto da diversi elementi e prestazioni che, nel loro insieme, definiscono il valore e le performance dell’involucro edilizio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MOSAICO A BLOCCHI -->
+<section class="mosaico">
+  <div class="grande">
+    <span class="occhiello" style="color:rgba(255,255,255,.6)">Il principio</span>
+    <div>
+      <h3>Un involucro che respira</h3>
+      <p style="margin-top:20px">Il rivestimento fa da schermo a sole e pioggia; l'aria che sale nell'intercapedine porta via calore e umidità. È il cosiddetto effetto camino.</p>
+    </div>
+  </div>
+  <div class="foto"><img src="../assets/foto/montaggio-secco-sottostruttura.jpg" alt="Sottostruttura in alluminio con staffe fissate al muro, montata a secco" style="object-position:center 40%"></div>
+  <div class="ardesia"><h4>Montaggio a secco</h4><p>L'impiego di elementi prefabbricati elimina le lavorazioni umide in cantiere, assicurando maggiore controllo della posa, riduzione delle variabili esecutive e uniformità del risultato finale.</p></div>
+  <div class="pietra"><h4>Sostituibilità puntuale degli elementi di rivestimento</h4><p>Grazie alla configurazione modulare del sistema, ciascuna lastra può essere rimossa e sostituita singolarmente senza interferire con gli elementi adiacenti né compromettere la continuità prestazionale della facciata.</p></div>
+  <div class="foto"><img src="../assets/foto/sostituibilita-lastre-ceramiche.jpg" alt="Lastre ceramiche di facciata ventilata fissate con ganci singoli" style="object-position:center 35%"></div>
+</section>
+
+<!-- ESTATE / INVERNO -->
+<section class="stagioni">
+  <div class="estate">
+    <svg class="icona" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="9"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M9.9 38.1l4.2-4.2M33.9 14.1l4.2-4.2"/></svg>
+    <span class="occhiello">Estate</span>
+    <h3>Prestazioni estive</h3>
+    <p>Il rivestimento esterno riduce l'irraggiamento diretto sulla parete, mentre la ventilazione naturale dell'intercapedine favorisce l'espulsione verso l'alto dell'aria riscaldata. Questo meccanismo limita la trasmissione del calore all'interno dell'edificio e contribuisce a contenere il surriscaldamento degli ambienti.</p>
+  </div>
+  <div class="inverno">
+    <svg class="icona" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 4v40M6.7 14l34.6 20M6.7 34l34.6-20"/><path d="M19 7l5 4 5-4M19 41l5-4 5 4M7.6 20.2l5.9-2.4-1-6.3M35.5 36.5l-1-6.3 5.9-2.4M7.6 27.8l5.9 2.4-1 6.3M35.5 11.5l-1 6.3 5.9 2.4"/></svg>
+    <span class="occhiello" style="color:rgba(255,255,255,.6)">Inverno</span>
+    <h3>Prestazioni invernali</h3>
+    <p>La facciata ventilata aiuta a trattenere il calore all'interno dell'edificio, migliorando il comfort e riducendo i consumi energetici. Inoltre, favorisce l'eliminazione dell'umidità, limitando il rischio di condensa e muffe.</p>
+  </div>
+</section>
+
+<!-- VANTAGGI A FISARMONICA -->
+<section class="vantaggi">
+  <div class="wrap">
+    <span class="occhiello">Perché sceglierla</span>
+    <details open><summary>Isolamento termico</summary><p>L'isolante posato all'esterno, senza interruzioni, riduce le dispersioni d'inverno e aumenta lo sfasamento termico d'estate: l'edificio consuma meno e le temperature interne sono più stabili.</p></details>
+    <details><summary>Protezione</summary><p>Pioggia, sole e smog colpiscono il rivestimento, non la muratura. L'isolante resta all'asciutto e la parete non si degrada nel tempo.</p></details>
+    <details><summary>Comfort acustico</summary><p>Il paramento esterno, l'intercapedine e l'isolante contribuiscono a ridurre i rumori che arrivano dall'esterno.</p></details>
+    <details><summary>Sicurezza al fuoco</summary><p>Con isolanti non combustibili come la lana di roccia e i dettagli previsti dalle regole antincendio per le facciate, il sistema si progetta per limitare la propagazione delle fiamme.</p></details>
+    <details><summary>Durata e manutenzione</summary><p>Materiali stabili nel colore e nella forma, niente crepe da intonaco. Se un elemento si danneggia, si sostituisce solo quello.</p></details>
+    <details><summary>Valore dell'immobile</summary><p>Un edificio datato cambia volto e prestazioni: più efficiente, più protetto, con un'immagine architettonica contemporanea.</p></details>
+  </div>
+</section>
+
+<!-- SISTEMI -->
+<section class="sistemi" id="sistemi">
+  <div class="wrap">
+    <div class="testa">
+      <div><span class="occhiello">I sistemi di rivestimento</span><h2>Per ogni edificio il materiale giusto</h2></div>
+      <div class="frecce">← →</div>
+    </div>
+    <div class="carosello">
+      <article><div class="im"><img src="../assets/foto/rivestimento-ceramico-travertino.jpg" alt="Facciata ventilata in lastre ceramiche effetto travertino"></div><h3>Rivestimento ceramico</h3><p>Gres porcellanato e lastre ceramiche, anche di grande formato, stabili nel colore e resistenti agli agenti atmosferici. Effetto pietra, cemento, legno o metallo.</p><a class="scopri" href="sistema-ceramico.html">Sistema e stratigrafia →</a></article>
+      <article><div class="im"><img src="../assets/foto/fibrocemento-doghe.jpg" alt="Fibrocemento rigato"></div><h3>Fibrocemento</h3><p>Pannelli colorati in massa, superficie opaca e materica, per facciate dal linguaggio essenziale.</p><a class="scopri" href="sistema-fibrocemento.html">Sistema e stratigrafia →</a></article>
+      <article><div class="im"><img src="../assets/foto/progetti/barbuti-san-leucio-facciata.jpg" alt="Facciata in doghe WPC"></div><h3>WPC</h3><p>Doghe, listelli e frangisole in composito legno-polimero: il calore del legno senza la sua manutenzione.</p><a class="scopri" href="sistema-wpc.html">Sistema e stratigrafia →</a></article>
+      <article><div class="im"><img src="../assets/foto/composito-a.jpg" alt="Alluminio composito"></div><h3>Alluminio composito</h3><p>Pannelli leggeri e perfettamente planari per superfici continue, anche curve e sagomate.</p><a class="scopri" href="sistema-alluminio-composito.html">Sistema e stratigrafia →</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- METODO -->
+<section class="metodo" id="metodo">
+  <div class="wrap">
+    <span class="occhiello">Il metodo Ventilàrt</span>
+    <h2>Dal sopralluogo alla consegna, un solo referente</h2>
+    <div class="fasi">
+      <div><b>01</b><h4>Sopralluogo e rilievo</h4><p>Misure dell'edificio e verifica dello stato delle pareti.</p></div>
+      <div><b>02</b><h4>Verifica del supporto</h4><p>Scelta di tasselli e staffe in base al tipo di muratura.</p></div>
+      <div><b>03</b><h4>Progetto e offerta</h4><p>Sistema, stratigrafia, dettagli e preventivo dettagliato.</p></div>
+      <div><b>04</b><h4>Tracciamento e staffe</h4><p>Reticolo di riferimento, poi le staffe fissate al muro.</p></div>
+      <div><b>05</b><h4>Isolante e sottostruttura</h4><p>Pannelli continui, montanti e traversi in alluminio.</p></div>
+      <div><b>06</b><h4>Rivestimento e consegna</h4><p>Posa delle lastre e documentazione completa del lavoro.</p></div>
+    </div>
+    <div class="cantieri-foto">
+      <figure><img src="../assets/foto/progetti/san-rocco-casoria-staffe.jpg" alt="Staffe fissate alla muratura"><figcaption class="cant">Staffe · <b>Palazzo Rue</b>, Casoria (NA)</figcaption></figure>
+      <figure><img src="../assets/foto/progetti/don-milani-parete-struttura.jpg" alt="Inserimento dell'anima in alluminio nelle doghe in WPC"><figcaption class="cant">Anima in alluminio nelle doghe WPC · <b>Scuola Don Milani</b>, Parete (CE)</figcaption></figure>
+      <figure><img src="../assets/foto/progetti/don-milani-parete-posa.jpg" alt="Posa del rivestimento"><figcaption class="cant">Posa del rivestimento · <b>Scuola Don Milani</b>, Parete (CE)</figcaption></figure>
+    </div>
+    <div class="barra"><i></i></div>
+    <div class="barra-et"><span>Sopralluogo</span><span>Squadre interne Ventilàrt</span><span>Consegna</span></div>
+  </div>
+</section>
+
+<!-- CHI SIAMO -->
+<section class="chi" id="chi">
+  <div class="foto"><img src="../assets/foto/progetti/barbuti-san-leucio-posa.jpg" alt="Squadra Ventilàrt in cantiere"><span class="cant">In cantiere · <b>Le Sete di San Leucio</b>, San Leucio (CE)</span></div>
+  <div class="testo">
+    <span class="occhiello">Chi siamo</span>
+    <h2>Un'impresa specializzata, una squadra interna</h2>
+    <p>Ventilàrt nasce a Casoria per fare una cosa sola e farla bene: progettare e posare facciate ventilate. Seguiamo ogni lavoro dal sopralluogo alla consegna, con le nostre squadre e un unico referente per il committente.</p>
+    <p>Lavoriamo per imprese, studi tecnici, enti pubblici e privati, su nuove costruzioni e riqualificazioni, in tutta Italia.</p>
+    <div class="punti">
+      <div>Squadre interne<small>la posa la fa il nostro personale</small></div>
+      <div>Un solo referente<small>dal primo sopralluogo alla consegna</small></div>
+      <div>Quattro sistemi<small>ceramici, fibrocemento, WPC, alluminio</small></div>
+      <div>Documentazione completa<small>di lavori e materiali</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHIUSURA -->
+<section class="cta" id="contatti">
+  <div class="wrap">
+    <h2>Hai una facciata da rifare?</h2>
+    <div>
+      <p>Richiedi un sopralluogo: il preventivo dettagliato arriva dopo la visita.</p>
+      <a class="bottone chiaro" href="tel:+393793016458">379 301 6458</a>
+      <a class="bottone" style="margin-left:8px;background:rgba(0,0,0,.25)" href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><img src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><p>Progettazione e posa di facciate ventilate.<br>Via Padula 19, 80026 Casoria (NA)</p></div>
+    <div><h5>Sistemi</h5><ul><li>Rivestimento ceramico</li><li>Fibrocemento</li><li>WPC</li><li>Alluminio composito</li></ul></div>
+    <div><h5>Azienda</h5><ul><li><a href="chi-siamo.html">Chi siamo</a></li><li>Progetti</li><li>Metodo</li><li>Blog</li></ul></div>
+    <div><h5>Contatti</h5><ul><li>379 301 6458</li><li>ventilart@ventilart.it</li><li>WhatsApp</li><li>Instagram</li></ul></div>
+    <div class="fondo"><span>© Ventilàrt · P.IVA <span class="da-fare">da inserire</span></span><span>Privacy · Cookie</span></div>
+  </div>
+</footer>
+
+<script>
+  // menu a tendina Sistemi: si apre al passaggio del mouse e al clic, si chiude con Esc o cliccando fuori
+  document.querySelectorAll('.tendina').forEach(function (t) {
+    var b = t.querySelector('button');
+    function apri(si) { t.classList.toggle('aperta', si); b.setAttribute('aria-expanded', si); }
+    b.addEventListener('click', function (e) { e.stopPropagation(); apri(!t.classList.contains('aperta')); });
+    t.addEventListener('mouseenter', function () { if (matchMedia('(hover:hover)').matches) apri(true); });
+    t.addEventListener('mouseleave', function () { if (matchMedia('(hover:hover)').matches) apri(false); });
+    document.addEventListener('click', function (e) { if (!t.contains(e.target)) apri(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') apri(false); });
+  });
+</script>
+<script>
+  // menu a tre linee: apre e chiude il pannello a tutto schermo; "Sistemi" si apre a fisarmonica
+  (function () {
+    var m = document.getElementById('menu-tel'), b = document.querySelector('.burger');
+    if (!m || !b) return;
+    function apri(si) { m.classList.toggle('aperto', si); m.setAttribute('aria-hidden', !si); b.setAttribute('aria-expanded', si); document.body.classList.toggle('menu-aperto', si); }
+    b.addEventListener('click', function () { apri(true); });
+    m.querySelector('.chiudi').addEventListener('click', function () { apri(false); });
+    m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { apri(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') apri(false); });
+    var s = m.querySelector('nav > button'), sotto = document.getElementById('sotto-sistemi');
+    s.addEventListener('click', function () { var o = !sotto.classList.contains('aperto'); sotto.classList.toggle('aperto', o); s.setAttribute('aria-expanded', o); });
+    if (sotto.querySelector('[aria-current]')) { sotto.classList.add('aperto'); s.setAttribute('aria-expanded', true); }
+  })();
+</script>
+</body>
+</html>

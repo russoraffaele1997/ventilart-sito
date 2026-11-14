@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rivestimento ceramico — Ventilàrt</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nero:#141719; --antracite:#30363B; --bianco:#fff; --carta:#f4f2ee;
+    --pietra:#d8d0c3; --salvia:#b9c4b5; --ardesia:#5d7280; --rosso:#d7202b;
+    --tenue:rgba(20,23,25,.62); --linea:rgba(20,23,25,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bianco);color:var(--nero);font:17px/1.65 'Jost',sans-serif;-webkit-font-smoothing:antialiased}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1360px;margin:0 auto;padding:0 40px}
+  .occhiello{font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--tenue)}
+  .maiuscolo{font-weight:400;text-transform:uppercase;letter-spacing:-.01em;line-height:.98}
+  h2.maiuscolo{font-size:clamp(40px,6.4vw,92px)}
+  .sottile{font-weight:300;letter-spacing:-.02em;line-height:1.08}
+  .bottone{display:inline-flex;align-items:center;gap:10px;background:var(--nero);color:#fff;padding:14px 26px;border-radius:99px;font-size:15px;font-weight:500}
+  .bottone.chiaro{background:#fff;color:var(--nero)}
+  .bottone.rosso{background:var(--rosso)}
+
+  /* barra in alto + menu */
+  .striscia{background:var(--carta);text-align:center;font-size:14px;padding:9px 16px}
+  .striscia a{text-decoration:underline;text-underline-offset:3px;font-weight:500}
+  header{position:sticky;top:0;z-index:20;background:var(--nero);color:#fff}
+  header .wrap{display:flex;align-items:center;gap:32px;height:68px}
+  header .logo{height:30px;width:auto}
+  header nav{display:flex;gap:26px;font-size:14px;margin-left:auto}
+  header nav a{opacity:.85}
+  header nav a:hover{opacity:1}
+  header .bottone{padding:10px 18px;font-size:14px}
+
+  /* hero */
+  .hero{position:relative;height:calc(100vh - 106px);min-height:560px;overflow:hidden;background:#e9e1d4}
+  .hero > img{position:absolute;inset:0;object-position:center center}
+  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 40% 55% at 82% 50%,rgba(244,240,233,.6),rgba(244,240,233,0) 100%)}
+  .hero .centro{position:absolute;top:0;bottom:0;left:66%;right:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px}
+  .hero .centro{--lw:clamp(200px,18vw,280px)}
+  .hero .marchio{width:var(--lw);height:auto;object-fit:contain}
+  .hero .slogan{margin-top:14px;font-size:calc(var(--lw) / 22.2);font-weight:400;letter-spacing:.16em;margin-right:-.16em;text-transform:uppercase;color:#3A3F45;white-space:nowrap}
+  .hero .scorri{position:absolute;left:83%;bottom:26px;z-index:1;transform:translateX(-50%);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--tenue)}
+  .hero .scorri::after{content:"";display:block;width:1px;height:34px;background:var(--tenue);margin:10px auto 0}
+
+  /* intro */
+  .intro{padding:120px 0 90px}
+  .intro .griglia{display:block;max-width:860px}
+  .intro h2{margin-top:18px}
+  .intro p.sotto{margin-top:22px;color:inherit;font-size:22px;line-height:1.5;max-width:760px}
+  .intro p{font-size:19px;color:var(--tenue);max-width:560px}
+
+  /* mosaico a blocchi */
+  .mosaico{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:380px 380px}
+  .mosaico > div{position:relative;padding:44px;overflow:hidden}
+  .mosaico .grande{grid-row:span 2;background:var(--nero);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+  .mosaico .grande h3{font-size:clamp(48px,5.4vw,84px);font-weight:300;line-height:.98;letter-spacing:-.03em}
+  .mosaico .grande p{color:rgba(255,255,255,.7);max-width:420px}
+  .mosaico h4{font-size:32px;font-weight:400;line-height:1.1;margin-bottom:14px}
+  .mosaico p{font-size:16px}
+  .mosaico .ardesia{background:var(--ardesia);color:#fff}
+  .mosaico .ardesia p{color:rgba(255,255,255,.82)}
+  .mosaico .pietra{background:var(--pietra)}
+  .mosaico .foto{padding:0}
+  
+
+  /* stratigrafia */
+  .strati{padding:130px 0;background:var(--carta)}
+  .strati .griglia{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center;margin-top:56px}
+  .strati svg{width:100%;height:auto}
+  .strati ol{list-style:none;counter-reset:s}
+  .strati li{counter-increment:s;display:grid;grid-template-columns:52px 1fr;padding:18px 0;border-top:1px solid var(--linea)}
+  .strati li::before{content:counter(s,decimal-leading-zero);font-size:14px;font-weight:600;color:var(--rosso);padding-top:4px}
+  .strati li b{display:block;font-weight:500;font-size:19px}
+  .strati li span{color:var(--tenue);font-size:15px}
+
+  /* stagioni */
+  .stagioni{display:grid;grid-template-columns:1fr 1fr}
+  .stagioni > div{padding:90px 60px;min-height:440px;display:flex;flex-direction:column;justify-content:flex-start}
+  .stagioni .icona{width:56px;height:56px;margin-bottom:28px;display:block}
+  .stagioni .estate .icona{color:#c8862a}
+  .stagioni .inverno .icona{color:#9ec3dc}
+  .stagioni .estate{background:var(--pietra)}
+  .stagioni .inverno{background:var(--antracite);color:#fff}
+  .stagioni .inverno p{color:rgba(255,255,255,.78)}
+  .stagioni h3{font-size:clamp(30px,3.2vw,48px);font-weight:300;text-transform:uppercase;line-height:1.05;margin:14px 0 22px;white-space:nowrap}
+  @media (max-width:900px){.stagioni h3{white-space:normal}}
+  .stagioni p{max-width:480px}
+
+  /* fisarmonica vantaggi */
+  .vantaggi{padding:130px 0}
+  .vantaggi details{border-bottom:1px solid var(--linea)}
+  .vantaggi details:first-of-type{border-top:1px solid var(--linea);margin-top:48px}
+  .vantaggi summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 0;font-size:clamp(32px,4.8vw,72px);text-transform:uppercase;line-height:1;letter-spacing:-.01em}
+  .vantaggi summary::-webkit-details-marker{display:none}
+  .vantaggi summary::after{content:"+";font-weight:300;font-size:.7em;transition:transform .25s}
+  .vantaggi details[open] summary::after{transform:rotate(45deg)}
+  .vantaggi details p{max-width:720px;color:var(--tenue);font-size:18px;padding:0 0 30px}
+
+  /* sistemi */
+  .sistemi{padding:120px 0;background:var(--nero);color:#fff}
+  .sistemi .testa{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:46px}
+  .sistemi .occhiello{color:rgba(255,255,255,.6)}
+  .sistemi h2{font-size:clamp(36px,4.6vw,64px);font-weight:300;letter-spacing:-.02em;line-height:1.05;margin-top:14px}
+  .sistemi .frecce{display:flex;gap:14px;font-size:28px;opacity:.8}
+  .carosello{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 72px)/4);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+  .carosello article{scroll-snap-align:start}
+  .carosello .im{aspect-ratio:3/4;overflow:hidden;border-radius:2px;margin-bottom:18px}
+  .carosello .im img{transition:transform .6s}
+  .carosello article:hover img{transform:scale(1.04)}
+  .carosello h3{font-size:26px;font-weight:400}
+  .carosello p{color:rgba(255,255,255,.68);font-size:15px;margin-top:6px}
+  .carosello .scopri{display:inline-block;margin-top:14px;font-size:14px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:2px}
+
+  /* metodo: fasi in orizzontale */
+  .metodo{padding:130px 0;background:var(--salvia)}
+  .metodo h2{font-size:clamp(36px,4.6vw,64px);font-weight:300;letter-spacing:-.02em;margin:14px 0 50px}
+  .fasi{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+  .fasi div{background:rgba(255,255,255,.55);padding:22px 18px;min-height:190px;border-radius:2px}
+  .fasi b{display:block;font-size:13px;color:var(--rosso);letter-spacing:.12em;margin-bottom:10px}
+  .fasi h4{font-weight:500;font-size:18px;line-height:1.2;margin-bottom:8px}
+  .fasi p{font-size:14px;color:var(--tenue);line-height:1.5}
+  .barra{position:relative;height:6px;background:rgba(255,255,255,.6);margin-top:26px;border-radius:9px}
+  .barra i{position:absolute;left:0;top:0;bottom:0;width:100%;background:linear-gradient(90deg,var(--antracite),var(--rosso));border-radius:9px}
+  .barra-et{display:flex;justify-content:space-between;font-size:13px;margin-top:8px;color:var(--tenue)}
+
+  /* didascalia dei nostri cantieri */
+  .cant{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 14px;background:linear-gradient(transparent,rgba(0,0,0,.55));color:#fff;font-size:12px;letter-spacing:.06em;line-height:1.3}
+  .cant b{font-weight:500}
+  .carosello .im,.chi .foto{position:relative}
+  .cantieri-foto{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+  .cantieri-foto figure{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;border-radius:2px}
+  .cantieri-foto figcaption{position:absolute;left:0;right:0;bottom:0}
+  .dettagli{padding:130px 0}
+  .dettagli .griglia{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:50px}
+  .dettagli .cella{background:#fff;padding:30px 26px;min-height:230px}
+  .dettagli svg{width:56px;height:56px;margin-bottom:22px}
+  .dettagli h4{font-size:20px;font-weight:500;margin-bottom:8px}
+  .dettagli p{font-size:15px;color:var(--tenue)}
+
+  /* progetti */
+  .progetti{padding:0 0 130px}
+  .progetti .testa{display:flex;justify-content:space-between;align-items:end;margin-bottom:40px}
+  .progetti h2{font-size:clamp(36px,4.6vw,64px);font-weight:300;letter-spacing:-.02em;margin-top:14px}
+  .lavori{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:320px 320px;gap:16px}
+  .lavori a{position:relative;overflow:hidden;color:#fff}
+  .lavori a:first-child{grid-row:span 2}
+  .lavori a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.65))}
+  .lavori .t{position:absolute;left:26px;right:26px;bottom:22px;z-index:1}
+  .lavori .t small{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+  .lavori .t h3{font-size:30px;font-weight:400;line-height:1.1;margin-top:4px}
+  .lavori .stato{position:absolute;top:18px;left:18px;z-index:1;background:var(--rosso);font-size:12px;font-weight:500;padding:4px 10px;border-radius:99px}
+
+  /* chi siamo */
+  .chi{display:grid;grid-template-columns:1fr 1fr;min-height:620px}
+  .chi .foto img{filter:grayscale(.15)}
+  .chi .testo{background:var(--carta);padding:100px 70px;display:flex;flex-direction:column;justify-content:center}
+  .chi h2{font-size:clamp(36px,4.2vw,58px);font-weight:300;letter-spacing:-.02em;line-height:1.05;margin:14px 0 24px}
+  .chi p{color:var(--tenue);margin-bottom:16px;max-width:540px}
+  .punti{display:grid;grid-template-columns:1fr 1fr;gap:18px 30px;margin-top:22px}
+  .punti div{border-top:2px solid var(--nero);padding-top:12px;font-weight:500}
+  .punti small{display:block;font-weight:400;color:var(--tenue);font-size:14px}
+  .partner{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:36px;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue)}
+
+  /* chiusura */
+  .cta{background:var(--rosso);color:#fff;padding:110px 0}
+  .cta .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:50px;align-items:end}
+  .cta h2{font-size:clamp(44px,6vw,88px);font-weight:400;text-transform:uppercase;line-height:.95;letter-spacing:-.02em}
+  .cta p{font-size:19px;opacity:.9;margin-bottom:26px}
+  footer{background:var(--nero);color:rgba(255,255,255,.7);padding:70px 0 40px;font-size:15px}
+  footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  footer img{height:34px;width:auto;margin-bottom:18px}
+  footer h5{color:#fff;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-bottom:14px}
+  footer li{list-style:none;margin-bottom:6px}
+  footer .fondo{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:22px;font-size:13px;display:flex;justify-content:space-between}
+  .da-fare{background:#fff3b0;color:#5a4a00;padding:0 6px;border-radius:4px}
+
+  /* menu a tendina Sistemi */
+  .tendina{position:relative}
+  .tendina > button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;opacity:.85}
+  .tendina > button:hover,.tendina.aperta > button{opacity:1}
+  .tendina > button svg{width:10px;height:10px;transition:transform .2s}
+  .tendina.aperta > button svg{transform:rotate(180deg)}
+  .pannello{position:absolute;top:calc(100% + 24px);left:50%;width:560px;transform:translate(-50%,-6px);background:#fff;color:var(--nero);padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:6px;box-shadow:0 24px 60px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s}
+  .pannello::before{content:"";position:absolute;left:0;right:0;top:-24px;height:24px}
+  .tendina.aperta .pannello{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  .pannello a{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center;padding:10px;opacity:1;border-radius:2px;transition:background .15s}
+  .pannello a:hover,.pannello a[aria-current]{background:var(--carta)}
+  .pannello img{width:64px;height:64px;object-fit:cover}
+  .pannello b{display:block;font-weight:500;font-size:15px;line-height:1.2}
+  .pannello small{display:block;font-size:13px;color:var(--tenue);line-height:1.35;margin-top:3px}
+
+  /* telefono */
+  @media (max-width:900px){
+    .wrap{padding:0 20px}
+    header nav{display:none}
+    header .bottone{margin-left:auto}
+    .intro .griglia,.strati .griglia,.chi,.cta .wrap,.stagioni{grid-template-columns:1fr}
+    .intro{padding:80px 0 60px}.intro .griglia{gap:24px}
+    .mosaico{grid-template-columns:1fr;grid-template-rows:auto}
+    .mosaico > div{min-height:300px;padding:32px 24px}
+    .mosaico .grande{grid-row:auto;min-height:420px}
+    .stagioni > div{padding:60px 24px;min-height:360px}
+    .carosello{grid-auto-columns:78%}
+    .fasi{grid-template-columns:1fr 1fr}
+    .cantieri-foto{grid-template-columns:1fr}
+    .dettagli .griglia{grid-template-columns:1fr 1fr}
+    .lavori{grid-template-columns:1fr;grid-template-rows:380px 260px 260px}
+    .lavori a:first-child{grid-row:auto}
+    .chi .foto{height:360px}
+    .chi .testo{padding:60px 24px}
+    footer .wrap{grid-template-columns:1fr 1fr}
+    .hero .centro{--lw:250px}
+    /* telefono: sopra la foto con persona e mano, sotto logo e slogan su fondo pietra */
+    .hero{height:auto;min-height:0;display:flex;flex-direction:column;background:var(--pietra)}
+    .hero > img{position:static;height:50vh;object-position:40% center}
+    .hero::after{display:none}
+    .hero .centro{position:static;padding:44px 24px 40px}
+    .hero .scorri{display:none}
+    .strati,.vantaggi,.sistemi,.metodo,.dettagli,.cta{padding:80px 0}
+    .progetti{padding-bottom:80px}
+  }
+
+  /* menu a tre linee (telefono) */
+  .burger{all:unset;display:none;cursor:pointer;width:44px;height:44px;margin-right:-10px;position:relative}
+  .burger span,.burger span::before,.burger span::after{position:absolute;left:11px;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .2s}
+  .burger span{top:21px}
+  .burger span::before,.burger span::after{content:"";left:0}
+  .burger span::before{top:-7px}
+  .burger span::after{top:7px}
+  .menu-tel{position:fixed;inset:0;z-index:50;background:var(--nero);color:#fff;display:flex;flex-direction:column;padding:0 24px 32px;overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+  .menu-tel.aperto{opacity:1;visibility:visible}
+  .menu-tel .alto{display:flex;align-items:center;justify-content:space-between;height:68px;flex-shrink:0}
+  .menu-tel .alto img{height:28px;width:auto}
+  .menu-tel .chiudi{all:unset;cursor:pointer;width:44px;height:44px;margin-right:-10px;font-size:34px;line-height:44px;text-align:center;font-weight:300}
+  .menu-tel nav{display:flex;flex-direction:column;margin-top:18px}
+  .menu-tel nav > a,.menu-tel nav > button{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:28px;font-weight:300;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .menu-tel nav > button svg{width:16px;height:16px;transition:transform .2s}
+  .menu-tel nav > button[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .menu-tel .sotto{display:none;flex-direction:column;padding:8px 0 14px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .menu-tel .sotto.aperto{display:flex}
+  .menu-tel .sotto a{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;padding:8px 0;font-size:17px}
+  .menu-tel .sotto img{width:52px;height:52px;object-fit:cover}
+  .menu-tel .sotto a[aria-current]{color:#fff;font-weight:500}
+  .menu-tel .contatti{margin-top:auto;padding-top:34px;display:flex;flex-direction:column;gap:6px;font-size:15px;color:rgba(255,255,255,.7)}
+  .menu-tel .contatti .bottone{margin-top:16px;justify-content:center}
+  body.menu-aperto{overflow:hidden}
+  @media (max-width:900px){ .burger{display:block} }
+
+  /* pagine dei sistemi */
+  .sh{position:relative;min-height:calc(100vh - 106px);display:grid;grid-template-columns:1fr 1fr;background:var(--nero);color:#fff}
+  .sh .testo{padding:110px 70px 90px max(24px,calc((100vw - 1240px)/2 + 24px));display:flex;flex-direction:column;justify-content:center}
+  .sh .occhiello{color:rgba(255,255,255,.6)}
+  .sh h1{font-size:clamp(44px,5.6vw,84px);font-weight:300;text-transform:uppercase;letter-spacing:-.02em;line-height:.98;margin:16px 0 26px}
+  .sh .lead{font-size:clamp(18px,1.5vw,21px);line-height:1.6;color:rgba(255,255,255,.8);max-width:560px}
+  .sh .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+  .sh .chips span{border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:6px 14px;font-size:13px;letter-spacing:.04em}
+  .sh .foto{position:relative;overflow:hidden}
+  .sh .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .sez{padding:120px 0}
+  .sez h2{font-size:clamp(36px,4.6vw,64px);font-weight:300;letter-spacing:-.02em;line-height:1.05;margin:14px 0 26px}
+  .sez .lead{font-size:20px;color:var(--tenue);max-width:760px}
+  .vant{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:46px}
+  .vant div{background:#fff;padding:34px 28px;min-height:240px}
+  .vant b{display:block;font-size:13px;color:var(--rosso);letter-spacing:.14em;margin-bottom:18px}
+  .vant h3{font-size:22px;font-weight:500;line-height:1.2;margin-bottom:10px}
+  .vant p{color:var(--tenue);font-size:15px}
+  .prop{background:var(--carta)}
+  .prop .griglia{display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:start}
+  .scheda{border-top:1px solid var(--linea)}
+  .scheda div{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--linea)}
+  .scheda dt{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);padding-top:3px}
+  .scheda dd{font-size:17px}
+  .qual{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:46px}
+  .qual div{border-top:2px solid var(--nero);padding-top:18px}
+  .qual h3{font-size:20px;font-weight:500;margin-bottom:8px}
+  .qual p{color:var(--tenue);font-size:16px}
+  .strat{background:var(--nero);color:#fff}
+  .strat .occhiello{color:rgba(255,255,255,.6)}
+  .strat .lead{color:rgba(255,255,255,.72)}
+  .strat .griglia{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center;margin-top:40px}
+  .strat svg{width:100%;height:auto;display:block}
+  .strati-el{list-style:none;counter-reset:s}
+  .strati-el li{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .strati-el li span{grid-row:span 2;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--nero);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500}
+  .strati-el b{font-weight:500;font-size:18px}
+  .strati-el small{color:rgba(255,255,255,.66);font-size:15px}
+  .posa .gruppo{margin-top:56px}
+  .posa .gruppo > h3{font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--tenue);padding-bottom:14px;border-bottom:1px solid var(--linea)}
+  .opzioni{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+  .opzione{background:var(--carta);display:grid;grid-template-columns:140px 1fr;gap:30px;align-items:center;padding:30px}
+  .opzione.sola{grid-column:1/-1;grid-template-columns:140px 1fr;max-width:820px}
+  .opzione svg{width:100%;height:auto;background:#fff}
+  .opzione h4{font-size:24px;font-weight:400;line-height:1.15;margin-bottom:10px}
+  .opzione p{color:var(--tenue);font-size:16px}
+  .opzione .tag{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rosso)}
+  .altri{padding:100px 0;background:var(--carta)}
+  .altri .riga{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+  .altri a{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;color:#fff}
+  .altri a img{transition:transform .6s}
+  .altri a:hover img{transform:scale(1.04)}
+  .altri a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.6))}
+  .altri a span{position:absolute;left:22px;bottom:18px;z-index:1;font-size:22px}
+  @media (max-width:900px){
+    .sh{grid-template-columns:1fr;min-height:0}
+    .sh .testo{padding:70px 24px 50px}
+    .sh .foto{height:360px;order:-1}
+    .sez{padding:80px 0}
+    .vant{grid-template-columns:1fr 1fr}
+    .vant div{min-height:0}
+    .prop .griglia,.strat .griglia{grid-template-columns:1fr;gap:36px}
+    .scheda div{grid-template-columns:1fr;gap:4px}
+    .qual,.opzioni,.altri .riga{grid-template-columns:1fr}
+    .opzione,.opzione.sola{grid-template-columns:120px 1fr;gap:20px;padding:24px}
+  }
+  @media (max-width:520px){.vant{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="striscia">Hai un edificio da riqualificare? <a href="#contatti">Richiedi un sopralluogo tecnico</a></div>
+
+<header>
+  <div class="wrap">
+    <a href="index.html"><img class="logo" src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"></a>
+    <nav>
+      <a href="index.html#facciata">La facciata ventilata</a>
+      <div class="tendina">
+        <button type="button" aria-expanded="false" aria-controls="menu-sistemi">Sistemi <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 3l4 4 4-4"/></svg></button>
+        <div class="pannello" id="menu-sistemi">
+          <a href="sistema-ceramico.html" aria-current="page"><img src="../assets/foto/rivestimento-ceramico-travertino.jpg" alt=""><span><b>Rivestimento ceramico</b><small>Lastre in gres porcellanato e ceramica</small></span></a>
+          <a href="sistema-fibrocemento.html"><img src="../assets/foto/fibrocemento-doghe.jpg" alt=""><span><b>Fibrocemento</b><small>Pannelli colorati in massa, opachi e materici</small></span></a>
+          <a href="sistema-wpc.html"><img src="../assets/foto/progetti/barbuti-san-leucio-facciata.jpg" alt=""><span><b>WPC</b><small>Doghe e frangisole effetto legno</small></span></a>
+          <a href="sistema-alluminio-composito.html"><img src="../assets/foto/composito-a.jpg" alt=""><span><b>Alluminio composito</b><small>Pannelli leggeri e planari, anche curvi</small></span></a>
+        </div>
+      </div>
+      <a href="index.html#metodo">Metodo</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <a class="bottone chiaro" href="#contatti">Sopralluogo</a>
+    <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu-tel"><span></span></button>
+  </div>
+</header>
+
+<div class="menu-tel" id="menu-tel" aria-hidden="true">
+  <div class="alto"><img src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><button class="chiudi" type="button" aria-label="Chiudi il menu">×</button></div>
+  <nav>
+    <a href="index.html#facciata">La facciata ventilata</a>
+    <button type="button" aria-expanded="false" aria-controls="sotto-sistemi">Sistemi <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 3l4 4 4-4"/></svg></button>
+    <div class="sotto" id="sotto-sistemi">
+      <a href="sistema-ceramico.html" aria-current="page"><img src="../assets/foto/rivestimento-ceramico-travertino.jpg" alt=""><span>Rivestimento ceramico</span></a>
+      <a href="sistema-fibrocemento.html"><img src="../assets/foto/fibrocemento-doghe.jpg" alt=""><span>Fibrocemento</span></a>
+      <a href="sistema-wpc.html"><img src="../assets/foto/progetti/barbuti-san-leucio-facciata.jpg" alt=""><span>WPC</span></a>
+      <a href="sistema-alluminio-composito.html"><img src="../assets/foto/composito-a.jpg" alt=""><span>Alluminio composito</span></a>
+    </div>
+    <a href="index.html#metodo">Metodo</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+  <div class="contatti">
+    <a href="tel:+393793016458">Tel. 379 301 6458</a>
+    <a href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a>
+    <span>Via Padula 19, 80026 Casoria (NA)</span>
+    <a class="bottone chiaro" href="#contatti">Richiedi un sopralluogo</a>
+  </div>
+</div>
+
+<!-- HERO DEL SISTEMA -->
+<section class="sh">
+  <div class="testo">
+    <span class="occhiello">Sistemi · Lastre in gres porcellanato e ceramica</span>
+    <h1>Rivestimento ceramico</h1>
+    <p class="lead">Lastre ceramiche cotte ad altissima temperatura: compatte, praticamente impermeabili e stabili nel colore. Per le facciate usiamo lastre di grande formato e superfici ultracompatte.</p>
+    <div class="chips"><span>Grande formato</span><span>Non assorbe acqua</span><span>Colore stabile</span><span>Zero manutenzione</span></div>
+  </div>
+  <div class="foto"><img src="../assets/foto/rivestimento-ceramico-travertino.jpg" alt="Facciata ventilata in lastre ceramiche effetto travertino"></div>
+</section>
+
+<!-- VANTAGGI -->
+<section class="sez">
+  <div class="wrap">
+    <span class="occhiello">Vantaggi</span>
+    <h2>Perché sceglierlo</h2>
+    <div class="vant">
+      <div><b>01</b><h3>Non assorbe acqua</h3><p>Resiste a gelo, sbalzi termici, raggi UV, smog e agenti chimici: mantiene planarità e aspetto nel tempo.</p></div>
+      <div><b>02</b><h3>Colori che non cambiano</h3><p>Il gres è cotto, non verniciato: il colore è stabile e non scolorisce al sole.</p></div>
+      <div><b>03</b><h3>Sicuro</h3><p>Le lastre per facciata hanno sul retro una rete in fibra di vetro incollata: in caso di urto trattiene i frammenti.</p></div>
+      <div><b>04</b><h3>Zero manutenzione</h3><p>Si pulisce con acqua e detergenti neutri; esistono anche finiture autopulenti.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPRIETÀ E QUALITÀ -->
+<section class="sez prop">
+  <div class="wrap">
+    <div class="griglia">
+      <div>
+        <span class="occhiello">Proprietà</span>
+        <h2>Scheda del materiale</h2>
+        <p class="lead">I valori esatti dipendono dal prodotto scelto: li confermiamo in progetto sulla scheda tecnica del produttore.</p>
+      </div>
+      <dl class="scheda">
+        <div><dt>Materiale</dt><dd>Gres porcellanato e superfici ceramiche ultracompatte</dd></div>
+        <div><dt>Spessore</dt><dd>Da 6 a 12 mm; le superfici ultracompatte anche 8 e 20 mm</dd></div>
+        <div><dt>Formati più usati</dt><dd>60 × 120, 120 × 240, 120 × 278, 160 × 320 cm e sottomoduli</dd></div>
+        <div><dt>Reazione al fuoco</dt><dd>Materiale minerale, non alimenta le fiamme</dd></div>
+        <div><dt>Assorbimento d'acqua</dt><dd>Praticamente nullo</dd></div>
+        <div><dt>Manutenzione</dt><dd>Praticamente nessuna</dd></div>
+      </dl>
+    </div>
+    <div class="qual">
+      <div><h3>Finiture</h3><p>Effetto pietra, cemento, marmo, legno, metallo e tinta unita, opache o lucide. Si possono abbinare formati diversi sulla stessa facciata.</p></div>
+      <div><h3>Lastre di progetto</h3><p>Oltre ai moduli standard si lavora su grandi lastre su misura, come le lastre retinate 270 × 180 cm effetto travertino di Palazzo Rue.</p></div>
+      <div><h3>Sostenibilità</h3><p>Il gres è un materiale minerale, inerte e durevole; esistono lastre composte interamente da materiali riciclati e riciclabili.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATIGRAFIA: tolta per ora, la rifacciamo bene (i dati sono in s.strati) -->
+
+<!-- SISTEMI DI POSA -->
+<section class="sez posa">
+  <div class="wrap">
+    <span class="occhiello">Sistemi di posa</span>
+    <h2>Come si monta</h2>
+    <p class="lead">La soluzione giusta dipende da formato, altezza dell'edificio ed effetto voluto: la scegliamo insieme in fase di progetto.</p>
+    <div class="gruppo">
+      <h3>Sottostruttura</h3>
+      <div class="opzioni">
+        <div class="opzione">
+          <svg viewBox="204 20 120 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sezione della facciata ventilata">
+  <defs><pattern id="tratt" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="#8f887c" stroke-width="2"/></pattern>
+  <pattern id="lana" width="18" height="12" patternUnits="userSpaceOnUse"><path d="M0 6 q4.5 -6 9 0 t9 0" fill="none" stroke="#c9b866" stroke-width="1.4"/></pattern></defs>
+  <rect x="30" y="20" width="90" height="280" fill="#b9b2a6"/><rect x="30" y="20" width="90" height="280" fill="url(#tratt)" opacity=".45"/>
+  <rect x="120" y="20" width="90" height="280" fill="#e8dca4"/><rect x="120" y="20" width="90" height="280" fill="url(#lana)"/>
+  <rect x="210" y="20" width="92" height="280" fill="#eef3f6"/><circle cx="233" cy="62" r="9" fill="none" stroke="#8fb0c2" stroke-width="1.5"/><circle cx="233" cy="62" r="2.5" fill="#8fb0c2"/><circle cx="233" cy="258" r="9" fill="none" stroke="#8fb0c2" stroke-width="1.5"/><circle cx="233" cy="258" r="2.5" fill="#8fb0c2"/><rect x="70" y="157" width="50" height="6" fill="#8a8f95"/>
+  <path d="M118 134 h8 v22 h140 v8 h-148 z" fill="#5d6670"/><rect x="256" y="156" width="40" height="8" fill="#30363B"/><rect x="294" y="100" width="6" height="120" fill="#30363B"/><rect x="302" y="20" width="12" height="280" fill="#e3d9c6" stroke="#141719" stroke-width="1.2"/></svg>
+          <div><h4>Con profili a T</h4><p>Montanti verticali con sezione a T fissati alle staffe: l'ala esterna del profilo fa da appoggio alle lastre.</p></div>
+        </div>
+        <div class="opzione">
+          <svg viewBox="204 20 120 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sezione della facciata ventilata">
+  <defs><pattern id="tratt" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="#8f887c" stroke-width="2"/></pattern>
+  <pattern id="lana" width="18" height="12" patternUnits="userSpaceOnUse"><path d="M0 6 q4.5 -6 9 0 t9 0" fill="none" stroke="#c9b866" stroke-width="1.4"/></pattern></defs>
+  <rect x="30" y="20" width="90" height="280" fill="#b9b2a6"/><rect x="30" y="20" width="90" height="280" fill="url(#tratt)" opacity=".45"/>
+  <rect x="120" y="20" width="90" height="280" fill="#e8dca4"/><rect x="120" y="20" width="90" height="280" fill="url(#lana)"/>
+  <rect x="210" y="20" width="92" height="280" fill="#eef3f6"/><circle cx="233" cy="62" r="9" fill="none" stroke="#8fb0c2" stroke-width="1.5"/><circle cx="233" cy="62" r="2.5" fill="#8fb0c2"/><circle cx="233" cy="258" r="9" fill="none" stroke="#8fb0c2" stroke-width="1.5"/><circle cx="233" cy="258" r="2.5" fill="#8fb0c2"/><rect x="70" y="105" width="50" height="6" fill="#8a8f95"/>
+  <path d="M118 82 h8 v22 h140 v8 h-148 z" fill="#5d6670"/><path d="M256 96 V120 H297 V200 H256 V224" fill="none" stroke="#30363B" stroke-width="6" stroke-linejoin="miter"/><rect x="302" y="20" width="12" height="280" fill="#e3d9c6" stroke="#141719" stroke-width="1.2"/></svg>
+          <div><h4>Con profili a omega</h4><p>Montanti verticali con sezione a omega (a cappello) fissati alle staffe: offrono un appoggio largo e rigido alle lastre.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="gruppo">
+      <h3>Fissaggio delle lastre</h3>
+      <div class="opzioni">
+        <div class="opzione">
+          <svg viewBox="204 20 126 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sezione della facciata ventilata">
+  <defs><pattern id="tratt" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="#8f887c" stroke-width="2"/></pattern>
+  <pattern id="lana" width="18" height="12" patternUnits="userSpaceOnUse"><path d="M0 6 q4.5 -6 9 0 t9 0" fill="none" stroke="#c9b866" stroke-width="1.4"/></pattern></defs>
+  <rect x="30" y="20" width="90" height="280" fill="#b9b2a6"/><rect x="30" y="20" width="90" height="280" fill="url(#tratt)" opacity=".45"/>
+  <rect x="120" y="20" width="90" height="280" fill="#e8dca4"/><rect x="120" y="20" width="90" height="280" fill="url(#lana)"/>
+  <rect x="210" y="20" width="98" height="280" fill="#eef3f6"/><circle cx="233" cy="62" r="9" fill="none" stroke="#8fb0c2" stroke-width="1.5"/><circle cx="233" cy="62" r="2.5" fill="#8fb0c2"/><circle cx="233" cy="258" r="9" fill="none" stroke="#8fb0c2" stroke-width="1.5"/><circle cx="233" cy="258" r="2.5" fill="#8fb0c2"/><rect x="70" y="157" width="50" height="6" fill="#8a8f95"/>
+  <path d="M118 134 h8 v22 h140 v8 h-148 z" fill="#5d6670"/><rect x="256" y="156" width="40" height="8" fill="#30363B"/><rect x="294" y="100" width="6" height="120" fill="#30363B"/><rect x="300" y="120" width="8" height="10" rx="3" fill="#d7202b"/><rect x="300" y="192" width="8" height="10" rx="3" fill="#d7202b"/><rect x="308" y="20" width="12" height="280" fill="#e3d9c6" stroke="#141719" stroke-width="1.2"/></svg>
+          <div><h4>Incollaggio con silicone strutturale</h4><p>Le lastre sono incollate ai profili con un sigillante strutturale: nessun elemento visibile, la facciata resta continua.</p><span class="tag">Fissaggio invisibile</span></div>
+        </div>
+        <div class="opzione">
+          <svg viewBox="204 20 130 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sezione della facciata ventilata">
+  <defs><pattern id="tratt" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="#8f887c" stroke-width="2"/></pattern>
+  <pattern id="lana" width="18" height="12" patternUnits="userSpaceOnUse"><path d="M0 6 q4.5 -6 9 0 t9 0" fill="none" stroke="#c9b866" stroke-width="1.4"/></pattern></defs>
+  <rect x="30" y="20" width="90" height="280" fill="#b9b2a6"/><rect x="30" y="20" width="90" height="280" fill="url(#tratt)" opacity=".45"/>
+  <rect x="120" y="20" width="90" height="280" fill="#e8dca4"/><rect x="120" y="20" width="90" height="280" fill="url(#lana)"/>
+  <rect x="210" y="20" width="102" height="280" fill="#eef3f6"/><circle cx="233" cy="62" r="9" fill="none" stroke="#8fb0c2" stroke-width="1.5"/><circle cx="233" cy="62" r="2.5" fill="#8fb0c2"/><circle cx="233" cy="258" r="9" fill="none" stroke="#8fb0c2" stroke-width="1.5"/><circle cx="233" cy="258" r="2.5" fill="#8fb0c2"/><rect x="70" y="157" width="50" height="6" fill="#8a8f95"/>
+  <path d="M118 134 h8 v22 h140 v8 h-148 z" fill="#5d6670"/><rect x="256" y="156" width="40" height="8" fill="#30363B"/><rect x="294" y="100" width="6" height="120" fill="#30363B"/><path d="M300 114 h16 v16 h-4 v-10 h-12 z" fill="#d7202b"/><path d="M300 190 h16 v16 h-4 v-10 h-12 z" fill="#d7202b"/><rect x="312" y="20" width="12" height="280" fill="#e3d9c6" stroke="#141719" stroke-width="1.2"/></svg>
+          <div><h4>Aggancio meccanico</h4><p>Ganci fissati sul retro della lastra la agganciano alla sottostruttura, oppure graffe a vista: la lastra si smonta e si sostituisce singolarmente.</p><span class="tag">Lastra sostituibile</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLI ALTRI SISTEMI -->
+<section class="altri">
+  <div class="wrap">
+    <span class="occhiello">Gli altri sistemi</span>
+    <div class="riga">
+      <a href="sistema-fibrocemento.html"><img src="../assets/foto/fibrocemento-doghe.jpg" alt="Facciata ventilata in lastre di fibrocemento rigate"><span>Fibrocemento</span></a>
+      <a href="sistema-wpc.html"><img src="../assets/foto/progetti/barbuti-san-leucio-facciata.jpg" alt="Facciata in doghe di WPC effetto legno"><span>WPC</span></a>
+      <a href="sistema-alluminio-composito.html"><img src="../assets/foto/composito-a.jpg" alt="Facciata ventilata in pannelli di alluminio composito"><span>Alluminio composito</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contatti">
+  <div class="wrap">
+    <h2>Hai una facciata da rifare?</h2>
+    <div>
+      <p>Richiedi un sopralluogo: il preventivo dettagliato arriva dopo la visita.</p>
+      <a class="bottone chiaro" href="tel:+393793016458">379 301 6458</a>
+      <a class="bottone" style="margin-left:8px;background:rgba(0,0,0,.25)" href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><img src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><p>Progettazione e posa di facciate ventilate.<br>Via Padula 19, 80026 Casoria (NA)</p></div>
+    <div><h5>Sistemi</h5><ul><li>Rivestimento ceramico</li><li>Fibrocemento</li><li>WPC</li><li>Alluminio composito</li></ul></div>
+    <div><h5>Azienda</h5><ul><li><a href="chi-siamo.html">Chi siamo</a></li><li>Progetti</li><li><a href="index.html#metodo">Metodo</a></li><li>Blog</li></ul></div>
+    <div><h5>Contatti</h5><ul><li>379 301 6458</li><li>ventilart@ventilart.it</li><li>WhatsApp</li><li>Instagram</li></ul></div>
+    <div class="fondo"><span>© Ventilàrt · P.IVA <span class="da-fare">da inserire</span></span><span>Privacy · Cookie</span></div>
+  </div>
+</footer>
+
+<script>
+  // menu a tendina Sistemi: si apre al passaggio del mouse e al clic, si chiude con Esc o cliccando fuori
+  document.querySelectorAll('.tendina').forEach(function (t) {
+    var b = t.querySelector('button');
+    function apri(si) { t.classList.toggle('aperta', si); b.setAttribute('aria-expanded', si); }
+    b.addEventListener('click', function (e) { e.stopPropagation(); apri(!t.classList.contains('aperta')); });
+    t.addEventListener('mouseenter', function () { if (matchMedia('(hover:hover)').matches) apri(true); });
+    t.addEventListener('mouseleave', function () { if (matchMedia('(hover:hover)').matches) apri(false); });
+    document.addEventListener('click', function (e) { if (!t.contains(e.target)) apri(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') apri(false); });
+  });
+</script>
+<script>
+  // menu a tre linee: apre e chiude il pannello a tutto schermo; "Sistemi" si apre a fisarmonica
+  (function () {
+    var m = document.getElementById('menu-tel'), b = document.querySelector('.burger');
+    if (!m || !b) return;
+    function apri(si) { m.classList.toggle('aperto', si); m.setAttribute('aria-hidden', !si); b.setAttribute('aria-expanded', si); document.body.classList.toggle('menu-aperto', si); }
+    b.addEventListener('click', function () { apri(true); });
+    m.querySelector('.chiudi').addEventListener('click', function () { apri(false); });
+    m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { apri(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') apri(false); });
+    var s = m.querySelector('nav > button'), sotto = document.getElementById('sotto-sistemi');
+    s.addEventListener('click', function () { var o = !sotto.classList.contains('aperto'); sotto.classList.toggle('aperto', o); s.setAttribute('aria-expanded', o); });
+    if (sotto.querySelector('[aria-current]')) { sotto.classList.add('aperto'); s.setAttribute('aria-expanded', true); }
+  })();
+</script>
+</body>
+</html>
