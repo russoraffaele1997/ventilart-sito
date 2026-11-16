@@ -268,7 +268,7 @@
   .motivi b{font-size:13px;color:var(--rosso);letter-spacing:.14em;padding-top:6px}
   .motivi h3{font-size:24px;font-weight:500;line-height:1.2;margin-bottom:8px}
   .motivi p{color:var(--tenue);font-size:16px}
-  .persone{background:var(--carta)}
+  .persone{background:var(--pietra)}
   .persone .coppia{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px}
   .socio{background:#fff;padding:44px 40px;display:grid;grid-template-columns:150px 1fr;gap:34px;align-items:start}
   .socio .ritratto{width:150px;height:150px;border-radius:50%;overflow:hidden;background:var(--antracite);color:#fff;display:flex;align-items:center;justify-content:center;font-size:34px;letter-spacing:.06em}
@@ -276,17 +276,20 @@
   .socio h3{font-size:30px;font-weight:400;line-height:1.1}
   .socio .ruolo{display:block;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--rosso);margin:8px 0 18px}
   .socio p{color:var(--tenue);font-size:16px}
-  .pilastri{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:50px}
-  .pilastri div{background:#fff;padding:34px 28px;min-height:250px}
+  .approccio{background:var(--salvia)}
+  .approccio .lead,.approccio .pilastri p{color:rgba(20,23,25,.7)}
+  .pilastri{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:50px}
+  .pilastri div{background:rgba(255,255,255,.55);padding:34px 28px;min-height:250px}
   .pilastri b{display:block;width:34px;height:3px;background:var(--rosso);margin-bottom:26px}
   .pilastri h3{font-size:22px;font-weight:500;margin-bottom:10px}
   .pilastri p{color:var(--tenue);font-size:15px}
-  .numeri{background:var(--antracite);color:#fff}
+  .numeri{background:var(--ardesia);color:#fff}
   .numeri .occhiello{color:rgba(255,255,255,.6)}
   .numeri .riga{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:50px}
   .numeri .riga div{border-top:1px solid rgba(255,255,255,.25);padding-top:22px}
   .numeri strong{display:block;font-size:clamp(52px,6vw,88px);font-weight:300;line-height:1;letter-spacing:-.03em}
   .numeri span{display:block;margin-top:12px;color:rgba(255,255,255,.72);font-size:16px}
+  .sede{background:var(--carta)}
   .sede .griglia{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
   .sede dl{display:grid;grid-template-columns:auto 1fr;gap:14px 30px;font-size:17px}
   .sede dt{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--tenue);padding-top:3px}
@@ -304,7 +307,7 @@
 </head>
 <body>
 
-<div class="striscia">Hai un edificio da riqualificare? <a href="#contatti">Richiedi un sopralluogo tecnico</a></div>
+<div class="striscia">Hai un edificio da riqualificare? <a href="contatti.html">Inviaci il progetto per un’offerta preliminare</a></div>
 
 <header>
   <div class="wrap">
@@ -320,11 +323,11 @@
           <a href="sistema-alluminio-composito.html"><img src="../assets/foto/composito-a.jpg" alt=""><span><b>Alluminio composito</b><small>Pannelli leggeri e planari, anche curvi</small></span></a>
         </div>
       </div>
-      <a href="index.html#metodo">Metodo</a>
+      <a href="metodo.html">Metodo</a>
       <a href="chi-siamo.html" aria-current="page">Chi siamo</a>
-      <a href="#contatti">Contatti</a>
+      <a href="contatti.html">Contatti</a>
     </nav>
-    <a class="bottone chiaro" href="#contatti">Sopralluogo</a>
+    <a class="bottone chiaro" href="contatti.html">Preventivo</a>
     <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu-tel"><span></span></button>
   </div>
 </header>
@@ -340,15 +343,15 @@
       <a href="sistema-wpc.html"><img src="../assets/foto/progetti/barbuti-san-leucio-facciata.jpg" alt=""><span>WPC</span></a>
       <a href="sistema-alluminio-composito.html"><img src="../assets/foto/composito-a.jpg" alt=""><span>Alluminio composito</span></a>
     </div>
-    <a href="index.html#metodo">Metodo</a>
+    <a href="metodo.html">Metodo</a>
     <a href="chi-siamo.html">Chi siamo</a>
-    <a href="#contatti">Contatti</a>
+    <a href="contatti.html">Contatti</a>
   </nav>
   <div class="contatti">
     <a href="tel:+393793016458">Tel. 379 301 6458</a>
     <a href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a>
     <span>Via Padula 19, 80026 Casoria (NA)</span>
-    <a class="bottone chiaro" href="#contatti">Richiedi un sopralluogo</a>
+    <a class="bottone chiaro" href="contatti.html">Richiedi un preventivo</a>
   </div>
 </div>
 
@@ -408,11 +411,11 @@
   <div class="wrap">
     <span class="occhiello">Il nostro approccio</span>
     <h2>Come lavoriamo</h2>
-    <p class="lead">Seguiamo ogni intervento dal sopralluogo alla consegna, con un unico referente e i materiali dei migliori produttori del settore.</p>
+    <p class="lead">Seguiamo ogni intervento dal progetto alla consegna, con un unico referente e i materiali dei migliori produttori del settore.</p>
     <div class="pilastri">
       <div><b></b><h3>Specializzazione</h3><p>Facciamo una cosa sola: progettare e posare facciate ventilate.</p></div>
       <div><b></b><h3>Squadre interne</h3><p>La posa la fa il nostro personale.</p></div>
-      <div><b></b><h3>Un solo referente</h3><p>Dal primo sopralluogo alla consegna.</p></div>
+      <div><b></b><h3>Un solo referente</h3><p>Dall’offerta alla consegna.</p></div>
       <div><b></b><h3>Documentazione completa</h3><p>Di lavori e materiali, consegnata a fine cantiere.</p></div>
     </div>
   </div>
@@ -453,7 +456,7 @@
   <div class="wrap">
     <h2>Hai una facciata da rifare?</h2>
     <div>
-      <p>Richiedi un sopralluogo: il preventivo dettagliato arriva dopo la visita.</p>
+      <p>Inviaci gli elaborati di progetto in formato DWG o PDF: prepariamo un’offerta preliminare tecnica ed economica. Sopralluogo e rilievo precedono l’offerta definitiva.</p>
       <a class="bottone chiaro" href="tel:+393793016458">379 301 6458</a>
       <a class="bottone" style="margin-left:8px;background:rgba(0,0,0,.25)" href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a>
     </div>
@@ -464,7 +467,7 @@
   <div class="wrap">
     <div><img src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><p>Progettazione e posa di facciate ventilate.<br>Via Padula 19, 80026 Casoria (NA)</p></div>
     <div><h5>Sistemi</h5><ul><li>Rivestimento ceramico</li><li>Fibrocemento</li><li>WPC</li><li>Alluminio composito</li></ul></div>
-    <div><h5>Azienda</h5><ul><li><a href="chi-siamo.html">Chi siamo</a></li><li>Progetti</li><li><a href="index.html#metodo">Metodo</a></li><li>Blog</li></ul></div>
+    <div><h5>Azienda</h5><ul><li><a href="chi-siamo.html">Chi siamo</a></li><li>Progetti</li><li><a href="metodo.html">Metodo</a></li><li>Blog</li></ul></div>
     <div><h5>Contatti</h5><ul><li>379 301 6458</li><li>ventilart@ventilart.it</li><li>WhatsApp</li><li>Instagram</li></ul></div>
     <div class="fondo"><span>© Ventilàrt · P.IVA <span class="da-fare">da inserire</span></span><span>Privacy · Cookie</span></div>
   </div>

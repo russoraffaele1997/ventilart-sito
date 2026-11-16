@@ -255,6 +255,37 @@
   @media (max-width:900px){ .burger{display:block} }
 
   /* pagine dei sistemi */
+  /* tavole delle stratigrafie */
+  .tavole{background:var(--carta)}
+  .tavole .schede{display:flex;flex-wrap:wrap;gap:10px;margin:40px 0 24px}
+  .tavole .schede button{all:unset;cursor:pointer;padding:14px 22px;border:1px solid var(--linea);background:#fff;display:flex;flex-direction:column;gap:2px;transition:background .15s,color .15s,border-color .15s}
+  .tavole .schede button b{font-weight:500;font-size:17px}
+  .tavole .schede button small{font-size:13px;color:var(--tenue)}
+  .tavole .schede button[aria-selected="true"]{background:var(--nero);border-color:var(--nero);color:#fff}
+  .tavole .schede button[aria-selected="true"] small{color:rgba(255,255,255,.65)}
+  .tavole .schede button:focus-visible{outline:2px solid var(--rosso);outline-offset:2px}
+  .tavola{--stage:#fbfaf7;--paper:#fff;--ink:#1f2a33;--accent:var(--antracite);display:grid;gap:24px}
+  .tavola[hidden]{display:none}
+  .tavola > *,.tavola .foglio > *{min-width:0}
+  .tavola .foglio{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:40px;align-items:start}
+  .tavola .figura{background:var(--stage);border:1px solid var(--linea);padding:16px;min-width:0}
+  .tavola svg{display:block;width:100%;height:auto}
+  .tavola .legend{list-style:none;margin:0;padding:0}
+  .tavola .legend li{display:grid;grid-template-columns:38px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--linea)}
+  .tavola .legend li:first-child{padding-top:4px}
+  .tavola .legend .n{width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-weight:500;font-size:15px;line-height:34px;text-align:center}
+  .tavola .legend h2{font-size:19px;font-weight:500;line-height:1.25;margin:4px 0}
+  .tavola .legend p{margin:0;color:var(--tenue);font-size:15px;line-height:1.55}
+  .tavola .swatch{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px;border:1px solid rgba(0,0,0,.25)}
+  .tavola .nota{font-size:13px;color:var(--tenue);margin-top:14px}
+  .tavola .dettaglio{background:#fff;border:1px solid var(--linea);padding:20px 20px 12px}
+  .tavola .dettaglio h3{font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--tenue);margin-bottom:8px}
+  .tavola .scorri-x{overflow-x:auto}
+  .tavola .dettaglio svg{min-width:560px}
+  .tavola .sec-t{fill:var(--ink);font:500 13px 'Jost',sans-serif}
+  .tavola .sec-l{stroke:var(--ink);stroke-width:1}
+  .tavola .sec-e{stroke:var(--ink);stroke-opacity:.6;stroke-width:1}
+  @media (max-width:900px){ .tavola .foglio{grid-template-columns:1fr;gap:24px} .tavole .schede{display:grid;grid-template-columns:1fr 1fr;gap:8px} .tavole .schede button{padding:12px 14px} .tavole .schede button b{font-size:15px} }
   .sh{position:relative;min-height:calc(100vh - 106px);display:grid;grid-template-columns:1fr 1fr;background:var(--nero);color:#fff}
   .sh .testo{padding:110px 70px 90px max(24px,calc((100vw - 1240px)/2 + 24px));display:flex;flex-direction:column;justify-content:center}
   .sh .occhiello{color:rgba(255,255,255,.6)}
@@ -267,12 +298,20 @@
   .sez{padding:120px 0}
   .sez h2{font-size:clamp(36px,4.6vw,64px);font-weight:300;letter-spacing:-.02em;line-height:1.05;margin:14px 0 26px}
   .sez .lead{font-size:20px;color:var(--tenue);max-width:760px}
-  .vant{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:46px}
+  .vant{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:46px}
   .vant div{background:#fff;padding:34px 28px;min-height:240px}
+  .vant div:nth-child(1){background:var(--ardesia);color:#fff}
+  .vant div:nth-child(2){background:var(--pietra)}
+  .vant div:nth-child(3){background:var(--salvia)}
+  .vant div:nth-child(4){background:var(--antracite);color:#fff}
+  .vant div:nth-child(1) b,.vant div:nth-child(4) b{color:rgba(255,255,255,.7)}
+  .vant div:nth-child(1) p,.vant div:nth-child(4) p{color:rgba(255,255,255,.78)}
   .vant b{display:block;font-size:13px;color:var(--rosso);letter-spacing:.14em;margin-bottom:18px}
   .vant h3{font-size:22px;font-weight:500;line-height:1.2;margin-bottom:10px}
   .vant p{color:var(--tenue);font-size:15px}
-  .prop{background:var(--carta)}
+  .prop{background:var(--salvia)}
+  .prop .lead,.prop .scheda dt,.prop .qual p{color:rgba(20,23,25,.7)}
+  .prop .scheda,.prop .scheda div{border-color:rgba(20,23,25,.18)}
   .prop .griglia{display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:start}
   .scheda{border-top:1px solid var(--linea)}
   .scheda div{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--linea)}
@@ -301,7 +340,8 @@
   .opzione h4{font-size:24px;font-weight:400;line-height:1.15;margin-bottom:10px}
   .opzione p{color:var(--tenue);font-size:16px}
   .opzione .tag{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rosso)}
-  .altri{padding:100px 0;background:var(--carta)}
+  .altri{padding:100px 0;background:var(--nero)}
+  .altri .occhiello{color:rgba(255,255,255,.6)}
   .altri .riga{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
   .altri a{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;color:#fff}
   .altri a img{transition:transform .6s}
@@ -325,7 +365,7 @@
 </head>
 <body>
 
-<div class="striscia">Hai un edificio da riqualificare? <a href="#contatti">Richiedi un sopralluogo tecnico</a></div>
+<div class="striscia">Hai un edificio da riqualificare? <a href="contatti.html">Inviaci il progetto per un’offerta preliminare</a></div>
 
 <header>
   <div class="wrap">
@@ -341,11 +381,11 @@
           <a href="sistema-alluminio-composito.html" aria-current="page"><img src="../assets/foto/composito-a.jpg" alt=""><span><b>Alluminio composito</b><small>Pannelli leggeri e planari, anche curvi</small></span></a>
         </div>
       </div>
-      <a href="index.html#metodo">Metodo</a>
+      <a href="metodo.html">Metodo</a>
       <a href="chi-siamo.html">Chi siamo</a>
-      <a href="#contatti">Contatti</a>
+      <a href="contatti.html">Contatti</a>
     </nav>
-    <a class="bottone chiaro" href="#contatti">Sopralluogo</a>
+    <a class="bottone chiaro" href="contatti.html">Preventivo</a>
     <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu-tel"><span></span></button>
   </div>
 </header>
@@ -361,15 +401,15 @@
       <a href="sistema-wpc.html"><img src="../assets/foto/progetti/barbuti-san-leucio-facciata.jpg" alt=""><span>WPC</span></a>
       <a href="sistema-alluminio-composito.html" aria-current="page"><img src="../assets/foto/composito-a.jpg" alt=""><span>Alluminio composito</span></a>
     </div>
-    <a href="index.html#metodo">Metodo</a>
+    <a href="metodo.html">Metodo</a>
     <a href="chi-siamo.html">Chi siamo</a>
-    <a href="#contatti">Contatti</a>
+    <a href="contatti.html">Contatti</a>
   </nav>
   <div class="contatti">
     <a href="tel:+393793016458">Tel. 379 301 6458</a>
     <a href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a>
     <span>Via Padula 19, 80026 Casoria (NA)</span>
-    <a class="bottone chiaro" href="#contatti">Richiedi un sopralluogo</a>
+    <a class="bottone chiaro" href="contatti.html">Richiedi un preventivo</a>
   </div>
 </div>
 
@@ -424,31 +464,9 @@
   </div>
 </section>
 
-<!-- STRATIGRAFIA: tolta per ora, la rifacciamo bene (i dati sono in s.strati) -->
+<!-- STRATIGRAFIA: tavole ancora da fare per questo sistema -->
 
-<!-- SISTEMI DI POSA -->
-<section class="sez posa">
-  <div class="wrap">
-    <span class="occhiello">Sistemi di posa</span>
-    <h2>Come si monta</h2>
-    <p class="lead">La soluzione giusta dipende da formato, altezza dell'edificio ed effetto voluto: la scegliamo insieme in fase di progetto.</p>
-    <div class="gruppo">
-      <h3>Fissaggio dei pannelli</h3>
-      <div class="opzioni">
-        <div class="opzione sola">
-          <svg viewBox="204 20 116 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sezione della facciata ventilata">
-  <defs><pattern id="tratt" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="#8f887c" stroke-width="2"/></pattern>
-  <pattern id="lana" width="18" height="12" patternUnits="userSpaceOnUse"><path d="M0 6 q4.5 -6 9 0 t9 0" fill="none" stroke="#c9b866" stroke-width="1.4"/></pattern></defs>
-  <rect x="30" y="20" width="90" height="280" fill="#b9b2a6"/><rect x="30" y="20" width="90" height="280" fill="url(#tratt)" opacity=".45"/>
-  <rect x="120" y="20" width="90" height="280" fill="#e8dca4"/><rect x="120" y="20" width="90" height="280" fill="url(#lana)"/>
-  <rect x="210" y="20" width="92" height="280" fill="#eef3f6"/><circle cx="233" cy="62" r="9" fill="none" stroke="#8fb0c2" stroke-width="1.5"/><circle cx="233" cy="62" r="2.5" fill="#8fb0c2"/><circle cx="233" cy="258" r="9" fill="none" stroke="#8fb0c2" stroke-width="1.5"/><circle cx="233" cy="258" r="2.5" fill="#8fb0c2"/><rect x="70" y="157" width="50" height="6" fill="#8a8f95"/>
-  <path d="M118 134 h8 v22 h140 v8 h-148 z" fill="#5d6670"/><rect x="256" y="156" width="40" height="8" fill="#30363B"/><rect x="294" y="100" width="6" height="120" fill="#30363B"/><path d="M300 64 h10 v6 h-4 v20 h-6 z" fill="#d7202b"/><path d="M300 256 h10 v-6 h-4 v-20 h-6 z" fill="#d7202b"/><rect x="302" y="20" width="8" height="280" fill="#c3c8cc" stroke="#141719" stroke-width="1.2"/></svg>
-          <div><h4>Agganciato a cassetta</h4><p>Il pannello è piegato sui bordi a formare una cassetta e viene agganciato alla sottostruttura: nessun fissaggio visibile, superficie continua.</p><span class="tag">Unico sistema di posa</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- SISTEMI DI POSA: tolti dalla pagina (i dati restano in s.posa) -->
 
 <!-- GLI ALTRI SISTEMI -->
 <section class="altri">
@@ -466,7 +484,7 @@
   <div class="wrap">
     <h2>Hai una facciata da rifare?</h2>
     <div>
-      <p>Richiedi un sopralluogo: il preventivo dettagliato arriva dopo la visita.</p>
+      <p>Inviaci gli elaborati di progetto in formato DWG o PDF: prepariamo un’offerta preliminare tecnica ed economica. Sopralluogo e rilievo precedono l’offerta definitiva.</p>
       <a class="bottone chiaro" href="tel:+393793016458">379 301 6458</a>
       <a class="bottone" style="margin-left:8px;background:rgba(0,0,0,.25)" href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a>
     </div>
@@ -477,7 +495,7 @@
   <div class="wrap">
     <div><img src="../assets/logo/ventilart-orizzontale-bianco.svg" alt="Ventilàrt"><p>Progettazione e posa di facciate ventilate.<br>Via Padula 19, 80026 Casoria (NA)</p></div>
     <div><h5>Sistemi</h5><ul><li>Rivestimento ceramico</li><li>Fibrocemento</li><li>WPC</li><li>Alluminio composito</li></ul></div>
-    <div><h5>Azienda</h5><ul><li><a href="chi-siamo.html">Chi siamo</a></li><li>Progetti</li><li><a href="index.html#metodo">Metodo</a></li><li>Blog</li></ul></div>
+    <div><h5>Azienda</h5><ul><li><a href="chi-siamo.html">Chi siamo</a></li><li>Progetti</li><li><a href="metodo.html">Metodo</a></li><li>Blog</li></ul></div>
     <div><h5>Contatti</h5><ul><li>379 301 6458</li><li>ventilart@ventilart.it</li><li>WhatsApp</li><li>Instagram</li></ul></div>
     <div class="fondo"><span>© Ventilàrt · P.IVA <span class="da-fare">da inserire</span></span><span>Privacy · Cookie</span></div>
   </div>

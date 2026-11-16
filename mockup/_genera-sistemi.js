@@ -13,6 +13,37 @@ const iCoda = modello.indexOf('<section class="cta"');
 if ([iCss, iStyle, iCorpo, iCoda].some((i) => i < 0)) throw new Error("chi-siamo.html è cambiata: controlla i segnaposto");
 
 const CSS = `  /* pagine dei sistemi */
+  /* tavole delle stratigrafie */
+  .tavole{background:var(--carta)}
+  .tavole .schede{display:flex;flex-wrap:wrap;gap:10px;margin:40px 0 24px}
+  .tavole .schede button{all:unset;cursor:pointer;padding:14px 22px;border:1px solid var(--linea);background:#fff;display:flex;flex-direction:column;gap:2px;transition:background .15s,color .15s,border-color .15s}
+  .tavole .schede button b{font-weight:500;font-size:17px}
+  .tavole .schede button small{font-size:13px;color:var(--tenue)}
+  .tavole .schede button[aria-selected="true"]{background:var(--nero);border-color:var(--nero);color:#fff}
+  .tavole .schede button[aria-selected="true"] small{color:rgba(255,255,255,.65)}
+  .tavole .schede button:focus-visible{outline:2px solid var(--rosso);outline-offset:2px}
+  .tavola{--stage:#fbfaf7;--paper:#fff;--ink:#1f2a33;--accent:var(--antracite);display:grid;gap:24px}
+  .tavola[hidden]{display:none}
+  .tavola > *,.tavola .foglio > *{min-width:0}
+  .tavola .foglio{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:40px;align-items:start}
+  .tavola .figura{background:var(--stage);border:1px solid var(--linea);padding:16px;min-width:0}
+  .tavola svg{display:block;width:100%;height:auto}
+  .tavola .legend{list-style:none;margin:0;padding:0}
+  .tavola .legend li{display:grid;grid-template-columns:38px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--linea)}
+  .tavola .legend li:first-child{padding-top:4px}
+  .tavola .legend .n{width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-weight:500;font-size:15px;line-height:34px;text-align:center}
+  .tavola .legend h2{font-size:19px;font-weight:500;line-height:1.25;margin:4px 0}
+  .tavola .legend p{margin:0;color:var(--tenue);font-size:15px;line-height:1.55}
+  .tavola .swatch{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px;border:1px solid rgba(0,0,0,.25)}
+  .tavola .nota{font-size:13px;color:var(--tenue);margin-top:14px}
+  .tavola .dettaglio{background:#fff;border:1px solid var(--linea);padding:20px 20px 12px}
+  .tavola .dettaglio h3{font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--tenue);margin-bottom:8px}
+  .tavola .scorri-x{overflow-x:auto}
+  .tavola .dettaglio svg{min-width:560px}
+  .tavola .sec-t{fill:var(--ink);font:500 13px 'Jost',sans-serif}
+  .tavola .sec-l{stroke:var(--ink);stroke-width:1}
+  .tavola .sec-e{stroke:var(--ink);stroke-opacity:.6;stroke-width:1}
+  @media (max-width:900px){ .tavola .foglio{grid-template-columns:1fr;gap:24px} .tavole .schede{display:grid;grid-template-columns:1fr 1fr;gap:8px} .tavole .schede button{padding:12px 14px} .tavole .schede button b{font-size:15px} }
   .sh{position:relative;min-height:calc(100vh - 106px);display:grid;grid-template-columns:1fr 1fr;background:var(--nero);color:#fff}
   .sh .testo{padding:110px 70px 90px max(24px,calc((100vw - 1240px)/2 + 24px));display:flex;flex-direction:column;justify-content:center}
   .sh .occhiello{color:rgba(255,255,255,.6)}
@@ -25,12 +56,20 @@ const CSS = `  /* pagine dei sistemi */
   .sez{padding:120px 0}
   .sez h2{font-size:clamp(36px,4.6vw,64px);font-weight:300;letter-spacing:-.02em;line-height:1.05;margin:14px 0 26px}
   .sez .lead{font-size:20px;color:var(--tenue);max-width:760px}
-  .vant{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:46px}
+  .vant{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:46px}
   .vant div{background:#fff;padding:34px 28px;min-height:240px}
+  .vant div:nth-child(1){background:var(--ardesia);color:#fff}
+  .vant div:nth-child(2){background:var(--pietra)}
+  .vant div:nth-child(3){background:var(--salvia)}
+  .vant div:nth-child(4){background:var(--antracite);color:#fff}
+  .vant div:nth-child(1) b,.vant div:nth-child(4) b{color:rgba(255,255,255,.7)}
+  .vant div:nth-child(1) p,.vant div:nth-child(4) p{color:rgba(255,255,255,.78)}
   .vant b{display:block;font-size:13px;color:var(--rosso);letter-spacing:.14em;margin-bottom:18px}
   .vant h3{font-size:22px;font-weight:500;line-height:1.2;margin-bottom:10px}
   .vant p{color:var(--tenue);font-size:15px}
-  .prop{background:var(--carta)}
+  .prop{background:var(--salvia)}
+  .prop .lead,.prop .scheda dt,.prop .qual p{color:rgba(20,23,25,.7)}
+  .prop .scheda,.prop .scheda div{border-color:rgba(20,23,25,.18)}
   .prop .griglia{display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:start}
   .scheda{border-top:1px solid var(--linea)}
   .scheda div{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--linea)}
@@ -59,7 +98,8 @@ const CSS = `  /* pagine dei sistemi */
   .opzione h4{font-size:24px;font-weight:400;line-height:1.15;margin-bottom:10px}
   .opzione p{color:var(--tenue);font-size:16px}
   .opzione .tag{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rosso)}
-  .altri{padding:100px 0;background:var(--carta)}
+  .altri{padding:100px 0;background:var(--nero)}
+  .altri .occhiello{color:rgba(255,255,255,.6)}
   .altri .riga{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
   .altri a{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;color:#fff}
   .altri a img{transition:transform .6s}
@@ -188,6 +228,12 @@ const SISTEMI = [
       "Lastre ceramiche di grande formato."
     ),
     sezioneBase: { profilo: "T", fissaggio: "gancio" },
+    stratigrafie: [
+      { nome: "Profili a T · incollata", sotto: "Silicone strutturale", file: "ceramico-T-incollata.html" },
+      { nome: "Profili omega · incollata", sotto: "Silicone strutturale", file: "ceramico-omega-silicone.html" },
+      { nome: "Profili a T · graffe", sotto: "Fissaggio a vista", file: "ceramico-T-graffe.html" },
+      { nome: "Doppia orditura · ganci", sotto: "Fissaggio a scomparsa", file: "ceramico-T-ganci.html" },
+    ],
     posa: [
       {
         titolo: "Sottostruttura",
@@ -240,12 +286,25 @@ const SISTEMI = [
       "Pannelli in fibrocemento."
     ),
     sezioneBase: { profilo: "T", fissaggio: "rivetto" },
+    stratigrafie: [
+      { nome: "Profili a T · rivetti", sotto: "Fissaggio a vista", file: "fibrocemento-T-rivetti.html" },
+      { nome: "Profili a T · clips", sotto: "Fissaggio a scomparsa", file: "fibrocemento-T-clips.html" },
+      { nome: "Profili omega · rivetti", sotto: "Fissaggio a vista", file: "fibrocemento-omega-rivetti.html" },
+      { nome: "Profili omega · clips", sotto: "Fissaggio a scomparsa", file: "fibrocemento-omega-clips.html" },
+    ],
     posa: [
+      {
+        titolo: "Sottostruttura",
+        opzioni: [
+          { nome: "Con profili a T", testo: "Montanti verticali con sezione a T fissati alle staffe: l'ala esterna del profilo fa da appoggio ai pannelli.", svg: { profilo: "T", fissaggio: "nessuno" } },
+          { nome: "Con profili a omega", testo: "Montanti verticali con sezione a omega (a cappello) fissati alla parete: offrono un appoggio largo e rigido ai pannelli.", svg: { profilo: "omega", fissaggio: "nessuno" } },
+        ],
+      },
       {
         titolo: "Fissaggio dei pannelli",
         opzioni: [
-          { nome: "Agganciato", testo: "Ganci fissati sul retro del pannello lo agganciano alla sottostruttura: nessun fissaggio visibile in facciata.", tag: "Fissaggio invisibile", svg: { profilo: "T", fissaggio: "gancio" } },
-          { nome: "Fissato con rivetti", testo: "Il pannello è fissato ai profili con rivetti a vista, anche nello stesso colore del pannello: posa semplice e veloce.", tag: "Rivetti anche in tinta", svg: { profilo: "T", fissaggio: "rivetto" } },
+          { nome: "Rivettato", testo: "Il pannello è fissato ai profili con rivetti a vista, anche nello stesso colore del pannello: posa semplice e veloce.", tag: "Fissaggio a vista", svg: { profilo: "T", fissaggio: "rivetto" } },
+          { nome: "Con clips", testo: "Clips fissate sul retro del pannello lo agganciano alla sottostruttura: nessun fissaggio visibile in facciata.", tag: "Fissaggio a scomparsa", svg: { profilo: "T", fissaggio: "gancio" } },
         ],
       },
     ],
@@ -285,6 +344,12 @@ const SISTEMI = [
       "Doghe in WPC con anima in alluminio."
     ),
     sezioneBase: { profilo: "T", fissaggio: "gancio" },
+    stratigrafie: [
+      { nome: "Doghe orizzontali · legno", sotto: "Magatelli in larice", file: "wpc-orizzontali-legno.html" },
+      { nome: "Doghe orizzontali · alluminio", sotto: "Magatelli in alluminio", file: "wpc-orizzontali-alluminio.html" },
+      { nome: "Doghe verticali · legno", sotto: "Magatelli in larice", file: "wpc-verticali-legno.html" },
+      { nome: "Doghe verticali · alluminio", sotto: "Magatelli in alluminio", file: "wpc-verticali-alluminio.html" },
+    ],
     posa: [
       {
         titolo: "Fissaggio delle doghe",
@@ -341,6 +406,61 @@ const SISTEMI = [
   },
 ];
 
+
+// --- tavole delle stratigrafie (disegni in mockup/_stratigrafie/, uno per variante) -----------------------
+// Prende disegno, legenda, nota e sezione orizzontale; rende unici stili e id interni, così più tavole
+// convivono nella stessa pagina; usa il carattere del sito al posto del monospaziato.
+function tavola(file, id) {
+  const src = fs.readFileSync(path.join(DIR, "_stratigrafie", file), "utf8");
+  const prendi = (re, nome) => { const m = src.match(re); if (!m) throw new Error(nome + " non trovato in " + file); return m[1]; };
+  let fig = prendi(/<div class="figure">(<svg[\s\S]*?<\/svg>)<\/div>/, "disegno");
+  let sez = prendi(/<div class="scroll">(<svg[\s\S]*?<\/svg>)<\/div>/, "sezione orizzontale");
+  const legenda = prendi(/(<ol class="legend">[\s\S]*?<\/ol>)/, "legenda");
+  const nota = (src.match(/<p class="note">([\s\S]*?)<\/p>/) || [, ""])[1];
+  const prepara = (svg, sid) => svg
+    .replace(/<svg /, `<svg id="${sid}" `)
+    .replace(/<style>([\s\S]*?)<\/style>/g, (m, css) => "<style>" + css.replace(/(^|\})\s*([^{}]+)\{/g,
+      (mm, a, sel) => a + sel.split(",").map((x) => `#${sid} ${x.trim()}`).join(",") + "{") + "</style>")
+    .replace(/ id="([^"]+)"/g, (m, x) => x === sid ? m : ` id="${sid}-${x}"`)
+    .replace(/url\(#([^)]+)\)/g, `url(#${sid}-$1)`)
+    .replace(/'IBM Plex Mono',ui-monospace,monospace/g, "'Jost',sans-serif");
+  return { fig: prepara(fig, id + "-fig"), sez: prepara(sez, id + "-sez"), legenda, nota };
+}
+
+function stratigrafie(s) {
+  if (!s.stratigrafie) return "<!-- STRATIGRAFIA: tavole ancora da fare per questo sistema -->\n";
+  const tav = s.stratigrafie.map((t, i) => ({ ...t, ...tavola(t.file, "tav-" + s.file.replace(/\.html$/, "") + "-" + i) }));
+  return `<!-- STRATIGRAFIA -->
+<section class="sez tavole" id="stratigrafia">
+  <div class="wrap">
+    <span class="occhiello">Stratigrafia</span>
+    <h2>Com'è fatta, strato per strato</h2>
+    <p class="lead">Scegli la variante per vedere la stratigrafia completa.</p>
+    <div class="schede" role="tablist" aria-label="Varianti della stratigrafia">
+${tav.map((t, i) => `      <button type="button" role="tab" id="${t.fig.match(/id="([^"]+)"/)[1]}-tab" aria-selected="${i === 0}" aria-controls="pannello-${i}"><b>${t.nome}</b><small>${t.sotto}</small></button>`).join("\n")}
+    </div>
+${tav.map((t, i) => `    <div class="tavola" role="tabpanel" id="pannello-${i}"${i ? " hidden" : ""}>
+      <div class="foglio">
+        <div class="figura">${t.fig}</div>
+        <div>
+          ${t.legenda}
+          ${t.nota ? `<p class="nota">${t.nota}</p>` : ""}
+        </div>
+      </div>
+    </div>`).join("\n")}
+  </div>
+</section>
+<script>
+  // schede della stratigrafia: un clic mostra la variante scelta
+  document.querySelectorAll('.tavole .schede button').forEach(function (b, i, tutti) {
+    b.addEventListener('click', function () {
+      tutti.forEach(function (x, j) { x.setAttribute('aria-selected', j === i); document.getElementById('pannello-' + j).hidden = j !== i; });
+    });
+  });
+</script>
+`;
+}
+
 // ---------------------------------------------------------------------------
 function pagina(s) {
   let testa = modello.slice(0, iCss) + CSS + modello.slice(iStyle, iCorpo);
@@ -390,25 +510,8 @@ ${s.qualita.map(([t, p]) => `      <div><h3>${t}</h3><p>${p}</p></div>`).join("\
   </div>
 </section>
 
-<!-- STRATIGRAFIA: tolta per ora, la rifacciamo bene (i dati sono in s.strati) -->
-
-<!-- SISTEMI DI POSA -->
-<section class="sez posa">
-  <div class="wrap">
-    <span class="occhiello">Sistemi di posa</span>
-    <h2>Come si monta</h2>
-    <p class="lead">La soluzione giusta dipende da formato, altezza dell'edificio ed effetto voluto: la scegliamo insieme in fase di progetto.</p>
-${s.posa.map((g) => `    <div class="gruppo">
-      <h3>${g.titolo}</h3>
-      <div class="opzioni">
-${g.opzioni.map((o) => `        <div class="opzione${o.sola ? " sola" : ""}">
-          ${sezione({ ...o.svg, colore: s.colore, spess: s.spess, numeri: false, zoom: true })}
-          <div><h4>${o.nome}</h4><p>${o.testo}</p>${o.tag ? `<span class="tag">${o.tag}</span>` : ""}</div>
-        </div>`).join("\n")}
-      </div>
-    </div>`).join("\n")}
-  </div>
-</section>
+${stratigrafie(s)}
+<!-- SISTEMI DI POSA: tolti dalla pagina (i dati restano in s.posa) -->
 
 <!-- GLI ALTRI SISTEMI -->
 <section class="altri">
