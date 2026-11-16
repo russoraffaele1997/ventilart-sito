@@ -52,6 +52,9 @@ const CSS = `  /* pagina contatti */
     .elaborati{padding:80px 0}
     .elaborati .cinque{grid-template-columns:1fr 1fr}
   }
+  @media (max-width:520px){
+    .elaborati .cinque{grid-template-columns:1fr}
+  }
 `;
 
 const corpo = `<!-- APERTURA -->
