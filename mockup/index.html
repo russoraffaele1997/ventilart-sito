@@ -60,7 +60,7 @@
   /* mosaico a blocchi */
   .mosaico{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:380px 380px}
   .mosaico > div{position:relative;padding:44px;overflow:hidden}
-  .mosaico .grande{grid-row:span 2;background:var(--nero);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+  .mosaico .grande{grid-row:span 2;background:var(--nero);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:22px}
   .mosaico .grande h3{font-size:clamp(48px,5.4vw,84px);font-weight:300;line-height:.98;letter-spacing:-.03em}
   .mosaico .grande p{color:rgba(255,255,255,.7);max-width:420px}
   .mosaico h4{font-size:32px;font-weight:400;line-height:1.1;margin-bottom:14px}
@@ -83,7 +83,7 @@
 
   /* stagioni */
   .stagioni{display:grid;grid-template-columns:1fr 1fr}
-  .stagioni > div{padding:90px 60px;min-height:440px;display:flex;flex-direction:column;justify-content:flex-start}
+  .stagioni > div{padding:70px 60px;display:flex;flex-direction:column;justify-content:flex-start}
   .stagioni .icona{width:56px;height:56px;margin-bottom:28px;display:block}
   .stagioni .estate .icona{color:#c8862a}
   .stagioni .inverno .icona{color:#9ec3dc}
@@ -123,7 +123,7 @@
   .metodo{padding:130px 0;background:var(--salvia)}
   .metodo h2{font-size:clamp(36px,4.6vw,64px);font-weight:300;letter-spacing:-.02em;margin:14px 0 50px}
   .fasi{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-  .fasi div{background:rgba(255,255,255,.55);padding:22px 18px;min-height:190px;border-radius:2px}
+  .fasi div{background:rgba(255,255,255,.55);padding:22px 18px;border-radius:2px}
   .fasi b{display:block;font-size:13px;color:var(--rosso);letter-spacing:.12em;margin-bottom:10px}
   .fasi h4{font-weight:500;font-size:18px;line-height:1.2;margin-bottom:8px}
   .fasi p{font-size:14px;color:var(--tenue);line-height:1.5}
@@ -206,8 +206,8 @@
     .intro{padding:80px 0 60px}.intro .griglia{gap:24px}
     .mosaico{grid-template-columns:1fr;grid-template-rows:auto}
     .mosaico > div{min-height:300px;padding:32px 24px}
-    .mosaico .grande{grid-row:auto;min-height:420px}
-    .stagioni > div{padding:60px 24px;min-height:360px}
+    .mosaico .grande{grid-row:auto;min-height:0}
+    .stagioni > div{padding:56px 24px}
     .carosello{grid-auto-columns:78%}
     .fasi{grid-template-columns:1fr 1fr}
     .cantieri-foto{grid-template-columns:1fr}

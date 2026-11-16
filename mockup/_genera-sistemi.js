@@ -57,7 +57,7 @@ const CSS = `  /* pagine dei sistemi */
   .sez h2{font-size:clamp(36px,4.6vw,64px);font-weight:300;letter-spacing:-.02em;line-height:1.05;margin:14px 0 26px}
   .sez .lead{font-size:20px;color:var(--tenue);max-width:760px}
   .vant{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:46px}
-  .vant div{background:#fff;padding:34px 28px;min-height:240px}
+  .vant div{background:#fff;padding:30px 26px}
   .vant div:nth-child(1){background:var(--ardesia);color:#fff}
   .vant div:nth-child(2){background:var(--pietra)}
   .vant div:nth-child(3){background:var(--salvia)}
