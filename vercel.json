@@ -6,18 +6,87 @@
   "outputDirectory": "pubblico",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/_proposte/d-moderno.html", "destination": "/", "permanent": false },
-    { "source": "/_proposte/:path*", "destination": "/:path*", "permanent": false }
+    {
+      "source": "/_proposte/d-moderno.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/_proposte/:path*",
+      "destination": "/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/lavorazione-gres-porcellanato",
+      "destination": "/sistema-ceramico",
+      "permanent": false
+    },
+    {
+      "source": "/lavorazione-fibrocemento",
+      "destination": "/sistema-fibrocemento",
+      "permanent": false
+    },
+    {
+      "source": "/lavorazione-wpc",
+      "destination": "/sistema-wpc",
+      "permanent": false
+    },
+    {
+      "source": "/lavorazione-alluminio-composito",
+      "destination": "/sistema-alluminio-composito",
+      "permanent": false
+    },
+    {
+      "source": "/lavorazioni",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/progetti",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/progetto-:nome",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/mockup/:path*",
+      "destination": "/:path*",
+      "permanent": false
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://gestionale.ventilart.it; frame-ancestors 'none'; base-uri 'self'; form-action 'none'" }
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://gestionale.ventilart.it; frame-ancestors 'none'; base-uri 'self'; form-action 'none'"
+        }
       ]
     }
   ]

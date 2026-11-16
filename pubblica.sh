@@ -1,7 +1,6 @@
 #!/bin/sh
 # Prepara la cartella pubblico/ che Vercel mette online:
-# il sito nuovo (_proposte) alla radice del dominio, con la home come index.html,
-# senza bozze, file di lavoro e note interne.
+# il sito ufficiale (mockup/) alla radice del dominio, senza script e file di lavoro.
 set -e
 rm -rf pubblico
 mkdir pubblico
@@ -19,15 +18,23 @@ if [ -f MANUTENZIONE-ATTIVA ]; then
   exit 0
 fi
 
-cp -r _proposte/. pubblico/
+# SITO UFFICIALE (dal 16/11/2026): le pagine di mockup/ alla radice del dominio.
+# (Il sito precedente, _proposte/, resta nel repository ma non va più online.)
+cp mockup/*.html pubblico/
 cp -r assets pubblico/assets
 cp online/favicon.svg online/v.svg pubblico/
-mv pubblico/d-moderno.html pubblico/index.html
-rm -f pubblico/_genera-pagine.js pubblico/blog/_genera.js
-rm -f pubblico/a-galleria.html pubblico/b-studio.html pubblico/c-preventivo.html
 rm -f pubblico/assets/foto/FONTI.md
-# i link alla home puntano a "/" invece che a d-moderno.html
-find pubblico -name '*.html' -exec sed -i 's#"\(\.\./\)\{0,1\}d-moderno\.html#"/#g' {} +
-sed -i "s#BASE + 'd-moderno.html\#contatti'#'/\#contatti'#" pubblico/chat/chat.js
-# le pagine del blog si aprono sia da /blog che da /blog/: i loro link relativi partono sempre da /blog/
-sed -i 's#<head>#<head>\n<base href="/blog/">#' pubblico/blog/*.html
+# percorsi assoluti: le pagine stanno alla radice, non più in /mockup/
+sed -i 's#"\.\./assets/#"/assets/#g; s#href="index\.html\#\([^"]*\)"#href="/\#\1"#g; s#href="index\.html"#href="/"#g' pubblico/*.html
+sed -i 's#<meta charset="utf-8">#<meta charset="utf-8">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">#' pubblico/*.html
+cp pubblico/index.html pubblico/404.html
+# motori di ricerca: robots.txt e mappa del sito
+printf 'User-agent: *\nAllow: /\nSitemap: https://www.ventilart.it/sitemap.xml\n' > pubblico/robots.txt
+{
+  echo '<?xml version="1.0" encoding="UTF-8"?>'
+  echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+  for p in "" chi-siamo metodo contatti sistema-ceramico sistema-fibrocemento sistema-wpc sistema-alluminio-composito privacy cookie; do
+    echo "  <url><loc>https://www.ventilart.it/$p</loc></url>"
+  done
+  echo '</urlset>'
+} > pubblico/sitemap.xml
