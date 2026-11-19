@@ -30,7 +30,7 @@ const AGG = "Ultimo aggiornamento: novembre 2026.";
 
 const PRIVACY = `
 <h2>Titolare del trattamento</h2>
-<p>Ventilàrt, Via Padula 19, 80026 Casoria (NA). Email <a href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a>, telefono <a href="tel:+393793016458">379 301 6458</a>.</p>
+<p>Ventilàrt S.r.l., Via Padula 19, 80026 Casoria (NA), P.IVA e codice fiscale 11200091210. Email <a href="mailto:ventilart@ventilart.it">ventilart@ventilart.it</a>, telefono <a href="tel:+393793016458">379 301 6458</a>, PEC <a href="mailto:ventilart@pec.ventilart.it">ventilart@pec.ventilart.it</a>.</p>
 
 <h2>Quali dati trattiamo</h2>
 <ul>
